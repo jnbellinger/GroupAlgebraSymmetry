@@ -1,0 +1,2277 @@
+% LaTex document
+%\pagelayout{normal}
+
+\def\G#1{{\bf \it #1}}
+\documentclass[12pt]{article}
+\usepackage{lscape}
+\topmargin -0.5in
+\oddsidemargin 0in
+\evensidemargin 0in
+\textheight 8.9in
+\textwidth 6.5in
+\parskip 3pt plus 1pt minus 0.5pt
+
+\begin{document}
+\title{ Continuous Transformations Which Preserve the Structure of a Finite Group}
+\author{James N. Bellinger}
+\date{11 November 1987}
+\maketitle
+\begin{abstract}
+Some finite groups have a linear mapping
+of the group elements onto the algebra with the basis of the group
+elements such
+that the resulting linear combinations of group elements retain
+the group properties.  In some cases these mappings are
+continuous Lie groups.  So far I have found
+a `non-compact' SO(3)xU(1), SO(4)xU(1), and Sl(2,c)xU(1).
+\end{abstract}
+%% Kac-Moody?  The generators seem to come in 3's . . .
+\newpage
+\pagestyle{plain}
+
+\vskip 2in
+
+
+\section{ Introduction and Physics Motivation}
+
+\par
+  Particles such as the $K_L$ we describe as
+a combination of $K^0$ and anti-$K^0$.  
+Particles such as the $\pi^0$ are regarded as linear combinations of
+quarks and anti-quarks.
+It has been proposed that
+the particles we know or infer (leptons and quarks) are similarly
+composed of combinations of ``preons.''
+
+ I examine in this paper some consequences of a simple preon model,
+and show that certain continuous symmetries result.
+
+ The model I use has seven basic assumptions:
+
+ $\bullet$  First suppose that all preon interactions are 3-body interactions.
+I know of no 4-body interaction which has been observed, now that
+beta decay is known to progress through a series of 3-body interactions.
+A 4-gluon vertex is hypothesised, but not directly observed.
+
+ $\bullet$  Suppose secondly that all particles are created from combinations of
+these preons.  This condition is not required for the mathematics of
+the model, but for any possible interpretation of it.
+
+ $\bullet$  Suppose thirdly that we are not for the moment concerned with the
+particle positions or momenta, but only with particle type.  We now are
+treating all particle interactions as being of the form $A \bigodot B
+\rightarrow C$.
+
+ $\bullet$  Fourthly suppose that every particle may interact with every other
+to make a new particle.  This requires that the particles in the model
+not have any net charge (as in $(e^+ +e^-)/\sqrt{2}$ vs
+$(e^+ -e^-)/\sqrt{2}$).  I include no mechanism for giving the particles
+mass:  all are assumed massless.
+
+
+ $\bullet$  Suppose fifthly that the interaction we have defined so far is
+associative: $A \bigodot (B \bigodot C) = (A \bigodot B) \bigodot C$.
+We can argue that
+associativity is a consequence of some of the conservation
+laws, though tighter conditions could be applied.  This condition
+is deliberately loose.
+
+ $\bullet$  Suppose sixthly that we have some particle $Q$ which has the property
+that $Q \bigodot A \rightarrow A$.  We do in fact observe interactions
+with this property, such as an electron absorbing a photon.
+Remember that by assumption 3 we are dealing only
+with particle character or identity, not momentum.
+
+ $\bullet$  Suppose seventhly that for each particle $A$ there is an `anti-particle'
+$A^{-1}$ for which $A \bigodot A^{-1} \rightarrow Q$.
+We have defined a group structure, which we may take to be finite.
+
+  Now I ask:  What continuous symmetries exist in this model?  This is
+something of a reversal of the standard approach which examines
+representations of a group to find particles.  I am looking at a finite
+group representing preon interactions and searching for the observed
+continuous symmetry.  Eigenvectors of such a transformation could be
+candidates for identification with observed particles.
+
+ The specific question I wish to address is this:  Can the observed
+symmetries (SU(3), SU(2), etc.) be generated in a natural way from
+linear transformations over finite groups, where the structure of
+the finite group is maintained?
+
+ The answer, as I will show, is:  Yes, some of them can be
+generated--perhaps all, I don't know.  The price is high, however--the 
+finite groups which represent particle interactions
+must be non-abelian.  This is contrary to observation and intuition, but
+in one case explored in detail the eigenvectors of the
+transformation which have constant
+eigenvalues do in fact commute, and only those eigenvectors whose
+eigenvalues are functions of the parameters fail to commute.  This
+suggests that only
+those particles whose preon contents are subject to change are those
+which fail to commute.  This remains to be proven or disproven in general,
+however.
+
+ A second, as yet unanswered, question is:  Can one predict which
+symmetries can be generated?  There is a hint that by examining the
+group characters one can determine the order of continuous symmetries,
+but this hasn't been fully explored yet.
+
+\section{ Foundations}
+ The method is to consider the elements of a finite group as the basis
+of a vector space, and then study those transformations of the basis
+elements for which the new bases, considered as elements of a new
+finite group
+themselves, form a group isomorphic to the original.  Each of the new
+bases is a linear combination (complex coefficients) of the original
+basis elements (elements of the group).  
+
+
+ Consider a finite group $G$ with elements $c_i$.  Number them in some
+arbitrary order, from $0$ to $N-1$, where $0$ is the label for the
+identity element and $N$ is the order of the group.  Display the
+group operation by 
+$c_i \bigodot c_j \rightarrow c_k$.  
+
+ I work with a space in which the elements $P$ are defined as
+$\sum_i p_i \thinspace c_i$, where $p_i$ is a complex number (it could be some other
+field, but I haven't addressed that question), and $c_i$ are the elements
+of the original finite group.  Multiplication by a complex number is
+naturally defined by $b \thinspace P $ as $\sum_i ( b \thinspace p_i )
+\thinspace c_i$, and the sum of two elements $P$ and $Q$ is
+$\sum_i ( p_i + q_i ) \thinspace c_i$.  There is also a natural operation between
+the elements of this space given in terms of the group operation by
+$P \bigotimes Q = \sum_i \sum_j p_i q_j (c_i \bigodot c_j )$.
+
+ 
+ In this space consider a linear transformation of the
+original group elements, 
+so that we have a new group $G^\prime$ with
+$c_i^\prime \bigotimes c_j^\prime \rightarrow c_k^\prime$.  
+This is an automorphism over the new space.  Let the
+array $V$ be defined by
+$c_i^\prime = V_{i,r} c_r$ so we can write
+\begin{equation}
+V_{i,r} c_r \bigotimes V_{j,s} c_s \rightarrow \phi_{k} V_{k,t} c_t
+\end{equation}
+\begin{equation}
+V_{i,ts^{-1}} c_{ts^{-1}} \bigotimes V_{j,s} c_s \rightarrow V_{ij,t} c_t
+\end{equation}
+\begin{equation}
+V_{i,ts^{-1}} c_{ts^{-1}} \bigotimes V_{j,s} c_s \rightarrow \phi_{ij} V_{ij,t} c_t
+\end{equation}
+\begin{equation}
+V_{i,ts^{-1}} \thinspace V_{j,s} = \phi_{ij} V_{ij,t} = V_{i,r} \thinspace V_{j,r^{-1}t}
+\end{equation}
+
+
+Note that I assume that $V$ is complex.  One could restrict it to
+be real, or use some other field entirely, but I'll take the
+complex case.  It turns out that the $\phi_{ij}$ are
+all identical, and can be divided out as a completely independent phase
+(U(1), in other words).
+%%%%You may verify that using the
+%%%%equation ${V^{*}}_{i,r} V_{j,r^{-1}t} = V_{ij,t}$ changes nothing.
+In what follows I will denote the
+identity by 0, for simplicity and clarity.  The top element of a column
+vector will correspond to this 0-element.  In what follows, if an
+object has more than one subscript, these will be separated by commas.
+If several terms are concatenated in a subscript without commas,
+group addition of the specified elements is assumed.
+  First let me demonstrate that the $\phi_x$ are identical.
+Clearly $V$ must not be singular, or the
+resulting transformed group would be smaller than the original.
+
+ Define $f_i = \sum_{x} V_{i,x}$.  Then since
+$$
+\sum_{r} V_{i,r} V_{j,r^{-1}t} = V_{ij,t} \phi_{ij}
+$$
+$$
+\sum_{r,t} V_{i,r} V_{j,r^{-1}t} = f_i f_j = \sum_{t} V_{ij,t} \phi_{ij} =
+\phi_{ij} f_{ij}
+$$
+When $i = 0$, we get $f_0 \thinspace f_j = \phi_j \thinspace f_j$.
+If any $f_k$ were 0, all would be, and thus V would be singular.
+Since V is non-singular,
+$f_j \neq 0$, so $f_0 = \phi_j \forall j$, thus all the $\phi_j$ are the
+same, and will be called simply $\phi$, which is also clearly non-zero.
+
+ To continue, restate the equation of $f$'s as $f_i \thinspace f_j =
+f_{ij} \thinspace \phi$.  Then $f_{i^2} = f^2_i /\phi$.  This extends
+to $f_{i^n} = f^n_i (1/\phi)^{n-1}$.  Now we know that for each $i$
+an element in the group
+there exists some $N$ such that $i^N = 0$ (the identity), since this
+is a finite group.  Then $f_{i^N} = f_0 = \phi = f^N_i (1/\phi)^{N-1}$,
+or, rearranging, $f^N_i = \phi^N$.  Thus
+$$
+f_i = \phi e^{2 i \pi {n_i \over N}} \quad\quad 0 \leq n_i \leq N
+$$
+But notice that the $n_i$ are discrete, and this is a continuous
+transformation.  The identity is obviously a member of the set of 
+transformations starting from the identity,
+and for the identity each
+$f_i$ is 1.  If we parameterize starting from the identity transform, then 
+each $n_i$ must be $0$.  Therefore,
+$$
+\sum_x V_{i,x} = f_i = \phi \quad \forall i
+$$
+
+ Let $g_i = \sum_x V_{x,i}$.  Then
+$$
+\sum_{i,r} V_{i,r} \thinspace V_{j,r^{-1}t} = \sum_t V_{ij,t} \phi =
+\sum_r g_r \thinspace V_{j,r^{-1}t} = g_t \phi
+$$
+$$
+\sum_{s} V_{j,s} g_{s^{-1}} = g_0 \phi \quad \forall j
+$$
+
+ Let ${\bf G}_s = \{ g_{s^{-1}} \}$, a
+column vector.  If ${\bf 1}$ is defined as a column vector of ones, then
+we may write $V {\bf G} = g_0 \phi {\bf 1}$, which may be solved with
+${\bf G} = g_0 \phi V^{-1} {\bf 1}$.  Note that $V^{-1}$ is also a
+transformation, and the sum of elements in a row in it is equal to
+some other $\phi^{\prime}$, which may be readily seen to be $\phi^*$.
+Thus, ${\bf G} = g_0 \phi \phi^* {\bf 1}$, or ${\bf G} = g_0 {\bf 1}$.
+Thus $g_i = g_0 \thinspace \forall i$.
+$$
+N g_0 = \sum_i g_i = \sum_{i,x} V_{x,i} = \sum_{x,i} V_{x,i} = \sum_x
+f_x = N \phi \Rightarrow g_0 = \phi
+$$
+
+ For convenience, let us divide $V$ by $\phi$, so that we can quit
+writing it out each time.  Let $V = V^{'} \thinspace \phi$.  Then
+$$
+V_{i,r} \thinspace V_{j,r^{-1}t} = V^{'}_{i,r} \thinspace V^{'}_{j,r^{-1}t}
+\thinspace \phi^2 = V_{ij,t} \phi = V^{'}_{ij,t} \phi^2
+$$
+$$
+V^{'}_{i,r} \thinspace V^{'}_{j,r^{-1}t} = V^{'}_{ij,t}
+$$
+
+ In what follows I will assume that the $\phi$ has been divided out, and
+that the {\bf new} equations (dropping the primes) governing the transformation
+are
+\begin{equation}
+V_{i,r} \thinspace V_{j,r^{-1}t} = V_{ij,t}
+\quad \sum_i V_{i,j} = \sum_j V_{i,j} = 1
+\end{equation}
+
+\subsection{ Infinitesimal Transformations}
+Now consider infinitesimal transformations away from the identity.  Here
+$s = r^{-1}t$.
+$$V_{i,ts^{-1}} V_{j,s} = V_{ij,t}$$
+\begin{equation}
+V_{a,b} \Rightarrow \delta_{a,b} + \delta V_{a,b}
+\end{equation}
+$$\left( \delta_{i,ts^{-1}} + \delta V_{i,ts^{-1}} \right) \left(
+\delta_{j,s} + \delta V_{j,s} \right) = \delta_{ij,t} + \delta V_{ij,t}$$
+$$\delta_{i,ts^{-1}} \delta_{j,s} + \delta_{j,s} \delta V_{i,ts^{-1}} +
+\delta_{i,ts^{-1}} \delta V_{j,s} + O(\delta^2) =
+\delta_{ij,t} + \delta V_{i,tj^{-1}} + \delta V_{j,i^{-1}t} =
+\delta_{ij,t} + \delta V_{ij,t}$$
+resulting in
+\begin{equation}
+\delta V_{i,tj^{-1}} + \delta V_{j,i^{-1}t} = \delta V_{ij,t} \quad , \quad
+\sum_i \delta V_{i,j} = \sum_j \delta V_{i,j} = 0
+\end{equation}
+ The above are the fundamental equations governing the transformations of
+the array.
+ Let $i = j = 0$.  Then the fundamental equation reduces to
+$2\delta V_{0,t} = \delta V_{0,t}$, so
+\begin{equation}
+\delta V_{0,t} = 0
+\end{equation}
+ Let $t = j$.  Then the fundamental equation becomes
+\begin{equation}
+\delta V_{i,0} + \delta V_{j,i^{-1}j} = \delta V_{ij,j}
+\end{equation}
+ Now for any $i \neq 0$ we know that there exists some $N \geq 2$ such that
+$i^N = 0$, where $0$ is the identity.  Thus we make the following substitutions
+\begin{eqnarray}
+j = i \;\; \Rightarrow \;\; 2 \delta V_{i,0} = \delta V_{i^2,i} \\
+j = i^2 \;\; \Rightarrow \;\; \delta V_{i,0} + \delta V_{i^2,i} =
+\delta V_{i^3,i^2} = 3 \delta V_{i,0} \\
+j = i^N \;\; \Rightarrow \;\; N \delta V_{i,0} = \delta V_{i^N,i^{N-1}}
+= \delta V_{0,i^{N-1}} \\
+\end{eqnarray}
+ But since $\delta V_{0,x} = 0$, we must have
+\begin{equation}
+\delta V_{i,0} = 0 \;\; \forall i
+\end{equation}
+ The column vector in $\delta V$ corresponding to this is all zero's
+($ \delta 1 = 0$ for the (0,0) position),
+and the top row is also all zero's.
+Remember that I am placing the identity element in the first
+position.  We formally express $V$ as $ exp( \sum c_x \delta V_x)$
+where the $\delta V_x$ are independent infinitesimal transformations away
+from the initial value.  Therefore, since the initial value of $V$ is the identity, which
+has zeros off the diagonal element in this row and column, any product of
+any $\delta V$'s with the initial value of $V$ must continue to have zero's
+in these positions.  Thus all $V$'s have $V_{0,0} = 1$, and $V_{x,0} = V_{0,x} = 0$.
+\begin{equation}
+V = \left( \begin{array}{cc} 1 & {0 \ldots 0} \\ 0 & \\ {\vdots} & V' \\
+0 & \end{array} \right) \end{equation}
+
+ Therefore, the identity element does not transform.
+
+
+From the fundamental rule governing the continuous transformations,
+$$
+\delta V_{i,tj^{-1}} + \delta V_{j,i^{-1}t} = \delta V_{ij,t}
+$$
+if we let $t=0$ we have
+$$
+\delta V_{i,j^{-1}} + \delta V_{j,i^{-1}} = 0
+$$
+or
+\begin{equation}
+\delta V_{i,q} = -\delta V_{q^{-1},i^{-1}} \quad \forall i,q
+\end{equation}
+
+ Now restate the first fundamental equation, substituting $t = jq$.
+$$\delta V_{i,jqj^{-1}} + \delta V_{j,i^{-1}jq} = \delta V_{ij,jq}$$
+{\bf If $j$ commutes with all other elements of the group}, then
+$jqj^{-1} = q$, and $ij = ji$, so
+$$\delta V_{i,q} + \delta V_{j,ji^{-1}q} = \delta V_{ji,jq}$$
+Now consider the sequence of equations generated by substituting for
+$i = jI$ and $q = jQ$.
+$$\delta V_{j^2I,j^2Q} = \delta V_{j,ji^{-1}q} + \delta V_{jI,jQ} =
+\delta V_{j,ji^{-1}q} + \delta V_{I,Q} + \delta V_{j,ji^{-1}q} =
+2 \delta V_{j,ji^{-1}q} + \delta V_{I,Q}$$
+$$
+\delta V_{j^3I,j^3Q} = 3 \delta V_{j,ji^{-1}q} + \delta V_{I,Q}
+$$
+and so on.  For some $N$, $j^N = 0$, and we get
+$$
+\delta V_{j^NI,j^NQ} = N \delta V_{j,ji^{-1}q} + \delta V_{I,Q} =\delta V_{I,Q}
+$$
+from which we get $\delta V_{j,ji^{-1}q} = 0$.  Since this is true for
+arbitrary $i$ and $q$, we see that $\delta V_{j,x} = 0 \thinspace \forall x$.
+Now since $j^{-1}$ will also commute, the same reasoning applied to it, and
+we have $\delta V_{j^{-1},x} = 0 \thinspace \forall x$, which implies
+$\delta V_{x^{-1},j} = 0 \thinspace \forall x$.  Thus {\bf if $j$ commutes
+with all other elements of the group, $j$ is not transformed.}
+
+ In an abelian group, any $j$ commutes with all other elements, so the above
+is true for all $j$ in the group.  Thus
+{\bf abelian groups are not continuously transformable}.  One 
+may further state that
+Abelian sub-groups do not ``internally" transform:  the matrix elements
+of the $\delta V$ array which connect one element in an abelian sub-group
+with another element in the subgroup are 0.
+This is trivial for a subgroup of order 2.
+
+ Clearly if this model does correspond to a physical system, it is not
+an immediately intuitive one.
+
+\subsection{ Further Simplifications}
+ Now let us look at diagonal elements.  In the fundamental equation of
+transformation, above, substitute $j=i$ and $t=i^2$.  We then get
+$2\delta V_{i,i} = \delta V_{i^2,i^2}$.  If $j=i^2$, then we find
+$\delta V_{i,i} + 2\delta V_{i^2,i^2} = \delta V_{i^3,i^3}$, and so
+on.  This gives $N\delta V_{i,i} = \delta V_{i^N,i^N}$, but since
+for some $N$, $i^N =0$, we must have
+\begin{equation}
+\delta V_{i,i} = 0 \quad \forall i
+\end{equation}
+
+ In another look at the fundamental equation, set $t=j$.  This results in
+\begin{equation}
+\delta V_{ij,j} = \delta V_{j,i^{-1}j}
+\end{equation}
+
+ Alternatively, if we set $ij \equiv q$, then we have 
+\begin{equation}
+\delta V_{i,tq^{-1}i} + \delta V_{i^{-1}q,i^{-1}t} = \delta V_{q,t}
+\end{equation}
+If $t = i$, then
+\begin{equation}
+\delta V_{i,iq^{-1}i} = \delta V_{q,i}
+\end{equation}
+Instead of reducing, we can use the inversion derived earlier ($\delta V_{j,r} =
+-\delta V_{j^{-1},r^{-1}}$), and find that
+$-\delta V_{i^{-1}qt^{-1},i^{-1}} + \delta V_{i^{-1}q,i^{-1}t} = \delta V_{q,t}$.
+Since $i$ is arbitrary, 
+substitute $j$ for $i^{-1}$ to find
+\begin{equation}
+\delta V_{jq,jt} - \delta V_{jqt^{-1},j} = \delta V_{q,t} \quad \forall j
+\end{equation}
+These equations are powerful tools, since they say that for any $q$ and
+$t$ one has N-1 combinations of matrix elements all equal to the single
+matrix element $\delta V_{q,t}$.
+
+\subsection{ Conjugacy Classes and Eigenvectors}
+
+ Each element $f$ in the group is a member of some conjugacy class,
+which is the set $F$ of all elements in the group such that
+if $r$ is in $F$, then there exists some $g$ in the group for which
+$g \thinspace r \thinspace g^{-1} = f$.  One interesting question
+(motivated by looking at a few examples) is `How does the sum of
+members of a conjugacy class transform?'  The answer, as is shown
+below, is that such a sum does remains the same under the differential
+transformation used so far.
+
+ The fundamental equation is
+$$\delta V_{i,tj^{-1}} + \delta V_{j,i^{-1}t} = \delta V_{ij,t}$$
+Substitute for $t$ the quantity $j^2 \thinspace s \thinspace j^{-1}$, and
+sum the $s$ over all members of its particular conjugacy class, which
+I'll call $S$.  The result is:
+$$\sum_{s \in S} \delta V_{i,j^2 s j^{-2}} +
+\sum_{s \in S} \delta V_{j,i^{-1}j^2 s j^{-1}} =
+\sum_{s \in S} \delta V_{ij,j^2 s j^{-1}}$$
+Since we are summing over all members of a conjugacy class, we can
+replace $j^2 s j^{-2}$ in the first term with $s$, $i^{-1}j^2 s j^{-1}$
+in the second term with $i^{-1}j s$, and $j^2 s j^{-1}$ on the
+right side with $j s$.  This results in the much simpler
+$$\sum_{s \in S} \delta V_{i,s} +
+\sum_{s \in S} \delta V_{j,i^{-1}j s} =
+\sum_{s \in S} \delta V_{ij,j s}$$
+Now if we set $j=i$, we find
+$$2\sum_{s \in S} \delta V_{i,s} =
+\sum_{s \in S} \delta V_{i^2,i s}$$
+For $j=i^2$, we get
+$$\sum_{s \in S} \delta V_{i,s} +
+\sum_{s \in S} \delta V_{i^2,i s} =
+\sum_{s \in S} \delta V_{i^3,i^2 s} = 3\sum_{s \in S} \delta V_{i,s}$$
+If $n >0$, we have by induction for $j=i^n$
+$$\sum_{s \in S} \delta V_{i^{n+1},i^n s} = (n+1)\sum_{s \in S} \delta V_{i,s}$$
+For some $m$, $i^m = 0$, so for $n=m-1$
+$$\sum_{s \in S} \delta V_{i^m,i^{m-1} s} = m\sum_{s \in S} \delta V_{i,s}$$
+But since $\delta V_{0,x} = 0$, the left side is 0, and thus
+$$\sum_{s \in S} \delta V_{i,s} = 0$$
+
+ These sums of elements in a conjugacy class are thus eigenvectors of the
+transformation $V$, with constant eigenvalue 1.  Such sums of elements
+not only do not transform under $V$, but they commute with any other
+linear combination of elements of the group.
+
+\subsection{ Discrete Transforms: Permutations}
+
+  We can have transformations which are simply permutations of the
+group elements, as well as permutations with a sign.  So long as these
+preserve the group structure they are legitimate objects of study here.
+Some of these permutations may arise naturally from continuous transformations
+from the identity, but some do not.  Those which do not arise from
+transformations from the form
+a finite group themselves, and each member of this set of
+group-preserving permutations may serve as
+the basis for a family of continuous transformations over the original
+group.
+
+ Clearly elements of a conjugacy class must either map
+into each other or into elements of a conjugacy class of the same size.
+This helps restrict the number of cases to examine.
+
+
+ Let's returning to our physical
+model--preons with no well-defined quantum numbers which are combined to
+form objects which DO have well-defined quantum numbers.  Presumably
+the constant eigenvectors of the transformation correspond to real particles, or
+things from which real particles could be generated.  Since most of
+the constant eigenvectors are sums of elements (`preons') from the
+same `conjugacy class', it isn't clear 
+that we have a natural way to find anti-particles
+from preons without the use of `signed permutation transforms'.
+
+ In any case the model is becoming somewhat
+unwieldy, with groups up to order 16 studied without finding the
+SU(3) color group.  A preon model with more preons than particles is
+unaesthetic, not to mention dubious.
+
+
+%%%%%% Example section:  SU(2) or SO(3) or allied group.  SQUARE/TRIANGLE
+\section{ Simple Examples}
+%%%% TRIANGLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ {\bf I am a firm believer in the power of examples, and will generate
+a number of them for use in checking hypotheses.}
+
+ {\bf Consider the group of the symmetries of an equilateral triangle. 
+It has 6 elements.}  $O_3$ 
+
+ We may designate the elements of the group by \G0 , \G1 , \G2 , \G3 , \G4 ,
+and \G5 , where \G0 is the identity,
+$a \equiv \G4$, $b \equiv \G1$, $b^2 \equiv \G2$,
+and so on.  We may define a product (Cayley) table for this group in the following
+way:
+\begin{equation}
+\begin{tabular}{c|cccccccc}
+$\bigodot$ & \G0 & \G1 & \G2 & \G3 & \G4 & \G5 \\ \hline
+\G0 & \G0 & \G1 & \G2 & \G3 & \G4 & \G5 \\
+\G1 & \G1 & \G2 & \G0 & \G4 & \G5 & \G3 \\
+\G2 & \G2 & \G0 & \G1 & \G5 & \G3 & \G4 \\
+\G3 & \G3 & \G5 & \G4 & \G0 & \G2 & \G1 \\
+\G4 & \G4 & \G3 & \G5 & \G1 & \G0 & \G2 \\
+\G5 & \G5 & \G4 & \G3 & \G2 & \G1 & \G0
+\end{tabular}
+\end{equation}
+I will dispense with the labels above and to the left,
+since the group operation with \G0 easily identifies which
+element is which.
+
+ It may be shown, via fairly tedious and trivial algebra, that all
+elements of $\delta V$ are zero except a few which are all simply related
+to each other.  If there are some tiny changes $\alpha$, $\beta$, and $\gamma$;
+then
+\begin{equation}
+\delta V = \left(
+\begin{array}{cccccc}
+ 0 &  0 &  0 &  0 &  0 &  0 \\
+ 0 &  0 &  0 &  \alpha &  -\beta &  -\alpha+\beta \\
+ 0 &  0 &  0 &  -\alpha &  \beta &  \alpha-\beta \\
+ 0 &  \alpha &  -\alpha &  0 &  \gamma &  -\gamma \\
+ 0 &  -\beta &  \beta &  -\gamma &  0 &  \gamma \\
+ 0 &  -\alpha+\beta &  \alpha-\beta & \gamma &  -\gamma &  0 \\
+\end{array}
+\right) 
+\end{equation}
+\begin{equation}
+\delta V
+\equiv \left( \begin{array}{cc} 0 & A \\ A^T & 0 \end{array} \right) \alpha +
+\left( \begin{array}{cc} 0 & B \\ B^T & 0 \end{array} \right) \beta +
+\left( \begin{array}{cc} 0 & 0 \\ 0 & C \end{array} \right) \gamma
+\end{equation}
+where
+$$
+a \equiv 
+\left( \begin{array}{ccc} 0 & 0 & 0 \\ 1 & 0  & -1 \\ -1 & 0 & 1 \\ \end{array} \right) 
+\quad \quad , \quad \quad
+b \equiv 
+\left( \begin{array}{ccc} 0 & 0 & 0 \\ 0 & -1 & 1 \\ 0 & 1 & -1 \\ \end{array} \right) \quad \quad
+b^T = b
+$$
+$$
+c \equiv 
+\left( \begin{array}{ccc} 0 & 1 & -1 \\ -1 & 0 & 1 \\ 1 & -1 & 0 \\ \end{array} \right) \quad \quad
+c^T = -c
+$$
+\begin{equation}
+A = \left( \begin{array}{cc} 0 & a \\ a^T & 0 \\ \end{array} \right) \quad
+B = \left( \begin{array}{cc} 0 & b \\ b^T & 0 \\ \end{array} \right) \quad
+C = \left( \begin{array}{cc} 0 & 0 \\ 0 & c \\ \end{array} \right)
+\end{equation}
+ The eigenvectors corresponding to eigenvalue 0 of $\delta V$ are
+\begin{displaymath}
+\left( \begin{array}{c} 1 \\ 0 \\ 0 \\ 0 \\ 0 \\ 0 \end{array}\right)
+\left( \begin{array}{c} 0 \\ 1 \\ 1 \\ 0 \\ 0 \\ 0 \end{array}\right)
+\left( \begin{array}{c} 0 \\ 0 \\ 0 \\ 1 \\ 1 \\ 1 \end{array}\right)
+\left( \begin{array}{c} 0 \\ \gamma \\ -\gamma \\ \alpha-\beta \\ \beta-\alpha \\ \alpha+\beta \end{array}\right)
+\end{displaymath}
+ Notice that these eigenvectors commute under the defined field, as expected,
+as they are sums of the elements in the conjugacy classes.
+$$
+\left[ A,B \right] = -2C \quad \quad
+\left[ B,C \right] = 2A + B \quad \quad
+\left[ A,C \right] = -A - 2B
+$$
+If we set
+$$
+X \equiv {i \over 2} (A+B) \quad \quad
+Y \equiv {1 \over \sqrt{3}} C \quad \quad
+Z \equiv {i \over 2 \sqrt{3}} (A-B)
+$$
+Then we find
+$$
+\left[ X,Y \right] = Z \quad\quad
+\left[ Y,Z \right] = X \quad\quad
+\left[ X,Z \right] = Y \quad\quad
+$$
+Let us now define
+$$
+e \equiv A \cos \theta + B + C \sin \theta \quad \quad
+f \equiv A \cos \theta - B + C \sin \theta \quad \quad
+h \equiv A 2 \sin \theta - B 2 \cos \theta
+$$
+The resulting commutation relations are
+$$
+\left[ e,f \right] = h \quad\quad
+\left[ h,e \right] = 2 e \quad\quad
+\left[ h,f \right] = -2f
+$$
+which are the conditions for generating the simplest Kac-Moody
+algebra \footnote{\underline{Infinite Dimensional Lie Algebras},
+Victor G. Kac, page x; suggested by Georgia Benkart}.
+If we set
+$$
+T_1 \equiv {1 \over 2} (A+B) \quad \quad
+T_2 \equiv {1 \over 2 \sqrt{3}} (A-B) \quad \quad
+T_3 \equiv {-i \over \sqrt{3}} C
+$$
+then we have $\left[ T_i,T_j \right] = i \epsilon_{ijk} T_k$
+this is related to the generators for SU(2) or SO(3).
+
+ Look at powers of $\delta V$.  The second power is 
+\begin{equation}
+{\delta V}^2 = \left(
+\begin{array}{cccc}
+ 0 &  0 &  0 &  0 \\
+ 0 &  2\left(\alpha^2+\beta^2-\alpha\beta\right) &  -2\left(\alpha^2+\beta^2-\alpha\beta\right)  &  
+\gamma \left(2\beta-\alpha\right) \\
+ 0 &  -2\left(\alpha^2+\beta^2-\alpha\beta\right)  &  2\left(\alpha^2+\beta^2-\alpha\beta\right)  &
+\gamma \left(\alpha-2\beta\right) \\
+ 0 &  \gamma \left(\alpha-2\beta\right) &  \gamma \left(2\beta-\alpha\right) &
+2\left(\alpha^2-\gamma^2\right) \\
+ 0 &  -\gamma\left(2\alpha-\beta\right) &  \gamma\left(2\alpha-\beta\right) &
+-2\alpha\beta+\gamma^2 \\
+0 &  \gamma\left(\alpha+\beta\right)  &  -\gamma\left(\alpha+\beta\right) &
+2\left(-\alpha^2+\alpha\beta\right)+\gamma^2 \\
+\end{array} \right.
+\end{equation}
+$$
+\left.
+\begin{array}{cc}
+ 0 &  0 \\
+\gamma\left(2\alpha-\beta\right) &  -\gamma\left(\alpha+\beta\right) \\
+-\gamma\left(2\alpha-\beta\right) & \gamma\left(\alpha+\beta\right) \\
+-2\alpha\beta+\gamma^2 &  -2\left(\alpha^2-\alpha\beta\right)+\gamma^2 \\
+2\left(\beta^2-\gamma^2\right) & -2\left(\beta^2-\alpha\beta\right)+\gamma^2 \\
+-2\left(\beta^2-\alpha\beta\right)+\gamma^2 & 
+2\left(\alpha^2-2\alpha\beta+\beta^2\right)-2\gamma^2 \\
+\end{array}
+\right) 
+$$
+ To find $V$, we use $V = e^{\delta V}$.
+
+% Hmm.  double check this stuff . . . .
+% The third power is
+%\begin{equation}
+%{\delta V}^3 = 4\left(\alpha^2+\beta^2-\gamma^2\right)
+%{\delta V}
+%\end{equation}
+%We can easily solve the series.  It is well-defined and converges,
+%but clearly the value can become arbitrarily large for arbitrarily
+%large values of $\alpha$ or $\beta$.  
+
+ The eigenvalues of the array $\delta V$ are given by
+\begin{equation}
+0 = X^4 \left( 4 \alpha^2 - 4\alpha\beta + 4\beta^2 - 3\gamma^2 - X^2 \right)
+\end{equation}
+
+ The eigenvalues of $\exp (\delta V)$ thus have 4 $1'$s, and 2 others which
+may be real or imaginary depending on $\alpha$, $\beta$, and $\gamma$.
+
+  There can be transformations which consist of simple permutations of the
+elements, or of permutations with a sign.  For this group there are six
+unsigned permutations, which may or may not be special cases of the above
+continuous transform.  For those which are {\bf not} special cases, the
+continuous transform may be simply applied to these permutations to get
+new families of transformations.
+
+  The first set of permutations is given by the mapping \G0 $\rightarrow$ \G0,
+\G1 $\rightarrow$ \G1, \G2 $\rightarrow$ \G2, and the following 3 cases:  
+The identity
+(\G3 $\rightarrow$ \G3, \G4 $\rightarrow$ \G4, and \G5 $\rightarrow$ \G5), 
+a left rotation
+(\G3 $\rightarrow$ \G4, \G4 $\rightarrow$ \G5, and \G5 $\rightarrow$ \G3), 
+and a right rotation
+(\G3 $\rightarrow$ \G5, \G4 $\rightarrow$ \G3, and \G5 $\rightarrow$ \G4).  These
+can be derived from transformations from the identity.
+
+%% The second set of permutations, which are clearly not transformations
+%% from the identity, is given by mapping 
+Another set of permutations is also reachable from transformations from the identity:
+\G0 $\rightarrow$ \G0, \G1 $\rightarrow$ \G2, and \G2 $\rightarrow$ \G1, together
+with the following 3 cases: (\G3 $\rightarrow$ \G3, \G4 $\rightarrow$ \G5,
+and \G5 $\rightarrow$ \G4), (\G3 $\rightarrow$ \G4, \G4 $\rightarrow$ \G3,
+and \G5 $\rightarrow$ \G5), and (\G3 $\rightarrow$ \G5, \G4 $\rightarrow$ \G4,
+and \G5 $\rightarrow$ \G3).
+
+%%   In addition there are permutations possible with a sign.  We can
+%% consistently map elements \G3, \G4, and \G5 to -\G3, -\G4, and -\G5
+%% respectively, giving a total of 12 basis permutations.
+
+ {\bf Consider the group of the symmetries of a square.}  It has 8 elements, and
+may be defined by the following equations:
+\begin{equation}
+a^2 \rightarrow 0 \quad , \quad b^4 \rightarrow 0 \quad , \quad b a \rightarrow
+a b^3
+\end{equation}
+
+ We may designate the elements of the group by \G0 , \G1 , \G2 , \G3 , \G4 ,
+\G5 , \G6 , and \G7 , where \G0 is the identity,
+$a \equiv \G4$, $b \equiv \G1$, $b^2 \equiv \G2$,
+and so on.  We may define a product (Cayley) table for this group in the following
+way:
+\begin{equation}
+\begin{tabular}{c|cccccccc}
+$\bigodot$ & \G0 & \G1 & \G2 & \G3 & \G4 & \G5 & \G6 & \G7 \\ \hline
+\G0 & \G0 & \G1 & \G2 & \G3 & \G4 & \G5 & \G6 & \G7 \\
+\G1 & \G1 & \G2 & \G3 & \G0 & \G5 & \G6 & \G7 & \G4 \\
+\G2 & \G2 & \G3 & \G0 & \G1 & \G6 & \G7 & \G4 & \G5 \\
+\G3 & \G3 & \G0 & \G1 & \G2 & \G7 & \G4 & \G5 & \G6 \\
+\G4 & \G4 & \G7 & \G6 & \G5 & \G0 & \G3 & \G2 & \G1 \\
+\G5 & \G5 & \G4 & \G7 & \G6 & \G1 & \G0 & \G3 & \G2 \\
+\G6 & \G6 & \G5 & \G4 & \G7 & \G2 & \G1 & \G0 & \G3 \\
+\G7 & \G7 & \G6 & \G5 & \G4 & \G3 & \G2 & \G1 & \G0
+\end{tabular}
+\end{equation}
+In the future I will dispense with the labels above and to the left,
+since the group operation with \G0 easily identifies which
+element is which.
+
+ It may be shown, via fairly tedious and trivial algebra, that all
+elements of $\delta V$ are zero except a few which are all simply related
+to each other.  Let there be some tiny changes $\alpha$, $\beta$, and $\gamma$;
+then
+\begin{equation}
+\delta V = \left(
+\begin{array}{cccccccc}
+ 0 &  0 &  0 &  0 &  0 &  0 &  0 &  0 \\
+ 0 &  0 &  0 &  0 &  \alpha &  \beta &  -\alpha &  -\beta \\
+ 0 &  0 &  0 &  0 &  0 &  0 &  0 &  0 \\
+ 0 &  0 &  0 &  0 &  -\alpha &  -\beta &  \alpha &  \beta \\
+ 0 &  \alpha &  0 &  -\alpha &  0 &  \gamma &  0 &  -\gamma \\
+ 0 &  \beta &  0 &  -\beta &  -\gamma &  0 &  \gamma &  0 \\
+ 0 &  -\alpha &  0 &  \alpha &  0 &  -\gamma &  0 &  \gamma \\
+ 0 &  -\beta &  0 &  \beta &  \gamma &  0 &  -\gamma &  0
+\end{array}
+\right) 
+\end{equation}
+\begin{equation}
+\delta V 
+\equiv \left( \begin{array}{cc} 0 & A \\ A^T & 0 \end{array} \right) 2\alpha +
+\left( \begin{array}{cc} 0 & B \\ B^T & 0 \end{array} \right) 2\beta +
+\left( \begin{array}{cc} 0 & 0 \\ 0 & C \end{array} \right) 2\gamma
+\end{equation}
+where
+$$
+A \equiv {1 \over 2} 
+\left( \begin{array}{cc} a & -a \\ -a & a \\ \end{array} \right) \quad \quad
+a \equiv \left( \begin{array}{cc} 1 & 0 \\ 0 & 0 \\ \end{array} \right)
+$$
+$$
+B \equiv {1 \over 2} 
+\left( \begin{array}{cc} b & -b \\ -b & b \\ \end{array} \right) \quad \quad
+b \equiv \left( \begin{array}{cc} 0 & 0 \\ 0 & 1 \\ \end{array} \right) \quad \quad
+B^T = B
+$$
+$$
+C \equiv {1 \over 2} 
+\left( \begin{array}{cc} c & -c \\ -c & c \\ \end{array} \right) \quad \quad
+c \equiv \left( \begin{array}{cc} 0 & 1 \\ -1 & 0 \\ \end{array} \right) \quad \quad
+C^T = -C
+$$
+\begin{equation}
+\delta V^3 = 4 \left( \alpha^2 + \beta^2 - \gamma^2 \right) \delta V
+\end{equation}
+ Notice that
+$$
+\left[ A,B \right] = C \quad \quad
+\left[ C,B \right] = A \quad \quad
+\left[ A,C \right] = B
+$$
+Let $X=A$, $Y=C$, and $Z=B$.  Then
+$$
+\left[ X,Y \right] = Z \quad \quad
+\left[ Y,Z \right] = X \quad \quad
+\left[ X,Z \right] = Y
+$$
+and this has the same structure as the `triangle group'.
+
+ To find $V$, we use $V = e^{\delta V}$.
+
+% The third power is
+%\begin{equation}
+%{\delta V}^3 = \left(4\alpha^2+4\beta^2-4\alpha\beta-3\gamma^2\right)
+%{\delta V}
+%\end{equation}
+%We can easily solve the series.  It is well-defined and converges,
+%but clearly the value can become arbitrarily large for arbitrarily
+%large values of $\alpha$ or $\beta$.  
+
+ The eigenvalues of the $\delta V$ array are given by
+\begin{equation}
+0 = X^6 \left( X^2 - 4\left(\alpha^2+\beta^2-\gamma^2 \right) \right)
+\end{equation}
+
+ The eigenvalues of $\exp(\delta V)$ have then 6 $1$'s and two others
+which are either real or imaginary, depending on the values of
+$\alpha$, $\beta$, and $\gamma$.
+
+%%%% THE QUATERNION GROUP %%%%%%%%%%%%%%%%%
+\section{ An Example with the Quaternion Group}
+ Consider the quaternion group.  It has 8 elements, and
+may be defined by the following equations:
+\begin{equation}
+a^4 \rightarrow 0 \quad , \quad b^2 \rightarrow a^2 \quad , \quad b a \rightarrow
+a^3 b
+\end{equation}
+
+ We may designate the elements of the group by \G0 , \G1 , \G2 , \G3 , \G4 ,
+\G5 , \G6 , and \G7 , where \G0 is the identity,
+$a^2 \equiv \G1$, $a \equiv \G2$, $a^3 \equiv \G3$,
+$b \equiv \G4$, $a^2 b \equiv \G5$, $a b \equiv \G6$, and $a^3 b \equiv
+\G7$.  We may define a product (Cayley) table for this group in the following
+way:
+\begin{equation}
+\begin{array}{cccccccc}
+\G0 & \G1 & \G2 & \G3 & \G4 & \G5 & \G6 & \G7 \\
+\G1 & \G0 & \G3 & \G2 & \G5 & \G4 & \G7 & \G6 \\
+\G2 & \G3 & \G1 & \G0 & \G6 & \G7 & \G5 & \G4 \\
+\G3 & \G2 & \G0 & \G1 & \G7 & \G6 & \G4 & \G5 \\
+\G4 & \G5 & \G7 & \G6 & \G1 & \G0 & \G2 & \G3 \\
+\G5 & \G4 & \G6 & \G7 & \G0 & \G1 & \G3 & \G2 \\
+\G6 & \G7 & \G4 & \G5 & \G3 & \G2 & \G1 & \G0 \\
+\G7 & \G6 & \G5 & \G4 & \G2 & \G3 & \G0 & \G1
+\end{array}
+\end{equation}
+
+ Grinding through the algebra will show that all
+elements of $\delta V$ are zero except a few which are described by
+three independent tiny changes $\alpha$, $\beta$, and $\gamma$.
+\begin{equation}
+\delta V = \alpha \left(
+\begin{array}{cccccccc}
+ 0 &  0 &  0 &  0 &  0 &  0 &  0 &  0 \\
+ 0 &  0 &  0 &  0 &  0 &  0 &  0 &  0 \\
+ 0 &  0 &  0 &  0 &  \alpha &  -\alpha &  \beta &  -\beta \\
+ 0 &  0 &  0 &  0 &  -\alpha &  \alpha &  -\beta &  \beta \\
+ 0 &  0 &  -\alpha &  \alpha & 0 & 0 &  \gamma &  -\gamma \\
+ 0 &  0 &  \alpha & -\alpha & 0 &  0 &  -\gamma &  \gamma \\
+ 0 &  0 &  -\beta &  \beta &  -\gamma &  \gamma &  0 &  0 \\
+ 0 &  0 &  \beta &  -\beta &  \gamma &  -\gamma &  0 &  0
+\end{array}
+\right)
+\end{equation}
+$$ {\rm Let}\quad a \equiv {1 \over 2}
+\left( \begin{array}{cc} 1 & -1 \\ -1 & 1 \end{array} \right) \quad
+a^2 = a$$
+$$ A \equiv \left( \begin{array}{cccc} 0 & 0 & 0 & 0 \\ 0 & 0 & a & 0 \\
+0 & -a & 0 & 0 \\ 0 & 0 & 0 & 0 \end{array} \right) \quad
+B \equiv \left( \begin{array}{cccc} 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & a \\
+0 & 0 & 0 & 0 \\ 0 & -a & 0 & 0 \end{array} \right) \quad
+C \equiv \left( \begin{array}{cccc} 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & a \\ 0 & 0 & -a & 0 \end{array} \right)$$
+$$BA = \left( \begin{array}{cccc} 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\ 0 & 0 & -a^2 & 0 \end{array} \right) \quad
+AB = \left( \begin{array}{cccc} 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & -a^2 \\ 0 & 0 & 0 & 0 \end{array} \right) $$
+$$AB-BA = \left( \begin{array}{cccc} 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & -a^2 \\ 0 & 0 & a^2 & 0 \end{array} \right) = -C$$
+$$AC-CA = \left( \begin{array}{cccc} 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & a^2 \\
+0 & 0 & 0 & 0 \\ 0 & -a^2 & 0 & 0 \end{array} \right) = B$$
+$$BC-CB = \left( \begin{array}{cccc} 0 & 0 & 0 & 0 \\ 0 & 0 & -a^2 & 0 \\
+0 & a^2 & 0 & 0 \\ 0 & 0 & 0 & 0 \end{array} \right) = - A$$
+
+ From the above, if we let
+$$T_1 \equiv B \quad 
+T_2 \equiv A \quad 
+T_3 \equiv C$$
+we see that
+$$\left[ T_i, T_j \right] = \epsilon_{ijk} T_k$$
+which describes the generators for the groups O(3) and SU(2).  At this
+point it is not obvious which is generated here.  I cannot use real
+coefficients to get this into Kac-Moody form, though I can do it with
+complex ones ($h = 2 i B$, $e=iA+C$, and $f=iA-C$).
+
+ To generate a transformation one may use the following method:
+$$V = e^{\alpha A + \beta B + \gamma C}$$
+$$\alpha A + \beta B + \gamma C = \left( \begin{array}{cccc}
+0 & 0 & 0 & 0 \\ 0 & 0 & \alpha & \beta \\ 0 & -\alpha & 0 & \gamma \\
+0 & -\beta & -\gamma & 0 \end{array} \right) \equiv Q$$
+$$Q^2 = \left( \begin{array}{cccc} 0 & 0 & 0 & 0 \\
+0 & -(\alpha^2 + \beta^2) & -\beta \gamma & \alpha \gamma \\
+0 & -\beta \gamma & -(\alpha^2 + \gamma^2) & -\alpha \beta \\
+0 & \alpha \gamma & -\alpha \beta & -(\beta^2 + \gamma^2)  \end{array}
+\right) \quad \quad Q^3 = -Q \left( \alpha^2 + \beta^2 + \gamma^2 \right)$$
+ In the above, every non-zero matrix element is understood to be
+multiplied by $a$, where $a$ is the $2 \times 2$ array defined above.
+\begin{equation}
+V(\alpha, \beta, \gamma) = I + {Q \over r} \sin{r} +
+{Q^2 \over r^2} \left( 1 - \cos{r} \right) \quad {\rm where} \quad
+r \equiv \sqrt{\alpha^2 + \beta^2 + \gamma^2}
+\end{equation}
+Define $\epsilon \equiv (1-\cos{r})$, and $\delta \equiv \sin{r}$.
+In its full glory, the array expands to the following:
+$$
+\left( \begin{array}{cccccccc}
+1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 1 - {\alpha^2+\beta^2 \over 2 r^2} \epsilon &
+{\alpha^2 + \beta^2 \over 2 r^2} \epsilon &
+{\alpha \over 2 r}\delta - {\beta \gamma \over 2 r^2}\epsilon &
+-{\alpha \over 2 r}\delta + {\beta \gamma \over 2 r^2}\epsilon &
+{\beta \over 2 r}\delta + {\alpha \gamma \over 2 r^2}\epsilon &
+-{\beta \over 2 r}\delta -{\alpha \gamma \over 2 r^2}\epsilon \\
+0 & 0 & {\alpha^2 + \beta^2 \over 2 r^2} \epsilon &
+1 - {\alpha^2+\beta^2 \over 2 r^2} \epsilon &
+-{\alpha \over 2 r}\delta + {\beta \gamma \over 2 r^2}\epsilon &
+{\alpha \over 2 r}\delta - {\beta \gamma \over 2 r^2}\epsilon &
+-{\beta \over 2 r}\delta -{\alpha \gamma \over 2 r^2}\epsilon &
+{\beta \over 2 r}\delta + {\alpha \gamma \over 2 r^2}\epsilon \\
+0 & 0 &
+-{\alpha \over 2 r}\delta - {\beta \gamma \over 2 r^2}\epsilon &
+{\alpha \over 2 r}\delta + {\beta \gamma \over 2 r^2}\epsilon &
+1 - {\alpha^2 + \gamma^2 \over 2 r^2} \epsilon &
+{\alpha^2 + \gamma^2 \over 2 r^2} \epsilon &
+{\gamma \over 2 r}\delta - {\alpha \beta \over 2 r^2}\epsilon &
+-{\gamma \over 2 r}\delta + {\alpha \beta \over 2 r^2}\epsilon \\
+0 & 0 &
+{\alpha \over 2 r}\delta + {\beta \gamma \over 2 r^2}\epsilon &
+-{\alpha \over 2 r}\delta - {\beta \gamma \over 2 r^2}\epsilon &
+{\alpha^2 + \gamma^2 \over 2 r^2} \epsilon &
+1 - {\alpha^2 + \gamma^2 \over 2 r^2} \epsilon &
+-{\gamma \over 2 r}\delta + {\alpha \beta \over 2 r^2}\epsilon &
+{\gamma \over 2 r}\delta - {\alpha \beta \over 2 r^2}\epsilon \\
+0 & 0 &
+-{\beta \over 2 r}\delta + {\alpha \gamma \over 2 r^2}\epsilon &
+{\beta \over 2 r}\delta - {\alpha \gamma \over 2 r^2}\epsilon &
+-{\gamma \over 2 r}\delta - {\alpha \beta \over 2 r^2}\epsilon &
+{\gamma \over 2 r}\delta + {\alpha \beta \over 2 r^2}\epsilon &
+1 - {\beta^2 + \gamma^2 \over 2 r^2}\epsilon &
+{\beta^2 + \gamma^2 \over 2 r^2}\epsilon \\
+0 & 0 &
+{\beta \over 2 r}\delta - {\alpha \gamma \over 2 r^2}\epsilon &
+-{\beta \over 2 r}\delta + {\alpha \gamma \over 2 r^2}\epsilon &
+{\gamma \over 2 r}\delta + {\alpha \beta \over 2 r^2}\epsilon &
+-{\gamma \over 2 r}\delta - {\alpha \beta \over 2 r^2}\epsilon &
+{\beta^2 + \gamma^2 \over 2 r^2}\epsilon &
+1 - {\beta^2 + \gamma^2 \over 2 r^2}\epsilon
+\end{array} \right)
+$$
+There are 5 eigenvalues of value 1, with constant eigenvectors.
+They are all sums of the members of the 5 distinct conjugacy classes.
+There is one additional eigenvalue of value 1, with variable
+eigenvector.  The other two eigenvalues are $\lambda = e^{ir}$.
+Notice that the eigenvalues are functions only of $r$, so in order
+for the array $V$ to be a function of $\alpha$, $\beta$, and $\gamma$,
+the eigenvectors must be functions of $\alpha$, $\beta$, and $\gamma$:
+in other words, not constant.
+\begin{equation}
+\begin{array}{c} 1 \\ \left( 
+\begin{array}{c} 1 \\ 0 \\ 0 \\ 0 \\ 0 \\ 0 \\ 0 \\ 0 \end{array} \right) \end{array}
+\begin{array}{c} 1 \\ \left( 
+\begin{array}{c} 0 \\ 1 \\ 0 \\ 0 \\ 0 \\ 0 \\ 0 \\ 0 \end{array} \right) \end{array}
+\begin{array}{c} 1 \\ \left( 
+\begin{array}{c} 0 \\ 0 \\ 1 \\ 1 \\ 0 \\ 0 \\ 0 \\ 0 \end{array} \right) \end{array}
+\begin{array}{c} 1 \\ \left( 
+\begin{array}{c} 0 \\ 0 \\ 0 \\ 0 \\ 1 \\ 1 \\ 0 \\ 0 \end{array} \right) \end{array}
+\begin{array}{c} 1 \\ \left( 
+\begin{array}{c} 0 \\ 0 \\ 0 \\ 0 \\ 0 \\ 0 \\ 1 \\ 1 \end{array} \right) \end{array}
+\begin{array}{c} 1 \\ \left( 
+\begin{array}{c} 0 \\ 0 \\ \gamma \\ -\gamma \\
+-\beta \\ \beta \\ \alpha \\ -\alpha \end{array} \right) \end{array}
+\end{equation}
+\begin{equation}
+\begin{array}{c} e^{ir} \\ \left( 
+\begin{array}{c} 0 \\ 0 \\ \alpha^2 + \beta^2 \\ -(\alpha^2 + \beta^2) \\
+(\beta \gamma + i \alpha r) \\ -(\beta \gamma + i \alpha r) \\
+(-\alpha \gamma + i \beta r) \\ -(-\alpha \gamma + i \beta r) \end{array} 
+\right) \end{array}
+\begin{array}{c} e^{-ir} \\ \left( 
+\begin{array}{c} 0 \\ 0 \\ \alpha^2 + \beta^2 \\ -(\alpha^2 + \beta^2) \\
+(\beta \gamma - i \alpha r) \\ -(\beta \gamma - i \alpha r) \\ 
+(-\alpha \gamma + i \beta r) \\ -(-\alpha \gamma - i \beta r) \end{array} 
+\right) \end{array}
+\end{equation}
+Denote the eigenvectors in the order above by $e_i$.  The first 5 are
+sums of members of the 5 distinct conjugacy classes, and commute with
+all the rest.
+Further, the product of any of $e_2$, $e_3$ or $e_4$ with any of $e_5$,
+$e_6$, or $e_7$ is zero.  In addition, $e_1$ operating on any of the
+last three gives the negative of that eigenvector.  The square of any of the
+last three is a factor times $e_1 - e_0$.  The product of $e_6$ and $e_7$ is
+the complex conjugate of the product of $e_7$ and $e_6$.  This
+leaves only the products of $e_5$ with $e_6$ and $e_7$, which do not
+commute.  
+
+
+ Let us look further at the transformation, but restrict ourselves to
+$\beta = \gamma = 0$.  Then $\alpha = r$, $\epsilon = 2\sin^2{\alpha/2}$,
+and $\delta = 2 \sin{\alpha/2} \cos{\alpha/2}$.  Let $\mu \equiv
+\cos^2{\alpha/2}$, $\nu \equiv \sin^2{\alpha/2}$, and $\omega \equiv
+\sin{\alpha/2} \cos{\alpha/2}$.  Then the array reduces to
+$$
+\left( \begin{array}{cccccccc}
+1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & \mu & \nu & \omega & -\omega & 0 & 0 \\
+0 & 0 & \nu & \mu & -\omega & \omega & 0 & 0 \\
+0 & 0 & -\omega & \omega & \mu & \nu & 0 & 0 \\
+0 & 0 & \omega & -\omega & \nu & \mu & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 1
+\end{array} \right)
+$$
+When $\mu = \cos^2{\alpha/2} = 1$, then this becomes the identity.
+When $\nu = 1$, the inner array becomes
+$$
+\Lambda = \left( \begin{array}{cccc}
+0 & 1 & 0 & 0 \\
+1 & 0 & 0 & 0 \\
+0 & 0 & 0 & 1 \\
+0 & 0 & 1 & 0
+\end{array} \right)
+$$
+where $\Lambda$ swaps the elements $c_2$ and $c_3$ and the elements
+$c_4$ and $c_5$.  This corresponds to eigenvalues of -1, and $r = \pi$.
+$\Lambda^2 = I$, of course.  This suggests that
+the group displayed is SO(3).
+
+  There are permutations over the group elements possible here also.
+For unsigned permutations, there are 3 cases which turn out to be
+special cases of the above continous transform:  (\G2 $\rightarrow$ \G3
+and \G4 $\rightarrow$ \G5), (\G2 $\rightarrow$ \G3 and \G6 $\rightarrow$ \G7),
+and (\G4 $\rightarrow$ \G5 and \G6 $\rightarrow$ \G7).  The first of these
+is illustrated directly above.  There are two additional cases which are
+{\bf not} cases of the original transformation from the identity--and thus
+may serve as bases for families of transformations themselves.  These are
+(\G2 $\rightarrow$ \G4, \G4 $\rightarrow$ \G6, \G6 $\rightarrow$ \G2, with
+(\G3 $\rightarrow$ \G5, \G5 $\rightarrow$ \G7, \G7 $\rightarrow$ \G3), and
+(\G2 $\rightarrow$ \G6, \G6 $\rightarrow$ \G4, \G4 $\rightarrow$ \G2, with
+(\G3 $\rightarrow$ \G7, \G7 $\rightarrow$ \G5, \G5 $\rightarrow$ \G3).
+There are thus 3 families of transformations based on unsigned permutations
+of the group elements.
+
+ In addition we can consistently map \G2 and \G3 to -\G2 and -\G3, provided
+we do the same with either the pair \G4 and \G5 or \G6 and \G7.  Likewise
+\G4 and \G5 can be mapped to their negatives if we do the same with
+\G6 and \G7, giving us 4 possible sign mappings:  the identity and 3 with
+4 elements swapping sign.  We have 12 families of transformations.
+
+%%%% A 10-ELEMENT GROUP %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{ An Example with With a 10-Element Group}
+ The non-abelian 10-element group
+may be defined by the following equations:
+\begin{equation}
+a^2 \rightarrow 0 \quad , \quad b^5 \rightarrow 0 \quad , \quad a b \rightarrow
+b^4 a
+\end{equation}
+
+ We may designate the elements of the group by \G0 , \G1 , \G2 , \G3 , \G4 ,
+\G5 , \G6 , \G7, \G8, and \G9 , where \G0 is the identity,
+$b \equiv \G1$, $b^2 \equiv \G2$, $b^3 \equiv \G3$, $b^4 \equiv \G4$,
+$a \equiv \G5$, $a b \equiv \G6$, $a b^2 \equiv \G7$, $a b^3 \equiv
+\G8$, and $a b^4 \equiv \G9$.
+We may define a product (Cayley) table for this group in the following way:
+\begin{displaymath}
+\begin{array}{cccccccccc}
+\G0 & \G1 & \G2 & \G3 & \G4 & \G5 & \G6 & \G7 & \G8 & \G9 \\
+\G1 & \G2 & \G3 & \G4 & \G0 & \G9 & \G5 & \G6 & \G7 & \G8 \\
+\G2 & \G3 & \G4 & \G0 & \G1 & \G8 & \G9 & \G5 & \G6 & \G7 \\
+\G3 & \G4 & \G0 & \G1 & \G2 & \G7 & \G8 & \G9 & \G5 & \G6 \\
+\G4 & \G0 & \G1 & \G2 & \G3 & \G6 & \G7 & \G8 & \G9 & \G5 \\
+\G5 & \G6 & \G7 & \G8 & \G9 & \G0 & \G1 & \G2 & \G3 & \G4 \\
+\G6 & \G7 & \G8 & \G9 & \G5 & \G4 & \G0 & \G1 & \G2 & \G3 \\
+\G7 & \G8 & \G9 & \G5 & \G6 & \G3 & \G4 & \G0 & \G1 & \G2 \\
+\G8 & \G9 & \G5 & \G6 & \G7 & \G2 & \G3 & \G4 & \G0 & \G1 \\
+\G9 & \G5 & \G6 & \G7 & \G8 & \G1 & \G2 & \G3 & \G4 & \G0 
+\end{array}
+\end{displaymath}
+
+ Grinding through the algebra will show that all
+elements of $\delta V$ are zero except a few which are described by
+six independent tiny changes $\alpha$, $\beta$, $\gamma$, $\epsilon$,
+$\mu$, and $\nu$.
+\begin{displaymath}
+\delta V = \left(
+\begin{array}{ccccc}
+0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 \\
+0 & \nu & -\nu-\epsilon-\gamma & \nu+\epsilon+\gamma & -\nu \\
+0 & \mu & \nu+\epsilon & -\nu-\epsilon & -\mu \\
+0 & \epsilon & \mu+\gamma & -\mu-\gamma & -\epsilon \\
+0 & \gamma & -\nu-\mu-\gamma & \nu+\mu+\gamma & -\gamma \\
+0 & -\nu-\mu-\epsilon-\gamma & \nu+\gamma & -\nu-\gamma & 
+\nu+\mu+\epsilon+\gamma 
+\end{array} \cdots \right.
+\end{displaymath}
+\begin{displaymath}
+\left. \cdots \begin{array}{ccccc}
+0 & 0 & 0 & 0 & 0 \\
+\nu & \mu & \epsilon & \gamma & -\nu-\mu-\gamma-\epsilon \\
+-\nu-\epsilon-\gamma & \nu+\epsilon & \mu+\gamma & -\nu-\mu-\gamma & \nu+\gamma \\
+\nu+\epsilon+\gamma & -\nu-\epsilon & -\mu-\gamma & \nu+\mu+\gamma & -\nu-\gamma \\
+-\nu & -\mu & -\epsilon & -\gamma & \nu+\mu+\gamma+\epsilon \\
+0 & \alpha & \beta & -\beta & -\alpha \\
+-\alpha & 0 & \alpha & \beta & -\beta \\
+-\beta & -\alpha & 0 & \alpha & \beta \\
+\beta & -\beta & -\alpha & 0 & \alpha \\
+\alpha & \beta & -\beta & -\alpha & 0 
+\end{array} \right)
+\end{displaymath}
+If we set
+\begin{displaymath}
+K = \left(
+\begin{array}{ccccc}
+0 & 1 & 0 & 0 & -1 \\
+-1 & 0 & 1 & 0 & 0 \\
+0 & -1 & 0 & 1 & 0 \\
+0 & 0 & -1 & 0 & 1 \\
+1 & 0 & 0 & -1 & 0
+\end{array} \right)
+\quad , \quad
+L = \left(
+\begin{array}{ccccc}
+0 & 0 & 1 & -1 & 0 \\
+0 & 0 & 0 & 1 & -1 \\
+-1 & 0 & 0 & 0 & 1 \\
+1 & -1 & 0 & 0 & 0 \\
+0 & 1 & -1 & 0 & 0
+\end{array} \right)
+\end{displaymath}
+\begin{displaymath}
+M = \left(
+\begin{array}{ccccc}
+0 & 0 & 0 & 0 & 0 \\
+1 & 0 & 0 & 0 & -1 \\
+-1 & 1 & 0 & -1 & 1 \\
+1 & -1 & 0 & 1 & -1 \\
+-1 & 0 & 0 & 0 & 1
+\end{array} \right)
+\quad , \quad
+N = \left(
+\begin{array}{ccccc}
+0 & 0 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 & -1 \\
+0 & 0 & 1 & -1 & 0 \\
+0 & 0 & -1 & 1 & 0 \\
+0 & -1 & 0 & 0 & 1
+\end{array} \right)
+\end{displaymath}
+\begin{displaymath}
+P = \left(
+\begin{array}{ccccc}
+0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 1 & 0 & -1 \\
+-1 & 1 & 0 & 0 & 0 \\
+1 & -1 & 0 & 0 & 0 \\
+0 & 0 & -1 & 0 & 1
+\end{array} \right)
+\quad , \quad
+Q = \left(
+\begin{array}{ccccc}
+0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 1 & -1 \\
+-1 & 0 & 1 & -1 & 1 \\
+1 & 0 & -1 & 1 & -1 \\
+0 & 0 & 0 & -1 & 1
+\end{array} \right)
+\end{displaymath}
+
+\begin{displaymath}
+A = \left( \begin{array}{cc}
+0 & 0 \\
+0 & K
+\end{array} \right) \quad , \quad
+B = \left( \begin{array}{cc}
+0 & 0 \\
+0 & L
+\end{array} \right) \quad , \quad
+C = \left( \begin{array}{cc}
+0 & M \\
+M^T & 0
+\end{array} \right)
+\end{displaymath}
+
+\begin{displaymath}
+D = \left( \begin{array}{cc}
+0 & N \\
+N^T & 0
+\end{array} \right) \quad , \quad
+E = \left( \begin{array}{cc}
+0 & P \\
+P^T & 0
+\end{array} \right) \quad , \quad
+F = \left( \begin{array}{cc}
+0 & Q \\
+Q^T & 0
+\end{array} \right)
+\end{displaymath}
+The commutators of these generators are:
+\begin{eqnarray*}
+\left[ A,B \right] = 0 \quad\left[ A,C \right] = C-D-F \quad\left[ A,D \right] = 2C-E-F\\
+\left[ A,E \right] = C+D-2F \quad\left[ A,F \right] = C+E-F \quad\left[ B,C \right] = D-2E+F\\
+\left[ B,D \right] = D-E-F \quad\left[ B,E \right] = C+D-E \quad\left[ B,F \right] = -C+2D-E\\
+\left[ C,D \right] = 2A-2B \quad\left[ C,E \right] = 2B \quad\left[ C,F \right] = 2*A-2B\\
+\left[ D,E \right] = 2B \quad\left[ D,F \right] = 2B \quad\left[ E,F \right] = 2A-2B 
+\end{eqnarray*}
+
+ The eigenvalues of $\delta V$ are given by the zeros of the
+following mess:
+\begin{equation}
+0 =
+x^6 \left(  
+\begin{array}{ccccc}
+& - X^4 & & & \\
++X^2 \left( \right. &16\gamma\nu &+ 8\gamma\epsilon &+ 8\mu^2 &+ 8\mu\nu \\
++ 4\mu\epsilon &+ 12\nu^2 &+ 12\nu\epsilon &+ 8\epsilon^2 &- 5\alpha^2 \\
+- 5\beta^2 &+ 12\gamma^2 &+ \left. 12\gamma\mu \right) & &\\
+& & & & \\
++\left( \right.- 112\gamma\nu\epsilon^2 &- 32\gamma\epsilon^3 &- 16\mu^4 
+&- 32\mu^3\nu &- 16\mu^3\epsilon \\
+- 64\mu^2\nu^2 &- 64\mu^2\nu\epsilon &- 16\mu^2\epsilon^2 
+&- 48\mu\nu^3  &- 112\mu\nu^2\epsilon \\
+- 96\mu\nu\epsilon^2 &- 16\mu\epsilon^3 &- 16\nu^4 
+&- 32\nu^3\epsilon &- 64\nu^2\epsilon^2 \\
+- 48\nu\epsilon^3 &- 16\epsilon^4 &- 5\alpha^4 &+ 10\alpha^3\beta  
+&+ 5\alpha^2\beta^2 \\
++ 40\alpha^2\gamma^2 &+ 40\alpha^2\gamma\mu &+ 60\alpha^2\gamma\nu  
+&+ 20\alpha^2\gamma\epsilon &+ 20\alpha^2\mu^2 \\
++ 20\alpha^2\mu\nu &+ 40\alpha^2\nu^2  &+ 40\alpha^2\nu\epsilon 
+&+ 20\alpha^2\epsilon^2 &- 10\alpha\beta^3 \\
++ 40\alpha\beta\gamma^2 &+ 40\alpha\beta\gamma\mu
+&+ 80\alpha\beta\gamma\nu &- 40\alpha\beta\mu\epsilon 
+&+ 40\alpha\beta\nu^2 \\
++ 40\alpha\beta\nu\epsilon &- 5\beta^4 &+ 20\beta^2\gamma^2  
+&+ 20\beta^2\gamma\mu &+ 20\beta^2\gamma\nu \\
++ 20\beta^2\gamma\epsilon &+ 20\beta^2\mu^2  &+ 20\beta^2\mu\nu 
+&+ 20\beta^2\mu\epsilon &+ 20\beta^2\nu^2 \\
++ 20\beta^2\nu\epsilon &+ 20\beta^2\epsilon^2 &- 16\gamma^4 
+&- 32\gamma^3\mu &- 16\gamma^3\nu \\
+- 48\gamma^3\epsilon &- 64\gamma^2\mu^2 &- 64\gamma^2\mu\nu
+&- 112\gamma^2\mu\epsilon &- 16\gamma^2\nu^2 \\
+- 96\gamma^2\nu\epsilon &- 64\gamma^2\epsilon^2 &- 48\gamma\mu^3
+&- 112\gamma\mu^2\nu &- 96\gamma\mu^2\epsilon \\
+- 96\gamma\mu\nu^2 &- 176\gamma\mu\nu\epsilon
+&- 64\gamma\mu\epsilon^2 &- 16\gamma\nu^3 &- 64\gamma\nu^2\epsilon 
+\left. \right)
+\end{array}
+ \right)
+\end{equation}
+ If all variables but $\mu$ are zero, then this has real eigenvalues,
+but if all but $\alpha$ are zero, then this has four imaginary
+eigenvalues.
+%%%%%%%%%%%%%%%%%%%%%%%%%% A4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{A4}
+
+ The alternating group of order 4 (the rotational symmetries of a
+tetrahedron) is a rather interesting group.  It's Cayley table is
+\begin{displaymath}
+\begin{array}{cccccccccccc}
+ \G0 &\G1 &\G2 &\G3 &\G4 &\G5 &\G6 &\G7 &\G8 &\G9 &\G1\G0 &\G1\G1 \\
+ \G1 &\G0 &\G7 &\G1\G1 &\G6 &\G9 &\G4 &\G2 &\G1\G0 &\G5 &\G8 &\G3 \\
+ \G2 &\G5 &\G6 &\G1\G0 &\G8 &\G1\G1 &\G0 &\G3 &\G9 &\G4 &\G7 &\G1 \\
+ \G3 &\G4 &\G8 &\G9 &\G7 &\G1\G0 &\G5 &\G1 &\G1\G1 &\G0 &\G6 &\G2 \\
+ \G4 &\G3 &\G1 &\G2 &\G5 &\G0 &\G7 &\G8 &\G6 &\G1\G0 &\G1\G1 &\G9 \\
+ \G5 &\G2 &\G3 &\G1 &\G0 &\G4 &\G8 &\G6 &\G7 &\G1\G1 &\G9 &\G1\G0 \\
+ \G6 &\G1\G1 &\G0 &\G7 &\G9 &\G1 &\G2 &\G1\G0 &\G4 &\G8 &\G3 &\G5 \\
+ \G7 &\G9 &\G4 &\G8 &\G1\G0 &\G3 &\G1 &\G1\G1 &\G5 &\G6 &\G2 &\G0 \\
+ \G8 &\G1\G0 &\G5 &\G6 &\G1\G1 &\G2 &\G3 &\G9 &\G0 &\G7 &\G1 &\G4 \\
+ \G9 &\G7 &\G1\G1 &\G0 &\G1 &\G6 &\G1\G0 &\G4 &\G2 &\G3 &\G5 &\G8 \\
+ \G1\G0 &\G8 &\G9 &\G4 &\G3 &\G7 &\G1\G1 &\G5 &\G1 &\G2 &\G0 &\G6 \\
+ \G1\G1 &\G6 &\G1\G0 &\G5 &\G2 &\G8 &\G9 &\G0 &\G3 &\G1 &\G4 &\G7
+\end{array}
+\end{displaymath}
+
+ After grinding through the algebra one finds for it's differential
+matrix:
+\begin{displaymath}
+\begin{array}{ccccccc}
+0 & 0 & 0 & 0 & 0 & 0 & ... \\
+0 & 0 & \tau & \nu & \epsilon & -\beta & ... \\
+0 & \nu & 0 & \tau & \delta-\tau& \gamma & ... \\
+0 & \tau & \nu & 0 & -\alpha & \epsilon+\mu & ... \\
+0 & \beta & \mu & -\alpha & 0 & 0 & ... \\
+0 & -\epsilon & \gamma & \beta+\delta-\tau & 0 & 0 & ... \\
+0 & -\tau & 0 & \alpha+\gamma & -\gamma & -\mu & ... \\
+0 & \epsilon & \alpha & -\beta-\delta & \beta & -\gamma-\alpha &... \\
+0 & 0 & -\delta & \epsilon+\mu & -\epsilon-\mu & \beta+\delta-\tau & ... \\
+0 & -\nu & -\gamma-\alpha & 0 & \tau-\beta-\delta & \alpha & ... \\
+0 & 0 & \delta-\tau & -\epsilon-\mu-\nu & \mu & \tau-\delta & ... \\
+0 & -\beta & -\mu-\nu & -\gamma & \gamma+\alpha & -\epsilon & ... \\
+& & & & & & \\
+... & 0 & 0 & 0 & 0 & 0 & 0 \\
+... & -\nu & \beta & 0 & -\tau & 0 & -\epsilon \\
+... & 0 & \alpha & -\nu-\mu & -\alpha-\gamma & \mu & -\delta \\
+...& \alpha+\gamma & -\epsilon-\nu-\mu & \beta+\delta-\tau & 0 & -\beta-\delta & -\gamma \\
+... & -\gamma & \epsilon & \tau-\beta-\delta & -\epsilon-\mu & \delta-\tau & \alpha+\gamma \\
+...&  \tau-\delta & -\alpha-\gamma& \epsilon+\mu & \alpha & -\mu & -\beta \\
+... & 0 & \mu+\nu & \delta & -\nu & \tau-\delta & -\alpha \\
+... & \delta & 0 & \mu+\nu & \gamma & -\epsilon-\mu-\nu & 0 \\
+... & \mu+\nu & \delta & 0 & \tau-\beta-\delta & 0 & -\mu-\nu \\
+... & -\tau & \gamma & -\epsilon-\mu & 0 & \epsilon+\mu+\nu & \beta+\delta \\
+... & -\mu & -\beta-\delta & 0 & \beta+\delta & 0 & \epsilon+\mu+\nu \\
+... &  -\alpha & 0 & -\delta & \epsilon+\mu+\nu & \beta+\delta & 0 
+\end{array}
+\end{displaymath}
+
+ There are 8 generators that appear from the above, whose commutation relations
+look like
+\begin{displaymath}
+\begin{array}{cc}
+\left[ A,B \right] = C - 2F -H &
+\left[ A,C \right] = B - 2E -G \\
+\left[ A,D \right] = 0 &
+\left[ A,E \right] = -C -H \\
+\left[ A,F \right] = -B -G &
+\left[ A,G \right] = C -2F -H \\
+\left[ A,H \right] = B -2E -G &
+\left[ B,C \right] = 0 \\
+\left[ B,D \right] = -C +F +2H &
+\left[ B,E \right] = C-F-2H \\
+\left[ B,F \right] = 4A-B-2D+E+2G &
+\left[ B,G \right] = -C+2F+H \\
+\left[ B,H \right] = -2A+B+4D-2E-G &
+\left[ C,D \right] = -B+E+2G \\
+\left[ C,E \right] = -4A-B+2D+E+2G &
+\left[ C,F \right] = C-F-2H  \\
+\left[ C,G \right] = 2A+B-4D-2E-G &
+\left[ C,H \right] = -C+2F+H \\
+\left[ D,E \right] = C-F-2H &
+\left[ D,F \right] = B-E-2G \\
+\left[ D,G \right] = -C-F &
+\left[ D,H \right] = -B-E \\
+\left[ E,F \right] = 0 &
+\left[ E,G \right] = -2C+F+H  \\
+\left[ E,H \right] = 2A+2B+2D-E-G &
+\left[ F,G \right] = -2A+2B-2D-E-G \\
+\left[ F,H \right] = -2C+F+H &
+\left[ G,H \right] = 0
+\end{array}
+\end{displaymath}
+
+	This is certainly messy, but some simplifications help.
+
+%%%% 16-ELEMENT GROUP Number 3 Table 22 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{ Examples With 16-Element Groups}
+\subsection{16-element group 1}
+
+%%% 16_1.DAT, Table 20 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ One of the non-abelian 16-element groups may be defined as in the
+following table with the group elements designated by \G0, \G1,
+\G2 . . . \G1\G5.  It generated 
+by the relations $a^2 = 0$, $b^2 = a$, $c^2 = b^{-1}$, $d^2 = 0$,
+$a = b^{-1}d^{-1}bd$, and $b=c^{-1}d^{-1}cd$; where
+$a$ is \G4, $b$ is \G2, $c$ is \G3, and
+$d$ is \G8.  The resulting product (Cayley) table is:
+\begin{displaymath}
+\begin{array}{cccccccccccccccc}
+\G0 &\G1 &\G2 &\G3 &\G4 &\G5 &\G6 &\G7 &\G8 &\G9 &\G1\G0 &\G1\G1 &\G1\G2 &\G1\G3 &\G1\G4 &\G1\G5 \\
+\G1 &\G2 &\G3 &\G4 &\G5 &\G6 &\G7 &\G0 &\G1\G4 &\G1\G5 &\G1\G3 &\G1\G2 &\G8 &\G9 &\G1\G0 &\G1\G1 \\
+\G2 &\G3 &\G4 &\G5 &\G6 &\G7 &\G0 &\G1 &\G1\G0 &\G1\G1 &\G9 &\G8 &\G1\G4 &\G1\G5 &\G1\G3 &\G1\G2 \\
+\G3 &\G4 &\G5 &\G6 &\G7 &\G0 &\G1 &\G2 &\G1\G3 &\G1\G2 &\G1\G5 &\G1\G4 &\G1\G0 &\G1\G1 &\G9 &\G8 \\
+\G4 &\G5 &\G6 &\G7 &\G0 &\G1 &\G2 &\G3 &\G9 &\G8 &\G1\G1 &\G1\G0 &\G1\G3 &\G1\G2 &\G1\G5 &\G1\G4 \\
+\G5 &\G6 &\G7 &\G0 &\G1 &\G2 &\G3 &\G4 &\G1\G5 &\G1\G4 &\G1\G2 &\G1\G3 &\G9 &\G8 &\G1\G1 &\G1\G0 \\
+\G6 &\G7 &\G0 &\G1 &\G2 &\G3 &\G4 &\G5 &\G1\G1 &\G1\G0 &\G8 &\G9 &\G1\G5 &\G1\G4 &\G1\G2 &\G1\G3 \\
+\G7 &\G0 &\G1 &\G2 &\G3 &\G4 &\G5 &\G6 &\G1\G2 &\G1\G3 &\G1\G4 &\G1\G5 &\G1\G1 &\G1\G0 &\G8 &\G9 \\
+\G8 &\G1\G2 &\G1\G1 &\G1\G5 &\G9 &\G1\G3 &\G1\G0 &\G1\G4 &\G0 &\G4 &\G6 &\G2 &\G1 &\G5 &\G7 &\G3 \\
+\G9 &\G1\G3 &\G1\G0 &\G1\G4 &\G8 &\G1\G2 &\G1\G1 &\G1\G5 &\G4 &\G0 &\G2 &\G6 &\G5 &\G1 &\G3 &\G7 \\
+\G1\G0 &\G1\G4 &\G8 &\G1\G2 &\G1\G1 &\G1\G5 &\G9 &\G1\G3 &\G2 &\G6 &\G0 &\G4 &\G3 &\G7 &\G1 &\G5 \\
+\G1\G1 &\G1\G5 &\G9 &\G1\G3 &\G1\G0 &\G1\G4 &\G8 &\G1\G2 &\G6 &\G2 &\G4 &\G0 &\G7 &\G3 &\G5 &\G1 \\
+\G1\G2 &\G1\G1 &\G1\G5 &\G9 &\G1\G3 &\G1\G0 &\G1\G4 &\G8 &\G7 &\G3 &\G5 &\G1 &\G0 &\G4 &\G6 &\G2 \\
+\G1\G3 &\G1\G0 &\G1\G4 &\G8 &\G1\G2 &\G1\G1 &\G1\G5 &\G9 &\G3 &\G7 &\G1 &\G5 &\G4 &\G0 &\G2 &\G6 \\
+\G1\G4 &\G8 &\G1\G2 &\G1\G1 &\G1\G5 &\G9 &\G1\G3 &\G1\G0 &\G1 &\G5 &\G7 &\G3 &\G2 &\G6 &\G0 &\G4 \\
+\G1\G5 &\G9 &\G1\G3 &\G1\G0 &\G1\G4 &\G8 &\G1\G2 &\G1\G1 &\G5 &\G1 &\G3 &\G7 &\G6 &\G2 &\G4 &\G0
+\end{array}
+\end{displaymath}
+ This group has a set of infinitesimal transformations given by
+\begin{displaymath}
+\delta V = \left(
+\begin{array}{cccccccc}
+0 &   0 &  0 &  0  & 0 &  0  &  0 &  0  \\ 
+0 &   0 &  0 &  0  & 0 &  0  &  0 &  0  \\ 
+0 &   0 &  0 &  0  & 0 &  0  &  0 &  0  \\
+0 &   0 &  0 &  0  & 0 &  0  &  0 &  0  \\
+0 &   0 &  0 &  0  & 0 &  0  &  0 &  0  \\
+0 &   0 &  0 &  0  & 0 &  0  &  0 &  0  \\ 
+0 &   0 &  0 &  0  & 0 &  0  &  0 &  0  \\
+0 &   0 &  0 &  0  & 0 &  0  &  0 &  0  \\
+0 &   \lambda & \mu-\epsilon& -\rho  & 0 &  \rho  & \epsilon-\mu& -\lambda  \\ 
+0 &   \rho & \epsilon-\mu& -\lambda  & 0 &  \lambda  & \mu-\epsilon& -\rho  \\
+0 &  -\sigma & \nu-\epsilon&\lambda+\rho-\sigma& 0 &\sigma-\rho-\lambda& \epsilon-\nu&  \sigma  \\
+0 &\sigma-\rho-\lambda& \epsilon-\nu&  \sigma  & 0 & -\sigma  & \nu-\epsilon&\lambda+\rho-\sigma \\
+0 &   \mu & \sigma-\rho& -\nu  & 0 &  \nu  & \rho-\sigma& -\mu  \\ 
+0 &   \nu & \rho-\sigma& -\mu  & 0 &  \mu  & \sigma-\rho& -\nu  \\
+0 &  -\epsilon & \lambda-\sigma&\nu+\mu-\epsilon& 0 &\epsilon-\nu-\mu& \sigma-\lambda&  \epsilon  \\ 
+0 &\epsilon-\mu-\nu& \sigma-\lambda&  \epsilon  & 0 & -\epsilon  & \lambda-\sigma&\mu+\nu-\epsilon
+\end{array} \right. \cdots
+\end{displaymath}
+\begin{displaymath}
+\cdots \left.
+\begin{array}{cccccccc}
+0 &  0 &  0  &   0 &  0 &  0 &   0 &   0 \\
+\lambda &  \rho & -\sigma  &\sigma-\rho-\lambda&  \mu &  \nu &  -\epsilon & \epsilon-\mu-\nu \\
+\mu-\epsilon &\epsilon-\mu & \nu-\epsilon & \epsilon-\nu &\sigma-\rho &\rho-\sigma & \lambda-\sigma &  \sigma-\lambda \\
+-\rho & -\lambda &\rho+\lambda-\sigma&   \sigma & -\nu & -\mu &\mu+\nu-\epsilon&   \epsilon \\
+0 &  0 &  0  &   0 &  0 &  0 &   0 &   0 \\
+\rho &  \lambda &\sigma-\rho-\lambda&  -\sigma &  \nu &  \mu &\epsilon-\mu-\nu&  -\epsilon \\
+\epsilon-\mu &\mu-\epsilon & \epsilon-\nu & \nu-\epsilon &\rho-\sigma &\sigma-\rho & \sigma-\lambda &  \lambda-\sigma \\
+-\lambda & -\rho &  \sigma  &\lambda+\rho-\sigma& -\mu & -\nu &   \epsilon & \mu+\nu-\epsilon \\
+0 &  0 & -\alpha  &   \alpha & -\beta & -\gamma &   \beta &   \gamma \\
+0 &  0 &  \alpha  & - \alpha & -\gamma & -\beta &   \gamma &   \beta \\
+\alpha & -\alpha &  0  &   0 &  \gamma &  \beta &  -\beta &  -\gamma \\
+-\alpha &  \alpha &  0  &   0 &  \beta &  \gamma &  -\gamma &  -\beta \\
+\beta &  \gamma & -\gamma  &  -\beta &  0 &  0 &  -\alpha &   \alpha \\
+\gamma &  \beta & -\beta  &  -\gamma &  0 &  0 &   \alpha &  -\alpha \\
+-\beta & -\gamma &  \beta  &   \gamma &  \alpha & -\alpha &   0 &   0 \\
+-\gamma & -\beta &  \gamma  &   \beta & -\alpha &  \alpha &   0 &   0
+\end{array} \right)
+\end{displaymath}
+
+ Here $\delta V$ is given by 
+$\alpha A' + \beta B' + \gamma G' + \mu M' + \nu N' + \rho R' + \sigma S' +
+\lambda L' + \epsilon E'$.  If we combine these we can simplify the
+commutation relations.  For instance, let $E = M' + N' + E'$, $L = R'+S'+L'$,
+and $G = G' + B'$.  Then the 36 non-trivial commutation relations appear
+as
+\begin{eqnarray*}
+\left[ A,B \right] = 0 & \left[ A,G \right] = 0 & \left[ A,L \right] = 0\\
+\left[ A,E \right] = 0 & \left[ B,G \right] = 0 & \left[ G,S \right] = 0\\
+\left[ M,E \right] = 0 & \left[ N,S \right] = 0 & \left[ N,E \right] = 0\\
+\left[ R,L \right] = 0 & \left[ S,L \right] = 0 & \left[ S,E \right] = 0\\
+\left[ A,M \right] = E-2N & \left[ A,N \right] = 2M-E & \left[ A,R \right] = L2R-2S \\
+\left[ A,S \right] = 4R+2S-2L & \left[ B,M \right] = L-S & \left[ B,N \right] = 2R+S\\
+\left[ B,R \right] = -M-N & \left[ B,S \right] = 2M-ED & \left[ B,L \right] = -2E\\
+\left[ B,E \right] = 2L & \left[ G,M \right] = 2L & \left[ G,N \right] = 2L\\
+\left[ G,R \right] = -2E & \left[ G,L \right] = -4E & \left[ G,E \right] = 4L\\
+\left[ M,N \right] = 2A & \left[ M,R \right] = -2B & \left[ M,S \right] = 4B-2G\\
+\left[ M,L \right] = -2G & \left[ N,R \right] = -2B & \left[ N,L \right] = -2G\\
+\left[ R,S \right] = 2A & \left[ R,E \right] = 2G & \left[ L,E \right] = 4G
+\end{eqnarray*}
+
+ The generators $A$, $B$, and $G$ form one subset.  Note that the commutators
+of $G$, $L$, and $E$ cycle, as do those of $A$, $E-2M$, and $E-2N$.  At the
+moment I am unable to identify this with one of the classical Lie groups.
+
+ The eigenfunction of the differential tranformation array is rather
+messy, but has the form
+$$
+0 = x^{8} \left( x^6 + \left( \right) x^4 + \left( \right) x^2 +
+\left( \right) \right)
+$$
+where the last quantity in parenthesis is about 2 pages long.  The
+quantities inside the parentheses are polynomials in the differential
+changes.
+
+\subsection{16-element group 2}
+
+%%% 16_2.DAT, Table 21 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ Another one of the non-abelian 16-element groups may be defined as in the
+following table with the group elements designated by \G0, \G1,
+\G2 . . . \G1\G5.  It generated 
+by the relations $a^2 = b^2 = c^2 = 0$, $x^2 = a$, and
+$a = b^{-1}c^{-1}bc$, where $x$ is \G1, $a$ is \G2, $b$ is \G9, and
+$c$ is \G1\G3.  The resulting product (Cayley) table is:
+\begin{displaymath}
+\begin{array}{cccccccccccccccc}
+\G0 & \G1 & \G2 & \G3 & \G4 & \G5 & \G6 & \G7 & \G8 & \G9 & \G1\G0 & \G1\G1 & 
+\G1\G2 & \G1\G3 & \G1\G4 & \G1\G5\\
+\G1 & \G2 & \G3 & \G0 & \G5 & \G6 & \G7 & \G4 & \G9 & \G1\G0 &
+ \G1\G1 & \G8 & \G1\G3 & \G1\G4 & \G1\G5 & \G1\G2\\
+\G2 & \G3 & \G0 & \G1 & \G6 & \G7 & \G4 & \G5 & \G1\G0 & \G1\G1 &
+ \G8 & \G9 & \G1\G4 & \G1\G5 & \G1\G2 & \G1\G3\\
+\G3 & \G0 & \G1 & \G2 & \G7 & \G4 & \G5 & \G6 & \G1\G1 & \G8 & \G9 &
+ \G1\G0 & \G1\G5 & \G1\G2 & \G1\G3 & \G1\G4\\
+\G4 & \G5 & \G6 & \G7 & \G2 & \G3 & \G0 & \G1 & \G1\G4 & \G1\G5 &
+ \G1\G2 & \G1\G3 & \G8 & \G9 & \G1\G0 & \G1\G1\\
+\G5 & \G6 & \G7 & \G4 & \G3 & \G0 & \G1 & \G2 & \G1\G5 & \G1\G2 & 
+\G1\G3 & \G1\G4 & \G9 & \G1\G0 & \G1\G1 & \G8\\
+\G6 & \G7 & \G4 & \G5 & \G0 & \G1 & \G2 & \G3 & \G1\G2 & \G1\G3 &
+ \G1\G4 & \G1\G5 & \G1\G0 & \G1\G1 & \G8 & \G9\\
+\G7 & \G4 & \G5 & \G6 & \G1 & \G2 & \G3 & \G0 & \G1\G3 & \G1\G4 &
+ \G1\G5 & \G1\G2 & \G1\G1 & \G8 & \G9 & \G1\G0\\
+\G8 & \G9 & \G1\G0 & \G1\G1 & \G1\G2 & \G1\G3 & \G1\G4 & \G1\G5 &
+ \G2 & \G3 & \G0 & \G1 & \G6 & \G7 & \G4 & \G5\\
+\G9 & \G1\G0 & \G1\G1 & \G8 & \G1\G3 & \G1\G4 & \G1\G5 & \G1\G2 &
+ \G3 & \G0 & \G1 & \G2 & \G7 & \G4 & \G5 & \G6\\
+\G1\G0 & \G1\G1 & \G8 & \G9 & \G1\G4 & \G1\G5 & \G1\G2 & \G1\G3 &
+ \G0 & \G1 & \G2 & \G3 & \G4 & \G5 & \G6 & \G7\\
+\G1\G1 & \G8 & \G9 & \G1\G0 & \G1\G5 & \G1\G2 & \G1\G3 & \G1\G4 &
+ \G1 & \G2 & \G3 & \G0 & \G5 & \G6 & \G7 & \G4\\
+\G1\G2 & \G1\G3 & \G1\G4 & \G1\G5 & \G1\G0 & \G1\G1 & \G8 & \G9 &
+ \G4 & \G5 & \G6 & \G7 & \G2 & \G3 & \G0 & \G1\\
+\G1\G3 & \G1\G4 & \G1\G5 & \G1\G2 & \G1\G1 & \G8 & \G9 & \G1\G0 &
+ \G5 & \G6 & \G7 & \G4 & \G3 & \G0 & \G1 & \G2\\
+\G1\G4 & \G1\G5 & \G1\G2 & \G1\G3 & \G8 & \G9 & \G1\G0 & \G1\G1 &
+ \G6 & \G7 & \G4 & \G5 & \G0 & \G1 & \G2 & \G3\\
+\G1\G5 & \G1\G2 & \G1\G3 & \G1\G4 & \G9 & \G1\G0 & \G1\G1 & \G8 &
+ \G7 & \G4 & \G5 & \G6 & \G1 & \G2 & \G3 & \G0
+\end{array}
+\end{displaymath}
+ This group has a set of infinitesimal transformations given by
+\begin{displaymath}
+\begin{array}{cccccccccccccccc}
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \epsilon & \mu & -\epsilon & -\mu &
+\gamma & -\delta & -\gamma & \delta \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & -\mu & \epsilon & \mu & -\epsilon &
+\delta & \gamma & -\delta & -\gamma \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & -\epsilon & -\mu & \epsilon & \mu &
+-\gamma & \delta & \gamma & -\delta \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \mu & -\epsilon & -\mu & \epsilon &
+-\delta & -\gamma & \delta & \gamma \\
+0 & 0 & 0 & 0 & -\epsilon & -\mu & \epsilon & \mu & 0 & 0 & 0 & 0 & 
+-\alpha & \beta & \alpha & -\beta \\
+0 & 0 & 0 & 0 & \mu & -\epsilon & -\mu & \epsilon & 0 & 0 & 0 & 0 & 
+-\beta & -\alpha & \beta & \alpha \\
+0 & 0 & 0 & 0 & \epsilon & \mu & -\epsilon & -\mu & 0 & 0 & 0 & 0 & 
+\alpha & -\beta & -\alpha & \beta \\
+0 & 0 & 0 & 0 & -\mu & \epsilon & \mu & -\epsilon & 0 & 0 & 0 & 0 & 
+\beta & \alpha & -\beta & -\alpha \\
+0 & 0 & 0 & 0 & -\gamma & \delta & \gamma & -\delta &
+\alpha & -\beta & -\alpha & \beta & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & -\delta & -\gamma & \delta & \gamma &
+\beta & \alpha & -\beta & -\alpha & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & \gamma & -\delta & -\gamma & \delta &
+-\alpha & \beta & \alpha & -\beta & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & \delta & \gamma & -\delta & -\gamma & 
+-\beta & -\alpha & \beta & \alpha & 0 & 0 & 0 & 0 
+\end{array}
+\end{displaymath}
+If we define S and T such that
+$$
+S \equiv {1 \over 2}  \left( 
+\begin{array}{cccc}
+1 & 0 & -1 & 0 \\
+0 & 1 & 0 & -1 \\
+-1 & 0 & 1 & 0 \\
+0 & -1 & 0 & 1
+\end{array} \right) \quad
+T \equiv {1 \over 2}  \left(
+\begin{array}{cccc}0 & 1 & 0 & -1 \\
+-1 & 0 & 1 & 0 \\
+0 & -1 & 0 & 1 \\
+1 & 0 & -1 & 0
+\end{array} \right)
+$$
+\begin{eqnarray*}
+A = \left( \begin{array}{cccc}
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & -S \\
+0 & 0 & S & 0
+\end{array} \right) \quad
+B = \left( \begin{array}{cccc}
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & T \\
+0 & 0 & -T & 0
+\end{array} \right) \\		% first line
+C = \left( \begin{array}{cccc}
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & S \\
+0 & 0 & 0 & 0 \\
+0 & -S & 0 & 0 
+\end{array} \right) \quad
+D = \left( \begin{array}{cccc}
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & T \\
+0 & 0 & 0 & 0 \\
+0 & -T & 0 & 0
+\end{array} \right) \\
+E = \left( \begin{array}{cccc}
+0 & 0 & 0 & 0 \\
+0 & 0 & S & 0 \\
+0 & -S & 0 & 0 \\
+0 & 0 & 0 & 0  
+\end{array} \right) \quad
+F = \left( \begin{array}{cccc}
+0 & 0 & 0 & 0 \\
+0 & 0 & T & 0 \\
+0 & -T & 0 & 0 \\
+0 & 0 & 0 & 0  
+\end{array} \right)
+\end{eqnarray*}
+Notice that $S^2 = S$, $T^2=-S$, and $ST = TS = T$.  These two arrays are
+thus isomorphic to $1$ and $i$.  The commutation relations among the
+generators are:
+\begin{eqnarray*}
+\left[ A,B \right] =  0 \quad\left[ C,D \right] = 0 \quad\left[ E,F \right] = 0\\
+\left[ C,E \right] = -A \quad\left[ E,A \right] = -C \quad\left[ A,C \right] = -E\\
+\left[ D,F \right] =  A \quad\left[ F,A \right] = -D \quad\left[ A,D \right] = -F\\
+\left[ D,E \right] =  B \quad\left[ E,B \right] =  D \quad\left[ B,D \right] = -E\\
+\left[ C,F \right] =  B \quad\left[ F,B \right] = -C \quad\left[ B,C \right] =  F
+\end{eqnarray*}
+These are the generators of the special group Sl(2,c), the set of 2x2 complex
+matrices with determinant 1?
+This is NOT isomorphic to the previous group.
+\subsection{16-element group 3}
+ One of the non-abelian 16-element groups may be defined as in the
+following table with the group elements designated by 
+The relations $a^2 = b^2 = x$, $x = a^{-1}b^{-1}ab$, and $x^2 = y^2 =0$
+define a non-abelian 16-element group, with group elements I will designate
+\G0, \G1, \G2 . . . \G1\G5, where $a$ is \G8, $b$ is \G1\G2, $x$ is \G1,
+and $y$ is \G2.  This gives the following product (Cayley) table:
+\begin{equation}
+\begin{array}{cccccccccccccccc}
+\G0 & \G1 & \G2 & \G3 & \G4 & \G5 & \G6 & \G7 & \G8 & \G9 & \G1\G0 & \G1\G1 & 
+\G1\G2 & \G1\G3 & \G1\G4 & \G1\G5\\
+\G1 & \G0 & \G3 & \G2 & \G5 & \G4 & \G7 & \G6 & \G9 & \G8 & \G1\G1 & \G1\G0 & 
+\G1\G3 & \G1\G2 & \G1\G5 & \G1\G4\\
+\G2 & \G3 & \G0 & \G1 & \G6 & \G7 & \G4 & \G5 & \G1\G0 & \G1\G1 & \G8 & \G9 & 
+\G1\G4 & \G1\G5 & \G1\G2 & \G1\G3\\
+\G3 & \G2 & \G1 & \G0 & \G7 & \G6 & \G5 & \G4 & \G1\G1 & \G1\G0 & \G9 & \G8 & 
+\G1\G5 & \G1\G4 & \G1\G3 & \G1\G2\\
+\G4 & \G5 & \G6 & \G7 & \G1 & \G0 & \G3 & \G2 & \G1\G2 & \G1\G3 & \G1\G4 & \G1\G5 & 
+\G9 & \G8 & \G1\G1 & \G1\G0\\
+\G5 & \G4 & \G7 & \G6 & \G0 & \G1 & \G2 & \G3 & \G1\G3 & \G1\G2 & \G1\G5 & \G1\G4 & 
+\G8 & \G9 & \G1\G0 & \G1\G1\\
+\G6 & \G7 & \G4 & \G5 & \G3 & \G2 & \G1 & \G0 & \G1\G4 & \G1\G5 & \G1\G2 & \G1\G3 & 
+\G1\G1 & \G1\G0 & \G9 & \G8\\
+\G7 & \G6 & \G5 & \G4 & \G2 & \G3 & \G0 & \G1 & \G1\G5 & \G1\G4 & \G1\G3 & \G1\G2 & 
+\G1\G0 & \G1\G1 & \G8 & \G9\\
+\G8 & \G9 & \G1\G0 & \G1\G1 & \G1\G3 & \G1\G2 & \G1\G5 & \G1\G4 & \G1 & \G0 & \G3 & \G2 & 
+\G4 & \G5 & \G6 & \G7\\
+\G9 & \G8 & \G1\G1 & \G1\G0 & \G1\G2 & \G1\G3 & \G1\G4 & \G1\G5 & \G0 & \G1 & \G2 & \G3 & 
+\G5 & \G4 & \G7 & \G6\\
+\G1\G0 & \G1\G1 & \G8 & \G9 & \G1\G5 & \G1\G4 & \G1\G3 & \G1\G2 & \G3 & \G2 & \G1 & \G0 & 
+\G6 & \G7 & \G4 & \G5\\
+\G1\G1 & \G1\G0 & \G9 & \G8 & \G1\G4 & \G1\G5 & \G1\G2 & \G1\G3 & \G2 & \G3 & \G0 & \G1 & 
+\G7 & \G6 & \G5 & \G4\\
+\G1\G2 & \G1\G3 & \G1\G4 & \G1\G5 & \G8 & \G9 & \G1\G0 & \G1\G1 & \G5 & \G4 & \G7 & \G6 & 
+\G1 & \G0 & \G3 & \G2\\
+\G1\G3 & \G1\G2 & \G1\G5 & \G1\G4 & \G9 & \G8 & \G1\G1 & \G1\G0 & \G4 & \G5 & \G6 & \G7 & 
+\G0 & \G1 & \G2 & \G3\\
+\G1\G4 & \G1\G5 & \G1\G2 & \G1\G3 & \G1\G0 & \G1\G1 & \G8 & \G9 & \G7 & \G6 & \G5 & \G4 & 
+\G3 & \G2 & \G1 & \G0\\
+\G1\G5 & \G1\G4 & \G1\G3 & \G1\G2 & \G1\G1 & \G1\G0 & \G9 & \G8 & \G6 & \G7 & \G4 & \G5 & 
+\G2 & \G3 & \G0 & \G1
+\end{array}
+\end{equation}
+ Using the standard techniques, we find that $\delta$ V depends on 6
+parameters as follows:
+\begin{equation}
+\delta V = \left(
+\begin{array}{cccccccccccccccc}
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \epsilon & -\epsilon & \mu & -\mu
+& \gamma & -\gamma & \delta & -\delta \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & -\epsilon & \epsilon & -\mu & \mu
+& -\gamma & \gamma & -\delta & \delta \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \mu & -\mu & \epsilon & -\epsilon
+& \delta & -\delta & \gamma & -\gamma \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & -\mu & \mu & -\epsilon & \epsilon
+& -\delta & \delta & -\gamma & \gamma \\
+0 & 0 & 0 & 0 & -\epsilon & \epsilon & -\mu & \mu & 0 & 0 & 0 & 0 & 
+\alpha & -\alpha & \beta & -\beta \\
+0 & 0 & 0 & 0 & \epsilon & -\epsilon & \mu & -\mu & 0 & 0 & 0 & 0 & 
+-\alpha & \alpha & -\beta & \beta \\
+0 & 0 & 0 & 0 & -\mu & \mu & -\epsilon & \epsilon & 0 & 0 & 0 & 0 & 
+\beta & -\beta & \alpha & -\alpha \\
+0 & 0 & 0 & 0 & \mu & -\mu & \epsilon & -\epsilon & 0 & 0 & 0 & 0 & 
+-\beta & \beta & -\alpha & \alpha \\
+0 & 0 & 0 & 0 & -\gamma & \gamma & -\delta & \delta & -\alpha & \alpha &
+-\beta & \beta & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & \gamma & -\gamma & \delta & -\delta & \alpha & -\alpha &
+\beta & -\beta & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & -\delta & \delta & -\gamma & \gamma & -\beta & \beta &
+-\alpha & \alpha & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & \delta & -\delta & \gamma & -\gamma & \beta & -\beta &
+\alpha & -\alpha & 0 & 0 & 0 & 0
+\end{array} \right) 
+\end{equation}
+A simple pattern is immediately evident.  Let
+\begin{equation}
+Q \equiv  {1 \over 2} \left(
+\begin{array}{cc}
+1 & -1 \\
+-1 & 1
+\end{array}
+\right) \quad
+R = \left(
+\begin{array}{cc}
+Q & 0 \\
+0 & Q
+\end{array}
+\right) \quad
+S = \left(
+\begin{array}{cc}
+0 & Q \\
+Q & 0
+\end{array}
+\right)
+\end{equation}
+ It is fairly easy to see that $RS = SR = -S$ and that $R^2 = S^2 = -R$.
+Now define the `infinitesimal generators' in our space, A through F as
+\begin{eqnarray*}
+A = \left( \begin{array}{cccc}
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & -R \\
+0 & 0 & R & 0
+\end{array} \right) \quad
+B = \left( \begin{array}{cccc}
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & -S \\
+0 & 0 & S & 0
+\end{array} \right) \\		% first line
+C = \left( \begin{array}{cccc}
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & -R \\
+0 & 0 & 0 & 0 \\
+0 & R & 0 & 0
+\end{array} \right) \quad
+D = \left( \begin{array}{cccc}
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & -S \\
+0 & 0 & 0 & 0 \\
+0 & S & 0 & 0
+\end{array} \right) \\		% second line
+E = \left( \begin{array}{cccc}
+0 & 0 & 0 & 0 \\
+0 & 0 & -R & 0 \\
+0 & R & 0 & 0 \\
+0 & 0 & 0 & 0
+\end{array} \right) \quad
+F = \left( \begin{array}{cccc}
+0 & 0 & 0 & 0 \\
+0 & 0 & -S & 0 \\
+0 & S & 0 & 0 \\
+0 & 0 & 0 & 0
+\end{array} \right)
+\end{eqnarray*}
+The commutators of these generators are very simple:
+\begin{eqnarray*}
+\left[ A,B \right] = 0 \quad\left[ C,D \right] = 0 \quad\left[ E,F \right] = 0\\
+\left[ C,E \right] = A \quad\left[ E,A \right] = C \quad\left[ A,C \right] = E \\
+\left[ D,F \right] = A \quad\left[ F,A \right] = D \quad\left[ A,D \right] = F \\
+\left[ C,F \right] = B \quad\left[ F,B \right] = C \quad\left[ B,C \right] = F\\
+\left[ D,E \right] = B \quad\left[ E,B \right] = D \quad\left[ B,D \right] = E 
+\end{eqnarray*}
+Using the notation of Gilmore \footnote{\underline{Lie Groups, Lie Algebras, 
+and Some of Their Applications}, page 187},
+if I make the identifications
+\begin{eqnarray*}
+A = O_{13} \quad B = O_{24} \quad C = O_{12} \quad D = -O_{34}
+\quad E = O_{23} \quad F = -O_{14}
+\end{eqnarray*}
+these are just the generators of the group SO(4).
+This is NOT isomorphic to the previous group.
+
+\subsection{16-element group 4}
+
+%  16_4
+
+ Another of the 16-element groups is generated by the elements
+$\G3^2=\G1\G1$,  $\G8^2=\G0$, $\G1\G1=\G3^{-1}\G8^{-1}\G3\G8$, and
+$\G1\G1^2=\G4^2=\G0$, with $\G1\G1x=x\G1\G1$ and $\G4x=x\G4$.
+
+\begin{displaymath}
+\begin{array}{cccccccccccccccc}
+\G0  &\G1  &\G2  &\G3  &\G4  &\G5  &\G6  &\G7  &\G8  &\G9 &\G1\G0 &\G1\G1 &\G1\G2 &\G1\G3 &\G1\G4 &\G1\G5 \\
+\G1  &\G0  &\G3  &\G2  &\G5  &\G4  &\G7  &\G6  &\G9  &\G8 &\G1\G1 &\G1\G0 &\G1\G3 &\G1\G2 &\G1\G5 &\G1\G4\\
+\G2  &\G3  &\G0  &\G1  &\G6  &\G7  &\G4  &\G5 &\G1\G4 &\G1\G5 &\G1\G2 &\G1\G3 &\G1\G0 &\G1\G1  &\G8  &\G9\\
+\G3  &\G2  &\G1  &\G0  &\G7  &\G6  &\G5  &\G4 &\G1\G5 &\G1\G4 &\G1\G3 &\G1\G2 &\G1\G1 &\G1\G0  &\G9  &\G8\\
+\G4  &\G5  &\G6  &\G7  &\G1  &\G0  &\G3  &\G2 &\G1\G1 &\G1\G0  &\G8  &\G9 &\G1\G4 &\G1\G5 &\G1\G3 &\G1\G2\\
+\G5  &\G4  &\G7  &\G6  &\G0  &\G1  &\G2  &\G3 &\G1\G0 &\G1\G1  &\G9  &\G8 &\G1\G5 &\G1\G4 &\G1\G2 &\G1\G3\\
+\G6  &\G7  &\G4  &\G5  &\G3  &\G2  &\G1  &\G0 &\G1\G3 &\G1\G2 &\G1\G4 &\G1\G5  &\G8  &\G9 &\G1\G1 &\G1\G0\\
+\G7  &\G6  &\G5  &\G4  &\G2  &\G3  &\G0  &\G1 &\G1\G2 &\G1\G3 &\G1\G5 &\G1\G4  &\G9  &\G8 &\G1\G0 &\G1\G1\\
+\G8  &\G9 &\G1\G4 &\G1\G5 &\G1\G0 &\G1\G1 &\G1\G2 &\G1\G3  &\G0  &\G1  &\G4  &\G5  &\G6  &\G7  &\G2  &\G3\\
+\G9  &\G8 &\G1\G5 &\G1\G4 &\G1\G1 &\G1\G0 &\G1\G3 &\G1\G2  &\G1  &\G0  &\G5  &\G4  &\G7  &\G6  &\G3  &\G2\\
+\G1\G0 &\G1\G1 &\G1\G2 &\G1\G3  &\G9  &\G8 &\G1\G5 &\G1\G4  &\G5  &\G4  &\G0  &\G1  &\G2  &\G3  &\G7  &\G6\\
+\G1\G1 &\G1\G0 &\G1\G3 &\G1\G2  &\G8  &\G9 &\G1\G4 &\G1\G5  &\G4  &\G5  &\G1  &\G0  &\G3  &\G2  &\G6  &\G7\\
+\G1\G2 &\G1\G3 &\G1\G0 &\G1\G1 &\G1\G5 &\G1\G4  &\G9  &\G8  &\G7  &\G6  &\G2  &\G3  &\G0  &\G1  &\G5  &\G4\\
+\G1\G3 &\G1\G2 &\G1\G1 &\G1\G0 &\G1\G4 &\G1\G5  &\G8  &\G9  &\G6  &\G7  &\G3  &\G2  &\G1  &\G0  &\G4  &\G5\\
+\G1\G4 &\G1\G5  &\G8  &\G9 &\G1\G2 &\G1\G3 &\G1\G0 &\G1\G1  &\G2  &\G3  &\G6  &\G7  &\G4  &\G5  &\G0  &\G1\\
+\G1\G5 &\G1\G4  &\G9  &\G8 &\G1\G3 &\G1\G2 &\G1\G1 &\G1\G0  &\G3  &\G2  &\G7  &\G6  &\G5  &\G4  &\G1  &\G0
+\end{array}
+\end{displaymath}
+
+ The $\delta V$ for this has 6 variables: $\alpha$, $\beta$, $\gamma$,
+$\epsilon$, $\mu$, and $\sigma$; which multiply arrays I denote by
+A, B, C, D, E, and F respectively.
+
+
+\begin{displaymath}
+\begin{array}{cccccccccccccccc}
+0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 \\
+0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 \\
+0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 \\
+0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 \\
+0 &0 &0 &0 &0 &0 &0 &0 & \gamma &-\gamma &\mu &-\mu &\sigma &-\sigma &\epsilon &-\epsilon \\
+0 &0 &0 &0 &0 &0 &0 &0 & -\gamma &\gamma &-\mu &\mu &-\sigma &\sigma &-\epsilon &\epsilon \\
+0 &0 &0 &0 &0 &0 &0 &0 &\epsilon &-\epsilon &\sigma &-\sigma &\mu &-\mu &\gamma &-\gamma \\
+0 &0 &0 &0 &0 &0 &0 &0 &-\epsilon &\epsilon &-\sigma &\sigma &-\mu &\mu &-\gamma &\gamma \\
+0 &0 &0 &0 &\gamma &-\gamma &\epsilon &-\epsilon &0 &0 &\alpha &-\alpha &\beta &-\beta &0 &0 \\
+0 &0 &0 &0 &-\gamma &\gamma &-\epsilon &\epsilon &0 &0 &-\alpha &\alpha &-\beta &\beta &0 &0 \\
+0 &0 &0 &0 &\mu &-\mu &\sigma &-\sigma &-\alpha &\alpha &0 &0 &0 &0 &-\beta &\beta \\
+0 &0 &0 &0 &-\mu &\mu &-\sigma &\sigma &\alpha &-\alpha &0 &0 &0 &0 &\beta &-\beta \\
+0 &0 &0 &0 &\sigma &-\sigma &\mu &-\mu &-\beta &\beta &0 &0 &0 &0 &-\alpha &\alpha \\
+0 &0 &0 &0 &-\sigma &\sigma &-\mu &\mu &\beta &-\beta &0 &0 &0 &0 &\alpha &-\alpha \\
+0 &0 &0 &0 &\epsilon &-\epsilon &\gamma &-\gamma &0 &0 &\beta &-\beta &\alpha &-\alpha &0 &0\\
+0 &0 &0 &0 &-\epsilon &\epsilon &-\gamma &\gamma &0 &0 &-\beta &\beta &-\alpha &\alpha &0 &0
+\end{array}
+\end{displaymath}
+
+The eigenvalues are given by the solutions to
+\begin{displaymath}
+0 = X^{12} \left(
+\begin{array}{c}
+X^4  \\
++8 X^2 \left( \alpha^2 \right.+ \beta^2 -\epsilon^2 -\gamma^2 -\mu^2 \left. -\sigma^2 \right)\\
++ 32 \left(
+\begin{array}{ccccc}
+ \epsilon^2 \mu^2 &+ \epsilon^2\sigma^2 &+\gamma^2\mu^2 &+\gamma^2 \sigma^2
+&\alpha^2 \beta^2 \\
+ -\alpha^2\epsilon^2 &-\alpha^2\gamma^2 &-\alpha^2 \mu^2 &-\alpha^2 \sigma^2 
+&-\beta^2\epsilon^2 \\
+ -\beta^2 \gamma^2 &-\beta^2 \mu^2 &-\beta^2 \sigma^2 &-\mu^2 \sigma^2
+&-\epsilon^2 \gamma^2
+\end{array} \right) \\
+ +128\alpha\beta\epsilon\gamma + 128\alpha\beta\mu\sigma
+ -128\epsilon\gamma\mu\sigma    \\
+ +16 \alpha^4 +16\beta^4 + 16\epsilon^4 + 16\gamma^4 + 16\mu^4 +16\sigma^4 
+\end{array}
+\right)
+\end{displaymath}
+
+ The generator commutation relations are as follows:
+
+\begin{eqnarray*}
+\left[ A,B \right] = 0 \quad\left[ C,D \right] = 0 \quad\left[ E,F \right] = 0\\
+\left[ C,E \right] = A \quad\left[ E,A \right] = -C \quad\left[ A,C \right] = -E\\
+\left[ C,F \right] = B \quad\left[ F,B \right] = -C \quad\left[ B,C \right] = -F\\
+\left[ D,E \right] = B \quad\left[ E,B \right] = -D \quad\left[ B,D \right] = -E\\
+\left[ D,F \right] = A \quad\left[ F,A \right] = -D \quad\left[ A,D \right] = -F
+\end{eqnarray*}
+\subsection{16-element group 5}
+% 16_5.DAT
+ Another 16-element group is generated by
+$\G1^2 = \G0$, $\G2^2 = \G4$, $\G4^2=\G8^2=\G0$, $\G8=\G1^{-1}\G2^{-1}\G1\G2$,
+$\G8x = x\G8$, and  $\G4x = x\G4$.  The product (Cayley) table here is
+\begin{displaymath}
+\begin{array}{cccccccccccccccc}
+\G0&  \G1&  \G2&  \G3&  \G4&  \G5&  \G6&  \G7&  \G8&  \G9& \G1\G0& \G1\G1& \G1\G2& \G1\G3& \G1\G4& \G1\G5 \\
+\G1&  \G0&  \G3&  \G2&  \G5&  \G4&  \G7&  \G6&  \G9&  \G8& \G1\G1& \G1\G0& \G1\G3& \G1\G2& \G1\G5& \G1\G4 \\
+\G2& \G1\G1&  \G4& \G1\G3&  \G6& \G1\G5&  \G0&  \G9& \G1\G0&  \G3& \G1\G2&  \G5& \G1\G4&  \G7&  \G8&  \G1 \\
+\G3& \G1\G0&  \G5& \G1\G2&  \G7& \G1\G4&  \G1&  \G8& \G1\G1&  \G2& \G1\G3& \G4& \G1\G5&  \G6&  \G9&  \G0 \\
+\G4&  \G5&  \G6&  \G7&  \G0&  \G1&  \G2&  \G3& \G1\G2& \G1\G3& \G1\G4& \G1\G5&  \G8&  \G9& \G1\G0& \G1\G1 \\
+\G5&  \G4&  \G7&  \G6&  \G1&  \G0&  \G3&  \G2& \G1\G3& \G1\G2& \G1\G5& \G1\G4&  \G9&  \G8& \G1\G1& \G1\G0 \\
+\G6& \G1\G5&  \G0&  \G9&  \G2& \G1\G1&  \G4& \G1\G3& \G1\G4&  \G7&  \G8&  \G1& \G1\G0&  \G3& \G1\G2&  \G5 \\
+\G7& \G1\G4&  \G1&  \G8&  \G3& \G1\G0&  \G5& \G1\G2& \G1\G5&  \G6&  \G9&  \G0& \G1\G1&  \G2& \G1\G3&  \G4 \\
+\G8&  \G9& \G1\G0& \G1\G1& \G1\G2& \G1\G3& \G1\G4& \G1\G5&  \G0&  \G1&  \G2&  \G3&  \G4&  \G5&  \G6&  \G7 \\
+\G9&  \G8& \G1\G1& \G1\G0& \G1\G3& \G1\G2& \G1\G5& \G1\G4&  \G1&  \G0&  \G3&  \G2&  \G5&  \G4&  \G7&  \G6 \\
+\G1\G0&  \G3& \G1\G2&  \G5& \G1\G4&  \G7&  \G8&  \G1&  \G2& \G1\G1&  \G4& \G1\G3&  \G6& \G1\G5&  \G0&  \G9 \\
+\G1\G1&  \G2& \G1\G3&  \G4& \G1\G5&  \G6&  \G9&  \G0&  \G3& \G1\G0&  \G5& \G1\G2&  \G7& \G1\G4&  \G1&  \G8 \\
+\G1\G2& \G1\G3& \G1\G4& \G1\G5&  \G8&  \G9& \G1\G0& \G1\G1&  \G4&  \G5&  \G6&  \G7&  \G0&  \G1&  \G2&  \G3 \\
+\G1\G3& \G1\G2& \G1\G5& \G1\G4&  \G9&  \G8& \G1\G1& \G1\G0&  \G5&  \G4&  \G7&  \G6&  \G1&  \G0&  \G3&  \G2 \\
+\G1\G4&  \G7&  \G8&  \G1& \G1\G0&  \G3& \G1\G2&  \G5&  \G6& \G1\G5&  \G0&  \G9&  \G2& \G1\G1&  \G4& \G1\G3\\
+\G1\G5&  \G6&  \G9&  \G0& \G1\G1&  \G2& \G1\G3&  \G4&  \G7& \G1\G4&  \G1&  \G8&  \G3& \G1\G0&  \G5& \G1\G2
+\end{array}
+\end{displaymath}
+
+ This results in a $\delta V$ of the form
+\begin{displaymath}
+\begin{array}{cccccccccccccccc}
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & \mu &-\beta & 0 & 0 &-\sigma &-\epsilon & 0 & 0 &-\mu & \beta & 0 & 0 & \sigma & \epsilon \\
+0 & \sigma & 0 &-\alpha & 0 &-\mu & 0 &-\gamma & 0 &-\sigma & 0 & \alpha & 0 & \mu & 0 & \gamma \\
+0 &-\epsilon &-\alpha & 0 & 0 &-\beta &-\gamma & 0 & 0 & \epsilon & \alpha & 0 & 0 & \beta & \gamma & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 &-\sigma &-\epsilon & 0 & 0 & \mu &-\beta & 0 & 0 & \sigma & \epsilon & 0 & 0 &-\mu & \beta \\
+0 &-\mu & 0 &-\gamma & 0 & \sigma & 0 &-\alpha & 0 & \mu & 0 & \gamma & 0 &-\sigma & 0 & \alpha \\
+0 &-\beta &-\gamma & 0 & 0 &-\epsilon &-\alpha & 0 & 0 & \beta & \gamma & 0 & 0 & \epsilon & \alpha & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 &-\mu & \beta & 0 & 0 & \sigma & \epsilon & 0 & 0 & \mu &-\beta & 0 & 0 &-\sigma &-\epsilon \\
+0 &-\sigma & 0 & \alpha & 0 & \mu & 0 & \gamma & 0 & \sigma & 0 &-\alpha & 0 &-\mu & 0 &-\gamma \\
+0 & \epsilon & \alpha & 0 & 0 & \beta & \gamma & 0 & 0 &-\epsilon &-\alpha & 0 & 0 &-\beta &-\gamma & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & \sigma & \epsilon & 0 & 0 &-\mu & \beta & 0 & 0 &-\sigma &-\epsilon & 0 & 0 & \mu &-\beta \\
+0 & \mu & 0 & \gamma & 0 &-\sigma & 0 & \alpha & 0 &-\mu & 0 &-\gamma & 0 & \sigma & 0 &-\alpha \\
+0 & \beta & \gamma & 0 & 0 & \epsilon & \alpha & 0 & 0 &-\beta &-\gamma & 0 & 0 &-\epsilon &-\alpha & 0
+\end{array}
+\end{displaymath}
+
+ The commutation relations among the generators are as follows,
+where $2\alpha A + 2\beta B + 2\gamma C + 2\epsilon D + 2\mu E + 2\sigma F =
+\delta V$:
+\begin{displaymath}
+\begin{array}{ccccc}
+ \left[ A,C\right] = 0 & \left[ B,D \right] = A &  \left[ B,F \right] = -C &
+ \left[ E,D\right] = C  &  \left[ E,F\right] = -A \\
+ \left[ B,E\right] = 0 &  \left[ D,A\right] = E & \left[ F,C \right] = -E &
+ \left[ D,C\right] = B &  \left[ F,A \right] = -B \\
+ \left[ D,F\right] = 0 &  \left[ A,E \right] = -D &  \left[ C,E\right] = F &
+ \left[ C,B\right] = -D & \left[ A,B\right] = F
+\end{array}
+\end{displaymath}
+ The eigenfunction for the differential array is given below.  There are
+10 constant eigenvectors with eigenvalue 0 (for the differential array)
+or 1 (for the full transformation.
+\begin{displaymath}
+0 = X^{12} \left( 
+\begin{array}{c}
+X^4 \\ 
++X^2  \left(-16\sigma\mu + \left(-16\epsilon\beta + 
+\left(-8\alpha^2 - 8\gamma^2\right)\right)\right) \\ 
++ \\
+-16\mu^4 + \left(32\beta^2 + \left(32\sigma^2 + 
+\left(32\epsilon^2 + 64\gamma\alpha\right)\right)\right)\mu^2 \\
++ \left(128\epsilon\sigma\beta + 
+\left(64\alpha^2 + 64\gamma^2\right)\sigma\right)\mu \\
++ \left(-16\beta^4 + \left(32\sigma^2 + 
+\left(32\epsilon^2 - 64\gamma\alpha\right)\right)\beta^2 \right. \\
++ \left(64\alpha^2 + 64\gamma^2\right)\epsilon\beta + \left(-16\sigma^4 + 
+\left(32\epsilon^2 + 64\gamma\alpha\right)\sigma^2 \right. \\
++ \left. \left. \left(-16\epsilon^4 - 64\gamma\alpha\epsilon^2 +
+\left(16\alpha^4 - 32\gamma^2\alpha^2 + 
+16\gamma^4\right)\right)\right)\right)
+\end{array} \right)
+\end{displaymath}
+\subsection{16-element group 6}
+% 16_6.dat
+There is a 6'th 16-element non-abelian group, generated by the following
+relations:  $\G1^2=\G4$, $\G2^2=\G8$, $\G4=\G1^{-1}\G2^{-1}\G1 \G2$,
+and $\G4^2=\G8^2=\G0$, with $\G4x=x\G4$, $\G8x=x\G8$.  It's product (Cayley) table
+is given by
+\begin{displaymath}
+\begin{array}{cccccccccccccccc}
+ \G0&  \G1&  \G2&  \G3&  \G4&  \G5&  \G6&  \G7&  \G8&  \G9& \G1\G0& \G1\G1& \G1\G2& \G1\G3& \G1\G4& \G1\G5 \\
+ \G1&  \G4&  \G3&  \G6&  \G5&  \G0&  \G7&  \G2&  \G9& \G1\G2& \G1\G1& \G1\G4& \G1\G3&  \G8& \G1\G5& \G1\G0 \\
+ \G2&  \G7&  \G8& \G1\G3&  \G6&  \G3& \G1\G2&  \G9& \G1\G0& \G1\G5&  \G0&  \G5& \G1\G4& \G1\G1&  \G4&  \G1 \\
+ \G3&  \G2&  \G9&  \G8&  \G7&  \G6& \G1\G3& \G1\G2& \G1\G1& \G1\G0&  \G1&  \G0& \G1\G5& \G1\G4&  \G5&  \G4 \\
+ \G4&  \G5&  \G6&  \G7&  \G0&  \G1&  \G2&  \G3& \G1\G2& \G1\G3& \G1\G4& \G1\G5&  \G8&  \G9& \G1\G0& \G1\G1 \\
+ \G5&  \G0&  \G7&  \G2&  \G1&  \G4&  \G3&  \G6& \G1\G3&  \G8& \G1\G5& \G1\G0&  \G9& \G1\G2& \G1\G1& \G1\G4 \\
+ \G6&  \G3& \G1\G2&  \G9&  \G2&  \G7&  \G8& \G1\G3& \G1\G4& \G1\G1&  \G4&  \G1& \G1\G0& \G1\G5&  \G0&  \G5 \\
+ \G7&  \G6& \G1\G3& \G1\G2&  \G3&  \G2&  \G9&  \G8& \G1\G5& \G1\G4&  \G5&  \G4& \G1\G1& \G1\G0&  \G1&  \G0 \\
+ \G8&  \G9& \G1\G0& \G1\G1& \G1\G2& \G1\G3& \G1\G4& \G1\G5&  \G0&  \G1&  \G2&  \G3&  \G4&  \G5&  \G6&  \G7 \\
+ \G9& \G1\G2& \G1\G1& \G1\G4& \G1\G3&  \G8& \G1\G5& \G1\G0&  \G1&  \G4&  \G3&  \G6&  \G5&  \G0&  \G7&  \G2 \\
+\G1\G0& \G1\G5&  \G0&  \G5& \G1\G4& \G1\G1&  \G4&  \G1&  \G2&  \G7&  \G8& \G1\G3&  \G6&  \G3& \G1\G2&  \G9 \\
+\G1\G1& \G1\G0&  \G1&  \G0& \G1\G5& \G1\G4&  \G5&  \G4&  \G3&  \G2&  \G9&  \G8&  \G7&  \G6& \G1\G3& \G1\G2 \\
+\G1\G2& \G1\G3& \G1\G4& \G1\G5&  \G8&  \G9& \G1\G0& \G1\G1&  \G4&  \G5&  \G6&  \G7&  \G0&  \G1&  \G2&  \G3 \\
+\G1\G3&  \G8& \G1\G5& \G1\G0&  \G9& \G1\G2& \G1\G1& \G1\G4&  \G5&  \G0&  \G7&  \G2&  \G1&  \G4&  \G3&  \G6 \\
+\G1\G4& \G1\G1&  \G4&  \G1& \G1\G0& \G1\G5&  \G0&  \G5&  \G6&  \G3& \G1\G2&  \G9&  \G2&  \G7&  \G8& \G1\G3 \\
+\G1\G5& \G1\G4&  \G5&  \G4& \G1\G1& \G1\G0&  \G1&  \G0&  \G7&  \G6& \G1\G3& \G1\G2&  \G3&  \G2&  \G9&  \G8 \\
+\end{array}
+\end{displaymath}
+
+Solving for the differential gives the following somewhat unusual array.
+Note that an element is no longer equal to the absolute value of the element
+in its transpose position.
+\begin{displaymath}
+\begin{array}{cccccccccccccccc}
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 &  0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & \mu &-\beta & 0 & 0 &-\mu & \beta &  0 & 0 &-\sigma &-\epsilon & 0 & 0 & \sigma & \epsilon \\
+0 &-\sigma & 0 &-\alpha & 0 & \sigma & 0 & \alpha &  0 & \mu & 0 &-\gamma & 0 &-\mu & 0 & \gamma \\
+0 &-\epsilon & \alpha & 0 & 0 & \epsilon &-\alpha & 0 &  0 &-\beta & \gamma & 0 & 0 & \beta &-\gamma & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 &  0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 &-\mu & \beta & 0 & 0 & \mu &-\beta &  0 & 0 & \sigma & \epsilon & 0 & 0 &-\sigma &-\epsilon \\
+0 & \sigma & 0 & \alpha & 0 &-\sigma & 0 &-\alpha &  0 &-\mu & 0 & \gamma & 0 & \mu & 0 &-\gamma \\
+0 & \epsilon &-\alpha & 0 & 0 &-\epsilon & \alpha & 0 &  0 & \beta &-\gamma & 0 & 0 &-\beta & \gamma & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 &  0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 &-\sigma &-\epsilon & 0 & 0 & \sigma & \epsilon &  0 & 0 & \mu &-\beta & 0 & 0 &-\mu & \beta \\
+0 & \mu & 0 &-\gamma & 0 &-\mu & 0 & \gamma &  0 &-\sigma & 0 &-\alpha & 0 & \sigma & 0 & \alpha \\
+0 &-\beta & \gamma & 0 & 0 & \beta &-\gamma & 0 &  0 &-\epsilon & \alpha & 0 & 0 & \epsilon &-\alpha & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 &  0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & \sigma & \epsilon & 0 & 0 &-\sigma &-\epsilon &  0 & 0 &-\mu & \beta & 0 & 0 & \mu &-\beta \\
+0 &-\mu & 0 & \gamma & 0 & \mu & 0 &-\gamma &  0 & \sigma & 0 & \alpha & 0 &-\sigma & 0 &-\alpha \\
+0 & \beta &-\gamma & 0 & 0 &-\beta & \gamma & 0 &  0 & \epsilon &-\alpha & 0 & 0 &-\epsilon & \alpha & 0 
+\end{array}
+\end{displaymath}
+ The eigenvalue of this differential transform are (found by REDUCE)
+\begin{displaymath}
+X^{12} \left(
+\begin{array}{ccccc}
+16\alpha^4 & -16\sigma^4 & -16\mu^4 & +16\gamma^4 & -16\beta^4 \\
+-16\epsilon^4 & -64\alpha^2\beta\epsilon  & +32\mu^2\sigma^2 &
+-32\alpha^2\gamma^2 & +64\alpha^2\mu\sigma \\
++64\alpha\beta^2\gamma & +64\alpha\epsilon^2\gamma & +64\alpha\gamma\mu^2 &
++64\alpha\gamma\sigma^2 & +32\beta^2\epsilon^2 \\
+-32\beta^2\mu^2 & -32\beta^2\sigma^2 & -64\beta\epsilon\gamma^2 &
+-128\beta\epsilon\mu\sigma & -32\epsilon^2\mu^2 \\
+-32\epsilon^2\sigma^2 & +64\gamma^2\mu\sigma & & & \\
+-16\beta\epsilon X^2 & +8\gamma^2 X^2 & +16\mu\sigma X^2 & +8\alpha^2 X^2 & \\
++X^4 & & & &
+\end{array}
+\right)
+\end{displaymath}
+ Natural generators are given by $\delta V = 2\alpha A + 2\beta B +
+2\gamma C + 2\epsilon D + 2\mu E + 2\sigma F$.
+The commutation relation among these generators are
+\begin{displaymath}
+\begin{array}{ccccc}
+\left[A,C\right]=0 & \left[B,E\right]=A & \left[B,F\right]=-C &
+\left[D,E\right]=-C & \left[D,F\right]=A \\
+\left[B,D\right]=0 & \left[E,A\right]=B & \left[F,C\right]=-B &
+\left[E,C\right]=-D & \left[F,A\right]=D \\
+\left[E,F\right]=0 & \left[A,B\right]=-F & \left[C,B\right]=E &
+\left[C,D\right]=F & \left[A,D\right]=-E
+\end{array}
+\end{displaymath}
+\subsection{16-element group 7}
+% 16_7
+The seventh of our non-abelian 16-element groups is generated by the
+relations $\G4^2 = \G8^2 = \G0$, $\G1^2=\G2$, $\G2^2=\G4$, 
+and $\G4=\G8^{-1}\G1^{-1}\G8\G1$.
+\begin{displaymath}
+\begin{array}{cccccccccccccccc}
+\G0&  \G1&  \G2&  \G3&  \G4&  \G5&  \G6&  \G7&  \G8&  \G9& \G1\G0& \G1\G1& \G1\G2& \G1\G3& \G1\G4& \G1\G5 \\
+\G1&  \G2&  \G3&  \G4&  \G5&  \G6&  \G7&  \G0&  \G9& \G1\G0& \G1\G1& \G1\G2& \G1\G3& \G1\G4& \G1\G5&  \G8 \\
+\G2&  \G3&  \G4&  \G5&  \G6&  \G7&  \G0&  \G1& \G1\G0& \G1\G1& \G1\G2& \G1\G3& \G1\G4& \G1\G5&  \G8&  \G9 \\
+\G3&  \G4&  \G5&  \G6&  \G7&  \G0&  \G1&  \G2& \G1\G1& \G1\G2& \G1\G3& \G1\G4& \G1\G5&  \G8&  \G9& \G1\G0 \\
+\G4&  \G5&  \G6&  \G7&  \G0&  \G1&  \G2&  \G3& \G1\G2& \G1\G3& \G1\G4& \G1\G5&  \G8&  \G9& \G1\G0& \G1\G1 \\
+\G5&  \G6&  \G7&  \G0&  \G1&  \G2&  \G3&  \G4& \G1\G3& \G1\G4& \G1\G5&  \G8&  \G9& \G1\G0& \G1\G1& \G1\G2 \\
+\G6&  \G7&  \G0&  \G1&  \G2&  \G3&  \G4&  \G5& \G1\G4& \G1\G5&  \G8&  \G9& \G1\G0& \G1\G1& \G1\G2& \G1\G3 \\
+\G7&  \G0&  \G1&  \G2&  \G3&  \G4&  \G5&  \G6& \G1\G5&  \G8&  \G9& \G1\G0& \G1\G1& \G1\G2& \G1\G3& \G1\G4 \\
+\G8& \G1\G3& \G1\G0& \G1\G5& \G1\G2&  \G9& \G1\G4& \G1\G1&  \G0&  \G5&  \G2&  \G7&  \G4&  \G1&  \G6&  \G3 \\
+\G9& \G1\G4& \G1\G1&  \G8& \G1\G3& \G1\G0& \G1\G5& \G1\G2&  \G1&  \G6&  \G3&  \G0&  \G5&  \G2&  \G7&  \G4 \\
+\G1\G0& \G1\G5& \G1\G2&  \G9& \G1\G4& \G1\G1&  \G8& \G1\G3&  \G2&  \G7&  \G4&  \G1&  \G6&  \G3&  \G0&  \G5 \\
+\G1\G1&  \G8& \G1\G3& \G1\G0& \G1\G5& \G1\G2&  \G9& \G1\G4&  \G3&  \G0&  \G5&  \G2&  \G7&  \G4&  \G1&  \G6 \\
+\G1\G2&  \G9& \G1\G4& \G1\G1&  \G8& \G1\G3& \G1\G0& \G1\G5&  \G4&  \G1&  \G6&  \G3&  \G0&  \G5&  \G2&  \G7 \\
+\G1\G3& \G1\G0& \G1\G5& \G1\G2&  \G9& \G1\G4& \G1\G1&  \G8&  \G5&  \G2&  \G7&  \G4&  \G1&  \G6&  \G3&  \G0 \\
+\G1\G4& \G1\G1&  \G8& \G1\G3& \G1\G0& \G1\G5& \G1\G2&  \G9&  \G6&  \G3&  \G0&  \G5&  \G2&  \G7&  \G4&  \G1 \\
+\G1\G5& \G1\G2&  \G9& \G1\G4& \G1\G1&  \G8& \G1\G3& \G1\G0&  \G7&  \G4&  \G1&  \G6&  \G3&  \G0&  \G5&  \G2
+\end{array}
+\end{displaymath}
+
+The resulting $\delta V$ is given by
+\begin{displaymath}
+\begin{array}{cccccccccccccccc}
+0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 \\
+0 &0 &0 &0 &0 &0 &0 &0 &\mu &-\gamma &-\sigma &-\epsilon &-\mu &\gamma &\sigma &\epsilon \\
+0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 \\
+0 &0 &0 &0 &0 &0 &0 &0 &\sigma &\epsilon &\mu &-\gamma &-\sigma &-\epsilon &-\mu &\gamma \\
+0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 \\
+0 &0 &0 &0 &0 &0 &0 &0 &-\mu &\gamma &\sigma &\epsilon &\mu &-\gamma &-\sigma &-\epsilon \\
+0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 \\
+0 &0 &0 &0 &0 &0 &0 &0 &-\sigma &-\epsilon &-\mu &\gamma &\sigma &\epsilon &\mu &-\gamma \\
+0 &\sigma &0 &\mu &0 &-\sigma &0 &-\mu &0 &-\alpha &0 &-\beta &0 &\alpha &0 &\beta \\
+0 &-\gamma &0 &-\epsilon &0 &\gamma &0 &\epsilon &\beta &0 &-\alpha &0 &-\beta &0 &\alpha &0 \\
+0 &-\mu &0 &\sigma &0 &\mu &0 &-\sigma &0 &\beta &0 &-\alpha &0 &-\beta &0 &\alpha \\
+0 &\epsilon &0 &-\gamma &0 &-\epsilon &0 &\gamma &\alpha &0 &\beta &0 &-\alpha &0 &-\beta &0 \\
+0 &-\sigma &0 &-\mu &0 &\sigma &0 &\mu &0 &\alpha &0 &\beta &0 &-\alpha &0 &-\beta \\
+0 &\gamma &0 &\epsilon &0 &-\gamma &0 &-\epsilon &-\beta &0 &\alpha &0 &\beta &0 &-\alpha &0 \\
+0 &\mu &0 &-\sigma &0 &-\mu &0 &\sigma &0 &-\beta &0 &\alpha &0 &\beta &0 &-\alpha \\
+0 &-\epsilon &0 &\gamma &0 &\epsilon &0 &-\gamma &-\alpha &0 &-\beta &0 &\alpha &0 &\beta &0
+\end{array}
+\end{displaymath}
+ Once again, the generators themselves are sometimes neither symmetric nor
+anti-symmetric.
+The natural generators are just the arrays corresponding to the
+above differentials, divided by 2.  $\delta V = 2 \alpha A +
+2\beta B + 2\gamma C + 2\epsilon D + 2\mu E + 2\sigma F$.
+Their commutators are
+\begin{displaymath}
+\begin{array}{ccccc}
+\left[A,B\right]=0 & \left[C,D\right]=A & \left[E,D\right]=B &
+\left[C,F\right]=B & \left[E,F\right]=-A \\
+\left[C,E\right]=0 & \left[D,A\right]=E & \left[D,B\right]=-C &
+\left[F,B\right]=-E & \left[F,A\right]=-C \\
+\left[D,F\right]=0 & \left[A,E\right]=-F & \left[B,C\right]=-F &
+\left[B,E\right]=D & \left[A,C\right]=-D
+\end{array}
+\end{displaymath}
+ The eigenvalues of this differential transform are the solutions to
+the following equation (found by REDUCE):
+\begin{displaymath}
+X^{12} \left(
+\begin{array}{ccccc}
+16\alpha^4 & +32\alpha^2\beta^2 & +64\alpha^2\epsilon\gamma &
++32\alpha^2\mu^2 & -32\alpha^2\sigma^2 \\
++16\sigma^4 & +64\alpha\beta\epsilon^2 & -64\alpha\beta\gamma^2 &
+-128\alpha\beta\mu\sigma & +16\beta^4 \\
+-64\beta^2\epsilon\gamma & -32\beta^2\mu^2 & +32\beta^2\sigma^2 &
++16\epsilon^4 & +32\epsilon^2\gamma^2 \\
+-64\epsilon^2\mu\sigma & +64\epsilon\gamma\mu^2 & -64\epsilon\gamma\sigma^2 &
++16\gamma^4 & +64\gamma^2\mu\sigma \\
++16\mu^4 & +32\mu^2\sigma^2 & & & \\
+-8\gamma^2 X^2 & -16\mu\sigma X^2 & +16\alpha\beta X^2 & +8\epsilon^2 X^2 & \\
++X^4 & & & &
+\end{array}
+\right)
+\end{displaymath}
+% 16_8
+\subsection{16-element group 8}
+% 16_8
+An 8'th 16-element group is generated by the relations
+${\G2}^2 ={\G0}$, ${\G1}^2 = {\G2}$, ${\G8}^2={\G1}^{-1}$, ${\G4}^2= {\G2}$,
+${\G2} = {\G1}^{-1}{\G4}^{-1}{\G1}{\G4}$, and
+${\G1}={\G8}^{-1}{\G4}^{-1}{\G8}{\G4}$.  The product (Cayley) table resulting is
+
+\begin{displaymath}
+\begin{array}{cccccccccccccccc}
+\G0&\G1&\G2&\G3&\G4&\G5&\G6&\G7&\G8&\G9&\G1\G0&\G1\G1&\G1\G2&\G1\G3&\G1\G4&\G1\G5\\
+\G1&\G2&\G3&\G0&\G6&\G7&\G5&\G4&\G1\G0&\G1\G1&\G9&\G8&\G1\G4&\G1\G5&\G1\G3&\G1\G2\\
+\G2&\G3&\G0&\G1&\G5&\G4&\G7&\G6&\G9&\G8&\G1\G1&\G1\G0&\G1\G3&\G1\G2&\G1\G5&\G1\G4\\
+\G3&\G0&\G1&\G2&\G7&\G6&\G4&\G5&\G1\G1&\G1\G0&\G8&\G9&\G1\G5&\G1\G4&\G1\G2&\G1\G3\\
+\G4&\G7&\G5&\G6&\G2&\G0&\G1&\G3&\G1\G4&\G1\G5&\G1\G2&\G1\G3&\G1\G1&\G1\G0&\G9&\G8\\
+\G5&\G6&\G4&\G7&\G0&\G2&\G3&\G1&\G1\G5&\G1\G4&\G1\G3&\G1\G2&\G1\G0&\G1\G1&\G8&\G9\\
+\G6&\G4&\G7&\G5&\G3&\G1&\G2&\G0&\G1\G3&\G1\G2&\G1\G4&\G1\G5&\G8&\G9&\G1\G1&\G1\G0\\
+\G7&\G5&\G6&\G4&\G1&\G3&\G0&\G2&\G1\G2&\G1\G3&\G1\G5&\G1\G4&\G9&\G8&\G1\G0&\G1\G1\\
+\G8&\G1\G0&\G9&\G1\G1&\G1\G2&\G1\G3&\G1\G4&\G1\G5&\G3&\G1&\G0&\G2&\G7&\G6&\G4&\G5\\
+\G9&\G1\G1&\G8&\G1\G0&\G1\G3&\G1\G2&\G1\G5&\G1\G4&\G1&\G3&\G2&\G0&\G6&\G7&\G5&\G4\\
+\G1\G0&\G9&\G1\G1&\G8&\G1\G4&\G1\G5&\G1\G3&\G1\G2&\G0&\G2&\G1&\G3&\G4&\G5&\G6&\G7\\
+\G1\G1&\G8&\G1\G0&\G9&\G1\G5&\G1\G4&\G1\G2&\G1\G3&\G2&\G0&\G3&\G1&\G5&\G4&\G7&\G6\\
+\G1\G2&\G1\G5&\G1\G3&\G1\G4&\G9&\G8&\G1\G0&\G1\G1&\G4&\G5&\G7&\G6&\G2&\G0&\G1&\G3\\
+\G1\G3&\G1\G4&\G1\G2&\G1\G5&\G8&\G9&\G1\G1&\G1\G0&\G5&\G4&\G6&\G7&\G0&\G2&\G3&\G1\\
+\G1\G4&\G1\G2&\G1\G5&\G1\G3&\G1\G1&\G1\G0&\G9&\G8&\G6&\G7&\G4&\G5&\G3&\G1&\G2&\G0\\
+\G1\G5&\G1\G3&\G1\G4&\G1\G2&\G1\G0&\G1\G1&\G8&\G9&\G7&\G6&\G5&\G4&\G1&\G3&\G0&\G2
+\end{array}
+\end{displaymath}
+ 
+This has a solution with 9 parameters.
+
+
+\begin{displaymath}
+\begin{array}{ccccccccc}
+ 0 & 0 & 0 & 0 &  0 & 0 & 0 & 0 & ... \\
+ 0 & 0 & 0 & 0 &  -\rho & \rho & -\lambda & \lambda &  ... \\
+ 0 & 0 & 0 & 0 &  0 & 0 & 0 & 0 & ... \\
+ 0 & 0 & 0 & 0 &  \rho & -\rho & \lambda & -\lambda & ... \\
+
+ 0 & \rho & 0 & -\rho &  0 & 0 & -\alpha & \alpha & ... \\
+ 0 & -\rho & 0 & \rho &  0 & 0 & \alpha & -\alpha & ... \\
+ 0 & \lambda & 0 & -\lambda &  \alpha & -\alpha & 0 & 0 & ... \\
+ 0 & -\lambda & 0 & \lambda &  -\alpha & \alpha & 0 & 0 & ... \\
+
+ 0 & 0 & 0 & 0 &  \nu & \nu-\mu-\sigma & \sigma-\nu & \mu-\nu & ... \\
+ 0 & 0 & 0 & 0 &  \nu-\mu-\sigma & \nu & \mu-\nu & \sigma-\nu & ... \\
+ 0 & 0 & 0 & 0 &  -\nu & \mu+\sigma-\nu & \nu-\sigma & \nu-\mu & ... \\
+ 0 & 0 & 0 & 0 &  \mu+\sigma-\nu & -\nu & \nu-\mu & \nu-\sigma & ... \\
+
+ 0 & \mu & 0 & -\mu &  \beta & \tau & -\tau & -\beta & ... \\
+ 0 & -\mu & 0 & \mu &  \tau & \beta & -\beta & -\tau &  ... \\
+ 0 & \sigma & 0 & -\sigma &  -\beta & -\tau & \beta & \tau & ... \\
+ 0 & -\sigma & 0 & \sigma &  -\tau & -\beta & \tau & \beta & ... \\
+& & & & & & & & \\
+& & & & & & & & \\
+ ... &  0 & 0 & 0 & 0 &  0 & 0 & 0 & 0 \\
+ ... & 0 & 0 & 0 & 0 &  -\mu & \mu & -\sigma & \sigma \\
+ ... & 0 & 0 & 0 & 0 &  0 & 0 & 0 & 0 \\
+ ... & 0 & 0 & 0 & 0 &  \mu & -\mu & \sigma & -\sigma \\
+ ... & \nu-\mu-\sigma & \nu & \mu+\sigma-\nu & -\nu &  -\beta & -\tau & \beta & \tau \\
+ ... & \nu & \nu-\mu-\sigma & -\nu & \mu+\sigma-\nu &  -\tau & -\beta & \tau & \beta \\
+ ... & \mu-\nu & \sigma-\nu & \nu-\mu & \nu-\sigma &  \tau & \beta & -\beta & -\tau \\
+ ... & \sigma-\nu & \mu-\nu & \nu-\sigma & \nu-\mu &  \beta & \tau & -\tau & -\beta \\
+ ... & 0 & 0 & 0 & 0 &  \rho-\lambda-\epsilon & -\epsilon & \lambda+\epsilon & -\rho+\epsilon \\
+ ... & 0 & 0 & 0 & 0 &  -\epsilon & \rho-\lambda-\epsilon & \epsilon-\rho & \lambda+\epsilon \\
+ ... & 0 & 0 & 0 & 0 &  \lambda+\epsilon-\rho & \epsilon & -\lambda-\epsilon & \rho-\epsilon \\
+ ... & 0 & 0 & 0 & 0 &  \epsilon & \lambda+\epsilon-\rho & \rho-\epsilon & -\lambda-\epsilon \\
+ ... & -\epsilon & \rho-\lambda-\epsilon & \epsilon & \lambda+\epsilon-\rho &  0 & 0 & -\alpha & \alpha \\
+ ... & \rho-\lambda-\epsilon & -\epsilon & \lambda+\epsilon-\rho & \epsilon &  0 & 0 & \alpha & -\alpha \\
+ ... & \epsilon-\rho & \lambda+\epsilon & \rho-\epsilon & -\lambda-\epsilon &  \alpha & -\alpha & 0 & 0 \\
+ ... & \lambda+\epsilon & \epsilon-\rho & -\lambda-\epsilon & \rho-\epsilon &  -\alpha & \alpha & 0 & 0 
+
+\end{array}
+\end{displaymath}
+
+\begin{displaymath}
+\begin{array}{ccc}
+\alpha \rightarrow C_1& \beta \rightarrow C_2& \epsilon \rightarrow C_8\\
+\rho \rightarrow C_9& \lambda \rightarrow C_3& \mu \rightarrow C_4\\
+\nu \rightarrow C_6& \sigma \rightarrow C_5& \tau \rightarrow C_7
+\end{array}
+\end{displaymath}
+
+If we define new generators based on the old ones, the commutation
+relations are greatly simplified:
+
+\begin{displaymath}
+\begin{array}{ccc}
+D_1 = 1/4 \left( C_2 + C_7 \right) & D_2 = 1/4 C_6 & D_3 = 1/4 C_8 \\
+D_4 = 2 C_3 - C_8 & D_5 = C_1 & D_6 = C_4 + C_5 + C_6 \\
+D_7 = C_4 - C_5 & D_8 = C_2 - C_7 & D_9 = C_8 + 2 C_9
+\end{array}
+\end{displaymath}
+\begin{displaymath}
+\begin{array}{ccc}
+\left[ D_1, D_2 \right] = -D_3 & \left[ D_2 , D_3 \right] = D_1  &  \left[ D_3 , D_1 \right] = D_2 \\
+\left[ D_4, D_5 \right] = 2 D_9 & \left[ D_4 , D_6 \right] = 4 D_8  &  \left[ D_4 , D_8 \right] = -4 D_6 \\
+\left[ D_4, D_9 \right] = -8 D_5 & \left[ D_5 , D_6 \right] = -2 D_7  &  \left[ D_5 , D_7 \right] = 2 D_6 \\
+\left[ D_5, D_9 \right] = 2 D_4 & \left[ D_6 , D_7 \right] = -4 D_5  &  \left[ D_6 , D_8 \right] = 2 D_4 \\
+\left[ D_7, D_8 \right] = 2 D_9 & \left[ D_7 , D_9 \right] = -4 D_8  &  \left[ D_8 , D_9 \right] = 4 D_7 
+\end{array}
+\end{displaymath}
+
+The transformation partitions neatly into a transformation based on
+$D_1$, $D_2$, and $D_3$, and a transformation based on the other 6.
+
+The group has four one-dimensional and three two-dimensional representations.
+If I can partition the transformation based on 6 parameters into 2 based
+on three it may be possible to link the N-dimensional representations with
+the transformations.  This does not seem to be possible.  Either
+I have an error in the generator commutations or I must abandon the
+hypothesis that
+the transformations may be partitioned into transformations of the independent
+representations.
+
+
+The Casimir invariant is simple:
+$$
+-1/32 C_1^2 + 1/32 C_2^2 + 1/32 C_3^2 -1/64 C_4^2 - 1/8 C_5^2 -1/16 C_6^2
+-1/32 C_7^2 - 1/16 C_8^2 - 1/32 C_9^2
+$$
+
+
+% 16_9.dat
+\subsection{16-element group 9}
+ The ninth non-abelian 16-element group is generated by the following
+relations: $\G1^2=\G2$, $\G2^2=\G4$, $\G4^2=\G0$, $\G8^2=\G0$,
+$\G4=\G2^{-1}\G8^{-1}\G2\G8$, and $\G2=\G1^{-1}\G8^{-1}\G1\G8$.  The
+resulting product (Cayley) table is:
+
+\begin{displaymath}
+\begin{array}{cccccccccccccccc}
+\G0& \G1& \G2& \G3& \G4& \G5& \G6& \G7& \G8& \G9& \G1\G0& \G1\G1& \G1\G2& \G1\G3& \G1\G4& \G1\G5 \\
+\G1& \G2& \G3& \G4& \G5& \G6& \G7& \G0& \G9& \G1\G0& \G1\G1& \G1\G2& \G1\G3& \G1\G4& \G1\G5& \G8 \\
+\G2& \G3& \G4& \G5& \G6& \G7& \G0& \G1& \G1\G0& \G1\G1& \G1\G2& \G1\G3& \G1\G4& \G1\G5& \G8& \G9 \\
+\G3& \G4& \G5& \G6& \G7& \G0& \G1& \G2& \G1\G1& \G1\G2& \G1\G3& \G1\G4& \G1\G5& \G8& \G9& \G1\G0 \\
+\G4& \G5& \G6& \G7& \G0& \G1& \G2& \G3& \G1\G2& \G1\G3& \G1\G4& \G1\G5& \G8& \G9& \G1\G0& \G1\G1 \\
+\G5& \G6& \G7& \G0& \G1& \G2& \G3& \G4& \G1\G3& \G1\G4& \G1\G5& \G8& \G9& \G1\G0& \G1\G1& \G1\G2 \\
+\G6& \G7& \G0& \G1& \G2& \G3& \G4& \G5& \G1\G4& \G1\G5& \G8& \G9& \G1\G0& \G1\G1& \G1\G2& \G1\G3 \\
+\G7& \G0& \G1& \G2& \G3& \G4& \G5& \G6& \G1\G5& \G8& \G9& \G1\G0& \G1\G1& \G1\G2& \G1\G3& \G1\G4 \\
+\G8& \G1\G1& \G1\G4& \G9& \G1\G2& \G1\G5& \G1\G0& \G1\G3& \G0& \G3& \G6& \G1& \G4& \G7& \G2& \G5 \\
+\G9& \G1\G2& \G1\G5& \G1\G0& \G1\G3& \G8& \G1\G1& \G1\G4& \G1& \G4& \G7& \G2& \G5& \G0& \G3& \G6 \\
+\G1\G0& \G1\G3& \G8& \G1\G1& \G1\G4& \G9& \G1\G2& \G1\G5& \G2& \G5& \G0& \G3& \G6& \G1& \G4& \G7 \\
+\G1\G1& \G1\G4& \G9& \G1\G2& \G1\G5& \G1\G0& \G1\G3& \G8& \G3& \G6& \G1& \G4& \G7& \G2& \G5& \G0 \\
+\G1\G2& \G1\G5& \G1\G0& \G1\G3& \G8& \G1\G1& \G1\G4& \G9& \G4& \G7& \G2& \G5& \G0& \G3& \G6& \G1 \\
+\G1\G3& \G8& \G1\G1& \G1\G4& \G9& \G1\G2& \G1\G5& \G1\G0& \G5& \G0& \G3& \G6& \G1& \G4& \G7& \G2 \\ 
+\G1\G4& \G9& \G1\G2& \G1\G5& \G1\G0& \G1\G3& \G8& \G1\G1& \G6& \G1& \G4& \G7& \G2& \G5& \G0& \G3 \\
+\G1\G5& \G1\G0& \G1\G3& \G8& \G1\G1& \G1\G4& \G9& \G1\G2& \G7& \G2& \G5& \G0& \G3& \G6& \G1& \G4
+\end{array}
+\end{displaymath}
+ The differential transform array is given by
+\begin{displaymath}
+\begin{array}{ccccccccc}
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & .\\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & .\\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & .\\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \\
+0 & \chi & -\mu-\delta &-\chi& 0 & -\sigma&\mu+\delta& \sigma& .\\
+0 & \mu &\sigma-\epsilon& -\mu& 0& \nu& \epsilon-\sigma& -\nu& \\
+0 & \epsilon &-\delta-\nu&-\epsilon& 0&\sigma-\epsilon-\chi& \nu+\delta& \chi+\epsilon-\sigma& .\\
+0 & \delta &\epsilon+\chi& -\delta& 0& -\mu-\nu-\delta& -\epsilon-\chi& \mu+\delta+\nu& \\
+0 & -\sigma & \mu+\delta& \sigma& 0& \chi& -\mu-\delta& -\chi& .\\
+0 & \nu & \epsilon-\sigma& -\nu& 0& \mu& \sigma-\epsilon& -\mu& \\
+0 & \sigma-\epsilon-\chi & \nu+\delta& \chi+\epsilon-\sigma& 0& \epsilon& -\nu-\delta& -\epsilon& .\\
+0 & -\mu-\delta-\nu & -\epsilon-\chi& \mu+\delta+\nu& 0& \delta& \epsilon+\chi& -\delta& \\
+ & & & & & & & & \\
+ & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+. & -\sigma & \mu& \sigma-\epsilon-\chi& \delta& \chi & \nu& \epsilon& -\mu-\delta-\nu \\
+ & -\mu-\delta&\epsilon-\sigma&-\delta-\nu&-\chi-\epsilon&\mu+\delta&\sigma-\epsilon&\delta+\nu&\epsilon+\chi \\
+. &  \sigma &-\mu&-\sigma+\epsilon+\chi&-\delta&-\chi &-\nu& -\epsilon& \mu+\delta+\nu \\
+ & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+. & \chi & \nu & \epsilon &-\mu-\delta-\nu&-\sigma& \mu&\sigma-\epsilon-\chi& \delta \\
+ & \mu+\delta&\sigma-\epsilon&\delta+\nu&\epsilon+\chi &-\mu-\delta&\epsilon-\sigma&-\delta-\nu&-\chi-\epsilon \\
+. & -\chi &-\nu &-\epsilon &\mu+\delta+\nu& \sigma&-\mu&-\sigma+\epsilon+\chi&-\delta \\
+ & 0& -\alpha& -\beta& \alpha& 0 & -\gamma& \beta& \gamma \\
+. & \gamma & 0& -\alpha& -\beta& \alpha& 0& -\gamma& \beta \\
+ & \beta& \gamma& 0& -\alpha& -\beta& \alpha& 0& -\gamma \\
+. & -\gamma& \beta& \gamma& 0& -\alpha& -\beta& \alpha& 0 \\
+ & 0& -\gamma& \beta& \gamma& 0& -\alpha& -\beta& \alpha \\
+. & \alpha& 0& -\gamma& \beta& \gamma& 0& -\alpha& -\beta \\
+ & -\beta& \alpha& 0& -\gamma& \beta& \gamma& 0& -\alpha \\
+ & -\alpha& -\beta& \alpha& 0& -\gamma& \beta& \gamma& 0
+\end{array}
+\end{displaymath}
+ The commutation relations among the generators are given in the
+following table.  $\delta V = \alpha A + \beta B + \gamma C +
+\delta D + \mu M + \nu N + \sigma S + \epsilon E + \chi Q$.
+\begin{displaymath}
+\begin{array}{cccc}
+\left[S,M\right]=-2A & \left[S,E\right]=-2B & \left[S,Q\right]=-2B & \left[S,D\right]=-2A+2G \\
+\left[S,N\right]=-2A & \left[S,A\right]=-M+2D-N & \left[S,B\right]=S+E+Q & \left[S,G\right]=-M-N \\
+\left[M,E\right]=-2A+2G & \left[M,Q\right]=-2A & \left[M,D\right]=2B & \left[M,N\right]=2B \\
+\left[M,A\right]=S-Q & \left[M,B\right]=-M+D+N & \left[M,G\right]=S+2E-Q & \left[E,Q\right]=2B \\
+\left[E,D\right]=2A-2G & \left[E,N\right]=0 & \left[E,A\right]=-M-D+N & \left[E,B\right]=-2S-2Q \\
+\left[E,G\right]=M+D-N & \left[Q,D\right]=0 & \left[Q,N\right]=2G & \left[Q,A\right]=-D+2N \\
+\left[Q,B\right]=-S+E-Q & \left[Q,G\right]=2M-D & \left[D,N\right]=2B & \left[D,A\right]=S-E+Q \\
+\left[D,B\right]=-2M+2N & \left[D,G\right]=-S+E-Q & \left[N,A\right]=2S+E & \left[N,B\right]=-M-D+N \\
+\left[N,G\right]=E-2Q & \left[A,B\right]=0 & \left[A,G\right]=0 & \left[B,G\right]=0
+\end{array}
+\end{displaymath}
+\end{document}

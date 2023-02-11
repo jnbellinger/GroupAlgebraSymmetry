@@ -1,0 +1,595 @@
+% LaTex document
+%\pagelayout{normal}
+
+\documentclass{revtex4-1}
+%\usepackage{CJK}
+
+%\documentclass[12pt]{article}
+\usepackage{amsmath}
+
+
+%\def\half{{1 \over 2}}
+
+%\topmargin -0.5in
+%\oddsidemargin 0in
+%\evensidemargin 0in
+%\textheight 8.9in
+%\textwidth 6.5in
+%\parskip 3pt plus 1pt minus 0.5pt
+
+\begin{document}
+%\begin {CJK*} {GB} { } 
+\title{ Transformations over a space defined over a finite group}
+\author{James N. Bellinger}
+\affiliation{University of Wisconsin at Madison}
+\date{\today}
+
+%\end{CJK*}
+
+\begin{abstract}
+Continuous transformations of dihedral groups of $>=6$ have a maximum of $3(p-1)/2$ independent parameters if $p$ is odd, and $3(p-2)/2$ if $p$ is even.
+\par The transformations $T_H$ of a group $H$ which is a subgroup of $G$ 
+will sometimes be a subset of the transformations $T_G$ over $G$,
+but not in general.  In particular, if $G = H \otimes Z_2$, $T_H$
+is a subset of $T_G$.  Therefore in general, if a subgroup $H$ of $G$
+transforms as $T_{GH}$ as part of $T_G$, $T_{GH}$ will not be the same as
+the transforms $T_H$ of $H$ as a stand-alone group.
+\par Unless the original group objects are physical objects,
+these continuous transformations are unlikely to have physical meaning.
+\end{abstract}
+\maketitle
+
+
+\section{Introduction}
+As described in an earlier paper \footnote{Symmetries of preon interactions modeled as a finite group. J.N. Bellinger J.Math.Phys.38:3414-3426,1997}, non-abelian finite groups can sustain
+continuous transformations in a space that mixes the group elements, which maintain the original
+group structure.  These transformations are of the form of $n \times n$ matrices, where $n$ is the
+order of the group.  Name such a transform matrix $V$; the equation governing its differential
+changes is $$\delta V_{i,kj^{-1}} + \delta V_{j,i^{-1}k} = \delta V_{ij,k}$$.  The $i$, $j$, and $k$ are the numbered group elements, such that (e.g.) $kj^{-1}$ is the number of the element given by the group product of group element $k$ and the inverse of $j$.
+
+\par While it is possible to solve for the generators of such a transformation for any given
+group, it is good to have general solutions available.  One simple example is dihedral groups.
+
+\section{Dihedral groups:  $2 \times$ p}
+Dihedral groups of order 2p obey $a^2=0$ and $b^p=0$
+and $ba=ab^{-1}$ for appropriate selections of $a$ and $b$.  It is convenient
+to number the group elements from $\{0\dots 2p-1\}$ mapping $i \rightarrow b^i$ for 
+$i \in \{0\dots p-1\}$ and $i \rightarrow ab^{i-p}$ for $i \in \{p\dots 2p-1\}$.
+Name the first subset $A$ and the second one $B$.   The subset $A$ is an abelian subgroup,
+and we already know that the $\delta V_{i,j}$ components are all $0$ when $i$ and $j$ are
+in the abelian subgroup.
+
+\par The $\delta V$ array then neatly partitions into 4 sub-matrices:
+\begin{equation}
+\delta V = \left(\begin{array}{cc} V1 & V2 \\ V3 & V4
+\end{array}\right)
+\end{equation}
+
+$$\delta V_{i,kj^{-1}} + \delta V_{j,i^{-1}k} = \delta V_{ij,k}$$
+
+\begin{tabular}{c|ccc}
+Case & $i$ & $j$ & $k$ \\ \hline \\
+1 & $A$ & $A$ & $A$ \\
+2 & $A$ & $A$ & $B$ \\
+3 & $A$ & $B$ & $A$ \\
+4 & $A$ & $B$ & $B$ \\
+5 & $B$ & $A$ & $B$ \\
+6 & $B$ & $A$ & $B$ \\
+7 & $B$ & $B$ & $A$ \\
+8 & $B$ & $B$ & $B$ 
+\end{tabular}
+
+\par
+For Case 1, all the $\delta V_{x,y}$ have $x$ and $y$ in subset $A$, which is
+an abelian subgroup and for which all the $\delta V$ $V1$ entries are
+zero.  
+
+\begin{tabular}{c|ccc}
+Case & $\delta V_{i,kj^{-1}}$ & $\delta V_{j,i^{-1}k}$ & $\delta V_{ij,k}$ \\ \hline \\
+2 & $V2$ & $V2$ & $V2$ \\
+3 & $V2$ & $V3$ & $V3$ \\
+4 & $V1=0$ & $V4$ & $V4$ \\
+5 & $V3$ & $V2$ & $V3$ \\ 
+6 & $V4$ & $V1=0$ & $V4$ \\ 
+7 & $V4$ & $V4$ & $V1=0$ \\ 
+8 & $V3$ & $V3$ & $V2$ 
+\end{tabular}
+
+\par $V2$ and $V3$ are, of course intimately linked, and $V4$ is not related to 
+either of them.
+
+\par Using the notation described above, if $i$ and $j$ are in $A$ their combination
+$ij$ is $mod(i+j)_p$.  For simplicity I will denote $mod(i+j)_p$ as $\{i+j\}$.  If 
+$i \in A$, $i^{-1}$
+we can represent as $N-i$ or simply $\{-i\}$ for convenience.  If $i \in B$, $i^{-1} = i$ as
+each element is its own inverse.
+When $i,j \in B$ (i.e. $i$ is really $mod(i)_N +N \equiv \{i\}+p$),
+their combination $ij$ is $\{j-i\}+p$.
+
+\begin{tabular}{cc|c}
+$i \in$  & $j \in$ & $ij$ \\ \hline \\
+$A$ & $A$ & $\{i+j\} \in A$ \\
+$A$ & $B$ & $\{j-i\} +p \in B$ \\
+$B$ & $A$ & $\{i-j\} +p \in B$ \\
+$B$ & $B$ & $\{j-i\} \in A$
+\end{tabular}
+
+
+\subsection{V4}
+\subsubsection{Case 7}
+In this case $i \in B$, $j \in B$, and $k \in A$.  Since $ij \in A$, the right-hand
+side of this equation is zero.
+$$\delta V_{i,kj^{-1}} + \delta V_{j,i^{-1}k} = \delta V_{ij,k} =0$$
+
+
+$$\delta V_{i,kj^{-1}} = \delta V_{i,\{j-k\}+p} = \delta V_{\{i\}+p,\{j-k\}+p}$$
+$$\delta V_{j,ik} = \delta V_{j,\{i+k\}+p} = \delta V_{\{j\}+p,\{i+k\}+p}$$
+
+\par The subscripts are hard to read, so define 
+$$\delta V_{x,y} \equiv (( x, y ))$$
+and we have 
+\begin{equation}
+(( \{i\}+p, \{j-k\}+p )) = - (( \{j\}+p, \{i+k\}+p ))
+\end{equation}
+\par We already know we're in the $V4$ block, so we can omit the $+p$ for clarity here.
+$$(( \{i\}, \{j-k\})) = - (( \{j\}, \{i+k\}))$$
+
+\par We can use this more easily if we define $\{J\} \equiv \{j - k\}$, which gives use
+\begin{equation}\label{eq:partialdiagonal}
+(( \{i\}, \{J\})) = - (( \{J+k\}, \{i+k\})) \forall k
+\end{equation}
+
+\par  Wrap-around diagonals have the same value.  For example, if $\{i\}=2$ and
+$\{J\} =1$ has $(( \{1\}, \{1\} )) = -x$, then in $V4$ we have:
+
+\begin{equation}
+\label{eq:diagonal}
+\begin{tabular}{ccccccc}
+ 0 & x & 0 & 0 & \dots & 0 & -x\\
+-x & 0 & x & 0 & \dots & 0 & 0\\
+0 & -x & 0 & x & \dots & 0 & 0\\
+0 & 0 & -x & 0 & \dots & 0 & 0\\
+ &&&& \dots & & \\
+0 & 0 & 0 & 0 & \dots  & 0 & x \\
+x & 0 & 0 & 0 & \dots  & -x & 0
+\end{tabular}
+\end{equation}
+
+There are $p$ partial diagonals, which are paired.  The central diagonal is zero.
+If $p$ is odd there can be $(p-1)/2$ of these ($b^p=0$) set of diagonals.  If $p$ is even,
+then we can use Equation~\ref{eq:partialdiagonal} and set $i=0$, $J=p/2$, and use
+$k=p/2$ to find $(( 0, p/2)) = - (( 0, p/2))$.  Clearly all elements in this partial diagonal
+are also 0.  So if $p$ is even the number of paired diagonals is $(p-2)/2$ and if $p$
+is odd there are $(p-1)/2$.
+
+\subsubsection{Case 6}
+In this case $i \in B$, $j \in A$, and $k \in B$.  Since $j$ and $i^{-1}k$ 
+are both in $A$, the
+second term is 0 and the fundamental equation is now:
+$$\delta V_{i,kj^{-1}}  + 0 = \delta V_{ij,k}$$
+
+Once again this involves elements of $V4$
+$$(( \{i\}+p, \{k-j\} +p )) = (( \{i+j\}+p, \{k\}+p))$$
+
+If we drop the $p$ for clarity, and define $\{K\} = \{k-j\}$ then we have
+$$(( \{i\}, \{K\} )) = (( \{i+j\}, \{K+j\})) \forall j$$
+
+This simply tells us that all elements in a wrap-around diagonal are the 
+same in $V4$, which we knew already from Case 7.
+
+\subsubsection{Case 4}
+In this case $i \in A$, $j \in B$, and $k \in B$.  Since both $i$ and $kj^{-1}$ are in $A$,
+the first term is 0 and the fundamental equation is now:
+$$0 + \delta V_{j,i^{-1}k} = \delta V_{ij,k}$$
+
+This also involves elements of $V4$:
+$$(( \{j\} +p, \{i+k\}+p )) = (( \{j-i\}+p, \{k\}+p))$$
+
+If we drop the $p$ for clarity, and define $\{J\} = \{j-i\}$, then we have
+$$(( \{J+i\}, \{k+i\} )) = (( \{J\}, \{k\} ))$$
+
+This simple tells us that all elements in a wrap-around diagonal are the same
+in $V4$, which we knew already from Case 7 and Case 6.  Simple parameter
+substitution shows these 3 sets of equations are equivalent.
+
+\subsubsection{Calculations within V4}
+
+Since Cases 4, 6, and 7 exhaust the equations that involve elements of $V4$, there are
+no further restrictions on the number of independent solutions and we have
+$(p-1)/2$ (or $(p-2)/2$ if $p$ is even) generators which can be represented by the following block array,
+where $0$ is an $p\times p$ array of $0$ and $V4$ is a wrap-around diagonal
+array like that in Eq~\ref{eq:diagonal}.  For purposes of categorization we can without
+loss of generality set x=1.  The wrap-arounds start in positions
+$((\{1\},\{2\}))$ (for +1) and $((\{2\},\{1\}))$ (for -1) for the first array, $((\{1\},\{3\}))$ (for +1) 
+and $((\{3\},\{1\}))$ (for -1) for the second array, and
+so on up to $((\{1\},\{p+1)/2\}))$ (for +1) for the $(p-1)/2)$'th array.  
+Give the one with  $((\{1\},\{m+1\}))=1$ the name $G_m$.
+
+This is easier to deal with if we define an array
+\begin{equation}
+P=
+\begin{cases}
+P_{i,j} = 1  \text{ for } j=i+1 \\
+P_{i,j} = 1  \text{ for } i=p,j=1 \\
+P_{i,j} = 0  \text{ otherwise}
+\end{cases}
+\end{equation}
+
+We can define our $(p-1)/2)$ generator representations as
+\begin{equation}
+G_m = P^m - P^{p-m} \text{ for } m \in \{1 \dots (p-1)/2\}
+\end{equation}
+
+Obviously $G_0 = 0$, and if $p$ is even $G_{p/2}=0$ too.  From this construction it is easy to see that these generator representations always commute.
+\begin{equation}
+G_m G_n = G_n G_m
+\end{equation}
+
+It further follows (recalling that $P^p=I$), and considering $3m$ as being modulo $p$, that
+\begin{eqnarray}
+{G_m}^3 & =&  P^{3m} - 3 P^{2m} P^{p-m} + 3 P^m P^{2p-2m} - P^{3p-3m} \\
+&=& (P^{3m} - P^{p-3m}) - 3 (P^m - P^{p-m}) \\
+&=& G_{3m} - 3 G_m
+\end{eqnarray}
+
+If $p$ is odd, or if $p$ is even and $m\neq p/2$, $3m$ will always refer to a different generator representation
+than $m$.  Note that if $p>3m>(p-1)/2$ then $G_{3m} = -G_{p-3m}$
+
+\begin{eqnarray}
+G_m G_n G_l = G_{m+n+l} + G_{m-n-l} + G_{l-m-n} + G_{n-m-l}
+\end{eqnarray}
+
+When $p=3$ or $p=4$, there is only one generator in the representation of $V4$.  When
+$p=5$ there are two, and it is straightforward to design linear combinations $L_1$ and
+$L_2$ such that ${L_1}^3 = \alpha L_1$ and ${L_2}^3 = \beta L_2$.  For $L_1 = c_1 G_1 
++ c_2 G_2$, the ratio  $c_1/c_2$ is one of $(1 \pm \sqrt(5))/2$ or $(-2 \pm \sqrt(5))$.
+
+For calculations define
+\begin{eqnarray}
+H_m = P^m + P^{p-m}
+\end{eqnarray}
+
+\par $H_0 = 2 I$, $H_m=H_{-m}$.  Even products of $G$'s involve  only the $H$'s, and odd products only
+involve the $G$'s.
+
+\subsection{V2, V3}
+From $\delta V_{i,j} = - \delta V_{j^{-1},i^{-1}}$ we know that these two sub-matrices
+are not independent.  Cases 2, 3, and 5, when re-written to reflect only elements in $V2$,
+are equivalent sets of equations.  For simplicity of notation if $k^{\prime}>p$ I use the 
+$k \equiv k^{\prime} -p$, 
+element $k^{\prime} = a b^k$ below.
+$$\delta V_{b^i,ab^{k-j}} + \delta V_{b_j,ab^{k+i}} = \delta V_{b^{i+j},ab^k}$$
+$$\delta V_{b^i,ab^{j-k}} - \delta V_{b^{i-k},ab^j} = - \delta V_{b^{-k}, ab^{j-i}}$$
+$$-\delta V_{b^{j-k},ab^i} + \delta V_{b^j, ab^{k+i}} = -\delta V_{b^{-k},ab^{i+j}}$$
+
+Keeping only the exponents of $b$ and taking the presence of $a$ in the second
+place as given, I write the first equation (equivalent to the other two) as
+\begin{equation} \label{eqn:case235}
+\langle i, k-j\rangle + \langle j, k+i\rangle = \langle i+j, k\rangle
+\end{equation}
+
+Equation Case 8 is not equivalent to the other three (2, 3, and 5).  
+When I put it in a form that references
+only $V2$ I get
+\begin{equation} \label{eqn:case8}
+ \langle k-j, i\rangle +\langle i-k, j\rangle + \langle j-i, k\rangle = 0
+\end{equation}
+Here $i$, $j$, and $k$ range from $0$ to $p-1$
+
+\par If you set $j=i$ in Equation~\ref{eqn:case8} you can easily see that
+\begin{equation} \label{eqn:reflect}
+\langle x, y \rangle = - \langle -x, y \rangle
+\end{equation}
+
+\par If $p$ is odd the above are all distinct except where $x=0$, and we know already that 
+$\langle 0, y \rangle=0$.  If $p$ is even, then $x=p/2=-x$ and $\langle p/2, y \rangle =
+-\langle p/2, y \rangle$ and these are also clearly $0$ for all $y$:  a second row of $0$.
+
+\par It isn't hard to show that Equation~\ref{eqn:case8} is a consequence of
+Equation~\ref{eqn:reflect} and Equation~\ref{eqn:case235}, so we use the latter 
+two as a simpler pair.
+
+\par It is convenient to use Equation~\ref{eqn:case235} in a slightly different form, defining
+$H = i + j$ to get
+\begin{equation} \label{eqn:hk}
+\langle H, k \rangle = \langle i, k - H + i \rangle + \langle H - i, k + 1 \rangle
+\end{equation}
+
+\par Let $H = p-1$.  From Equation~\ref{eqn:reflect} if we know $\langle p-1, k \rangle$
+we know $\langle 1, k \rangle$.  Since the sums of each row or column of the differential matrix
+is $0$, we also have
+\begin{equation}
+\langle p-1, 0 \rangle = \sum_{j=1}^{p-1} \langle p-1, j \rangle 
+\end{equation}
+and using Equation~\ref{eqn:reflect} we find
+\begin{equation}
+\langle p-1, k \rangle = \langle i, k+i+1 \rangle - \langle i+1, k+1 \rangle
+\end{equation}
+
+\par Let $I=1$.
+\begin{equation}
+\langle p-1, k \rangle = \langle 1, k+2 \rangle - \langle 2, k+1 \rangle =
+-\langle p-1, k+2 \rangle - \langle 2, k+1 \rangle
+\end{equation}
+
+We can rewrite this as
+\begin{equation}
+\langle 2, k+1 \rangle = - \langle p-1, k \rangle + \langle p-1, k+2 \rangle
+\end{equation}
+
+Since this is true for all $k$, we now have each element of the row $\langle 2,x \rangle$
+In terms of the $p-1$ remaining elements of the row $\langle p-1, x \rangle$.  This
+automatically gives us the row $\langle p-2, x \rangle$.
+
+\par Let $I=2$.  The same sort of manipulation shows us
+\begin{equation}
+\langle p-1, k \rangle = \langle 2, k+3 \rangle - \langle 3, k+2 \rangle
+\end{equation}
+
+Since we know the $\langle 2, x \rangle$ in terms of the top row, we can solve
+for $\langle 3, x \rangle$ also, and plainly iterate through each of the rows in turn.
+
+\par All rows are expressible in terms of the elements of the top row, and one of 
+those elements in the top row in turn is expressible in terms of the rest of the row, so there are a maximum
+of $p-1$ independent variables if $p$ is odd, and therefore a maximum of $p-1$ generators
+involving the off-diagonal arrays.
+
+\par Explicit calculations on examples suggest that $p-1$ is also the minimum, which,
+combined with the generators from the diagonal matrix, says there are $3 (p-1)/2$ 
+generators for the transformations of a finite group of order $2p$.
+
+\par We can produce neater equations.  Let $H=p-2$ and $i=p-1$.
+
+\begin{equation}
+\langle p-2, k \rangle = \langle p-1, k+1 \rangle + \langle p-1, k-1 \rangle
+\end{equation}
+
+Then, successively, let $H=p-3$ and $i=p-2$, then $H=p-4$ and $i=p-3$ to get
+\begin{equation}
+\langle p-3, k \rangle = \langle p-1, k+2 \rangle + \langle p-1, k \rangle + \langle p-1, k-2 \rangle
+\end{equation}
+\begin{equation}
+\langle p-4, k \rangle = \langle p-1, k+3 \rangle + \langle p-1, k+1 \rangle +
+\langle p-1, k-1 \rangle + \langle p-1, k-3 \rangle
+\end{equation}
+
+and so on.
+\begin{equation} \label{eqn:struct}
+\langle p-X, k \rangle = \sum_{a=1-X}^{X-1 , (2)} \langle p-1, k+a \rangle
+\end{equation}
+
+This makes it convenient to deal with the case where $p$ is even.  Recall that
+$$\langle p/2, k \rangle=0$$.  In Equation~\ref{eqn:struct} set $X=p/2$.  This gives us
+\begin{equation}
+\langle p-p/2, k \rangle = \langle p/2, k \rangle = 0 = \sum_{a=1-p/2}^{p/2-1, (2)} \langle p-1, k+a \rangle
+\end{equation}
+The right hand side consists of $(p-2)/2 +1 =p/2$ terms, or half of the $\langle p-1,  k \rangle$ row.
+If $k$ is odd these are all the odd numbered elements, and if $k$ is even all the even numbered
+elements of the row.  This gives 2 equations:  all even numbered elements of the $p-1$ row
+sum to zero, and so do all the odd numbered elements.  Adding both says that the sum of all
+elements in the row is zero, which we already knew.  Therefore there are 2 independent
+constraints on the values of the elements of the $p-1$ row (from which all other rows can
+be determined), so there are $p-2$ independent parameters in the transformation over the 
+off-diagonal sub-arrays.
+
+\par Combining the diagonal sub-matrix results and the off-diagonal sub-matrix results tells us
+that for a dihedral group of order $p$, there are a maximum of $3(p-1)/2$ independent
+parameters in the transformation if $p$ is odd, and $3(p-2)/2$ if $p$ is even.
+
+\par In all cases I have solved the maximum number of parameters is the total number of parameters.
+\section{H a subgroup of G}
+
+We use the differential continuous transformation equation
+\begin{equation}
+\delta V_{i,kj^{-1}} + \delta V_{j,i^{-1}k} = \delta V_{ij,k}
+\end{equation}
+\par For simplicity of notation, take the $\delta V$ as given and
+represent the above as 
+\begin{equation}
+(i,kj^{-1})+ (j,i^{-1}k) = (ij,k)
+\end{equation}
+Let $T_H$ be the continuous transformations (defined in 
+\footnote{Journal of Mathematical Physics 38:3414-3426, 1997}) over H. Let H be a subgroup of G.
+
+\par Is $T_H \leq T_G$?
+
+\subsection{H is a normal subgroup of G}
+
+\subsubsection{$G = H \otimes Z_2$}
+
+For this case, $T_H \leq T_G$, as I show below.
+
+\par The cosets of $G$ are $H$ and $Q$, where $Q=Hb$ and $b^2 =0$, with $0$ representing the identity.
+Retain the ordering, so that each element $h_b$ of $Q$ is $h b$ where $h \in H$.  Since $b$ commutes
+with everything I will place it at the right.
+
+\par The $i$, $j$, and $k$ will be in either $H$ or $Q$, giving us 8 sets of equations.  The transformation
+array partitions into 4 blocks.  $A$ and $D$ are on the diagonal, $B$ and $C$ off-diagonal.
+$$
+\begin{array}{ccc}
+ & H & Q \\
+H & A & B \\
+Q & C & D
+\end{array}
+$$
+
+\par The list of equations is
+$$
+\begin{array}{ccccccc}
+  & i & j & k & Generic & Block & Detail \\
+1 & H & H & H & (H,H)+(H,H)=(H,H) & A+A \in A & (i,kj^{-1}) + (j,i^{-1}k)=(ij,k) \\
+2 & H & H & Q & (H,Q)+(H,Q)=(H,Q) & B+B \in B & (i,kj^{-1}b) + (j,i^{-1}kb)=(ij,kb) \\
+3 & H & Q & H & (H,Q)+(Q,H)=(Q,H) & B+C \in C & (i,kj^{-1}b) + (jb,i^{-1}k)=(ijb,k) \\
+4 & H & Q & Q & (H,H)+(Q,Q)=(Q,Q) & A+D \in D & (i,kj^{-1}) + (jb,i^{-1}kb)=(ijb,kb) \\
+5 & Q & H & H & (Q,H)+(H,Q)=(Q,H) & C+B \in C & (ib,kj^{-1}) + (j,i^{-1}kb)=(ijb,k) \\
+6 & Q & H & Q & (Q,Q)+(H,H)=(Q,Q) & D+A \in D & (ib,kj^{-1}b) + (j,i^{-1}k)=(ijb,kb) \\
+7 & Q & Q & H & (Q,Q)+(Q,Q)=(H,H) & D+D \in A & (ib,kj^{-1}b) + (jb,i^{-1}kb)=(ij,k) \\
+8 & Q & Q & Q & (Q,H)+(Q,H)=(H,Q) & C+C \in B & (ib,kj^{-1}) + (jb,i^{-1}k)=(ij,kb) 
+\end{array}
+$$
+\par Notice that equation sets 1, 4, 6, and 7 include only $A$ and $D$, and the rest only include
+$B$ and $C$.  Equation set 1, if in isolation, would reproduce $T_H$.  Since 2, 3, 5, and 8
+do not involve these elements, it suffices to show that equations 1, 4, 6, and 7 will in fact
+continue to reproduce $T_H$.
+
+\par Add up equation sets 4, 6, and 7.  This gives
+\begin{equation}
+(i,kj^{-1}) + (j,i^{-1}k) + 2 (jb,i^{-1}kb) + 2 (ib,kj^{-1}b) = (ij,k) + 2 (ijb,kb)
+\end{equation}
+which of course simplifies to
+\begin{equation}
+(jb,i^{-1}kb) + (ib,kj^{-1}b) = (ijb,kb)
+\end{equation}
+
+\par Add equation sets 4 and 6.  This gives
+\begin{equation}
+(i,kj^{-1}) + (jb,i^{-1}kb) + (ib,kj^{-1}b) + (j,i^{-1}k) = 2 (ijb,kb)
+\end{equation}
+which we combine with the above equation to find that
+\begin{equation}
+(i,kj^{-1}) + (j,i^{-1}k) = (ijb,kb)
+\end{equation}
+
+\par Solving for the rest of them is trivial, and we see that
+\begin{equation}
+(ijb,kb) = (ij,k) \quad (ib,kj^{-1}b) = (i,kj^{-1}) \quad (jb,i^{-1}kb) = (j,i^{-1}k)
+\end{equation}
+
+In this case we see that the transformations within $D$ exactly mirror those within $A$, which
+means that the same $T_H$, extended to reach the elements in $Q$, is part of the set of transformations
+over $H \otimes Z_2$.
+
+\par For the sake of completeness, recalling that $(x,y) = - (y^{-1},x^{-1})$, we can show that
+the off-diagonal blocks are governed by
+\begin{align}
+-(jk^{-1}b,i^{-1}) = (i,kj^{-1}b) &= (ib, kj^{-1}) = - (jk^{-1},i^{-1}b) \\
+-(k^{-1}b,j^{-1}i^{-1}) = (ij, kb) &= (ijb, k) = - (k^{-1},j^{-1}i^{-1}b) \\
+-(k^{-1}ib, j^{-1}) = (j,i^{-1}kb) &= (jb,i^{-1}k) = - (k^{-1}i, j^{-1}b)
+\end{align}
+
+\subsubsection{$H \otimes g$}
+
+Order the elements of $g$ in some arbitrary order that has the identity as $0$.  Call the $q$'th element $g_q$.
+
+The group $G$ partitions into cosets which we can label as $C_q = H g_q$.
+
+Recall the fundamental equation:
+\begin{equation}
+(i,kj^{-1})+ (j,i^{-1}k) = (ij,k)
+\end{equation}
+
+If the $\{i,j,k\} \in H$, we have the transformation $T_H$ over $H$, provided it is
+not constrained by any other terms.
+
+In the following cases, the $\{i,j,k\} \in H$ is already accounted for, and $q \ne 0$.
+
+If the first term involves elements of $(H,H)$, then we have $i \in H$, and if $k \in C_q$, then
+we must have $j \in C_q$.  This means that the second and third terms must be in $(C_q,C_q)$
+and $(C_q,C_q)$ respectively.  $(H,H) + (C_q,C_q) \in (C_q,C_q)$.
+
+If the second term involves elements of $(H,H)$, then we have $j \in H$, and if $k \in C_q$, then
+we must have $i \in C_q$.  This means that the first and third terms must be in $(C_q,C_q)$ and
+$(C_q,C_q)$ respectively.   $(C_q,C_q) + (H,H)  \in (C_q,C_q)$.
+
+If the third term involves elements of $(H,H)$, then we have $k \in H$, and if $j \in C_q$, then
+we must have $i \in C_q^{-1}$. This means that the first and second terms must be in $(C_q^{-1},C_q^{-1})$
+and $(C_q^{-1},C_q^{-1})$ respectively.  $(C_q^{-1},C_q^{-1}) + (C_q^{-1},C_q^{-1}) \in (H,H)$.
+Recalling that $(i,j) = -(j^{-1},i^{-1})$, we can have all these equations involving $(C_q,C_q)$, which
+simplifies the argument below.
+
+We have $1+3 \times (n-1)$ equation sets:  One that mixes only $(H,H)$ terms, and $(n-1)$ sets of $3$
+equation sets mixing only $(H,H)$ and $(C_q,C_q)$ terms for a given $q$.  
+
+\par However, though each of the of the $(n-1)$ sets of
+equation sets is identical in form to each other, they are not as simple as the $Z_2$ example above.
+Since $q^2 \neq 0$ in general, though the first two equation sets are the same, the last, in order to
+involve only $C_q$ elements, reverses the order.
+\begin{align}
+ (i,kj^{-1}) + (jq,i^{-1}kq) & = (ijq,kq) \\ 
+(iq,kj^{-1}q) + (j,i^{-1}k) &= (ijq,kq) \\ 
+(iq,kj^{-1}q) + (jq^{-1},i^{-1}kq^{-1}) &= (ij,k) \nonumber \\ 
+(iq,kj^{-1}q) - (k^{-1}iq,j^{-1}q) &= (ij,k) 
+\end{align}
+
+Combining all three reduces to the following, but without more information we cannot solve for
+the $(C_q,C_q)$ terms in terms of the $(H,H)$ ones, and in general the interference between terms
+will mean that the $T_H$ will no longer be a subset of $T_G$.
+\begin{equation}
+2(iq,kj^{-1}q) + (jq,i^{-1}kq) - (k^{-1}iq,j^{-1}q) = 2(ijq,kq)
+\end{equation}
+
+\subsubsection{Normal subgroup}
+
+The mixing is even more thorough if H is a generic normal subgroup of G.  The $C_q$ we can still
+define similarly, with $\{q\}$ being one element of each coset, but since in general $iq \neq qi$,
+the sets of equation sets are more complicated:
+\begin{align}
+(i,kj^{-1}) + (jq, i^{-1}kq) &= (ijq, kq) \\ 
+(iq,kqj^{-1}) + (j, i^{-1}k) &= (iqj, kq) \\
+(iq,kqj^{-1}) + (jq^{-1}, q^{-1}i^{-1}k) &= (iqjq^{-1},k) \nonumber \\
+(iq,kqj^{-1}) - (k^{-1}iq,qj^{-1}) &= (iqjq^{-1},k)
+\end{align}
+
+Clearly the equation sets for simple groups will be even further entangled, and $T_H$ will not
+be a subset of $T_G$ except by accident.
+
+\subsubsection{Consequence}
+
+Taking this in reverse, we see that the transformations of $H$ when it is a subset of $G$ will
+not in general be the same as the transformations of $H$ taken standalone, because of the
+extra constraints due to its embedding in $G$.
+
+\par This means that you cannot simply solve a larger group and automatically
+retrieve the transformations of its subgroups as they would be in isolation:  each group
+needs to be studied on its own.
+
+\section{Physics applications}
+
+Can the symmetries of this type have physics applications?
+
+\par If the group in question is a representation of physical
+entities whose interactions are faithfully represented by the
+group's Cayley table, then yes, it could.  The original JMP
+paper studied the possibility that preon interactions could be
+modeled this way.
+
+\par  If, on the other hand, the group is the representation of the
+set of operators
+on some physical system, then the answer is no, unless the
+representation uses some other field than the field of which
+the transformations are a subset.  This is because
+the set of operators which preserves the symmetries of that
+system will not include the {\it additions} (in the set of transformations) 
+of two operators.  This {\it addition} 
+creates a new operator which is not in the original set of 
+symmetry-preserving operators.  For example, in the usual
+representation, group element interactions are matrix multiplications,
+but when you treat them as basis vectors for a field, that introduces matrix
+addition, which creates matrices which don't have the same 
+properties as the original ones.
+
+\par In one simple case, an equilateral
+triangle can be operated on by 3 flips $\{ F_1, F_2, F_3 \}$
+and 3 rotations $\{ R_0, R_{120}, R_{240} \}$.  A set of 3 2-points
+representing the triangle is operated on by $2x2$ matrices
+representing the operators.  One infinitesimal transformation over
+$F_1$ turns out to be $F_1 + \epsilon F_2 - \epsilon F_3$.  You
+quickly see that the result doesn't preserve any of the points, or
+transform them into each other.  This comes from mixing two
+distinct operations:  transformations over the physical system and
+transformations over the representation.
+
+\par In addition, there are two distinct entities which can represent
+null.  The identity element, modulo some scaling, is one candidate,
+but so is the true zero, in which all coefficients of the group elements
+are zero.  Notice that for two elements $a$ and $b$ such that $a^2=b^2$
+and $ab=ba$, the expanded product of $a+b$ and $a-b$ is true zero,
+even though neither of the terms is.
+
+\section{ Examples}
+As described in the earlier paper, the continuous transformations over
+the dihedral group of order 6 (the smallest non-abelian finite group) are
+isometric to SU(2).  The transformations over the alternating group $A_4$
+(a 12-element group) are isometric to S(3).  
+
+\end{document}
