@@ -256,3 +256,7 @@ class Chain:
             self.chainlist.append(oentry.multiply(foverlap[0]))  # returns a new Element
         other.setUsedUp()
         return Chain.MERGED
+    #
+    def contents(self):
+        ''' Return a pointer to the contents.  Not intended to be mutable '''
+        return self.chainlist
