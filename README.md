@@ -86,7 +86,8 @@ Limitations
 
 This is not lightning-fast.  You will probably not have the patience to wait for a set of commutators
 even when the group size is well less than the implied size limit of 100.  The a4group example takes
-a minute and a half on my machine.  The 16_9group example takes a little over 9 minutes.
+a minute and a half on my machine.  The 16_9group example takes a little over 9 minutes.  The s4group
+example (output is s4.output) took 2 1/2 hours.
 
 The equation-solving is simple, and I do not warrant that it will be adequate for all situations
 arising.  If it isn't adequate, one can try using lapack instead of exact fractions, and rounding off
