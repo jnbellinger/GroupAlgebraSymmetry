@@ -95,7 +95,7 @@ class CommuteBundle:
             # There should be only 1 constant term in each Chain, with a name of the form {m_0}
             for entry in self.initialChains:
                 constcount = 0
-                constele = E.Element(N.Name(0, 0, 100), F.Fraction(1, 1))
+                constele = E.Element(N.Name(0, 0, 99999), F.Fraction(1, 1))  # Never expect to use groups this large
                 for ele in entry.contents():
                     if ele.name.row != 0:
                         constele = copy.deepcopy(ele)
