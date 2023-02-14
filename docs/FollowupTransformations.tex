@@ -19,7 +19,7 @@
 
 \begin{document}
 %\begin {CJK*} {GB} { } 
-\title{ Transformations over a space defined over a finite group}
+\title{ Special transformations over a space defined over a finite group}
 \author{James N. Bellinger}
 \affiliation{University of Wisconsin at Madison}
 \date{\today}
@@ -27,8 +27,14 @@
 %\end{CJK*}
 
 \begin{abstract}
-Continuous transformations of dihedral groups of $>=6$ have a maximum of $3(p-1)/2$ independent parameters if $p$ is odd, and $3(p-2)/2$ if $p$ is even.
-\par The transformations $T_H$ of a group $H$ which is a subgroup of $G$ 
+
+"Special" transformations in a group algebra map the elements representing the elements of the finite group into a set which preserves the
+original finite group operations.
+
+Continuous special transformations of dihedral groups of $>=6$ have a maximum of $3(p-1)/2$ independent parameters if $p$ 
+is odd, and $3(p-2)/2$ if $p$ is even.
+
+\par The special transformations $T_H$ of a group $H$ which is a subgroup of $G$ 
 will sometimes be a subset of the transformations $T_G$ over $G$,
 but not in general.  In particular, if $G = H \otimes Z_2$, $T_H$
 is a subset of $T_G$.  Therefore in general, if a subgroup $H$ of $G$
@@ -41,11 +47,15 @@ these continuous transformations are unlikely to have physical meaning.
 
 
 \section{Introduction}
-As described in an earlier paper \footnote{Symmetries of preon interactions modeled as a finite group. J.N. Bellinger J.Math.Phys.38:3414-3426,1997}, non-abelian finite groups can sustain
-continuous transformations in a space that mixes the group elements, which maintain the original
-group structure.  These transformations are of the form of $n \times n$ matrices, where $n$ is the
+As described in an earlier paper \footnote{Symmetries of preon interactions modeled as a finite group. 
+J.N. Bellinger J.Math.Phys.38:3414-3426,1997}, non-abelian finite groups can sustain
+continuous special transformations in a space that maps the elements corresponding to the elements of the finite group into a set which
+preserves the original
+group structure.  Hereafter when I refer to a transformation it is one of these "special" transformations.
+These transformations are of the form of $n \times n$ matrices, where $n$ is the
 order of the group.  Name such a transform matrix $V$; the equation governing its differential
-changes is $$\delta V_{i,kj^{-1}} + \delta V_{j,i^{-1}k} = \delta V_{ij,k}$$.  The $i$, $j$, and $k$ are the numbered group elements, such that (e.g.) $kj^{-1}$ is the number of the element given by the group product of group element $k$ and the inverse of $j$.
+changes is $$\delta V_{i,kj^{-1}} + \delta V_{j,i^{-1}k} = \delta V_{ij,k}$$.  The $i$, $j$, and $k$ are the numbered group elements, 
+such that (e.g.) $kj^{-1}$ is the number of the element given by the group product of group element $k$ and the inverse of $j$.
 
 \par While it is possible to solve for the generators of such a transformation for any given
 group, it is good to have general solutions available.  One simple example is dihedral groups.
@@ -591,5 +601,9 @@ As described in the earlier paper, the continuous transformations over
 the dihedral group of order 6 (the smallest non-abelian finite group) are
 isometric to SU(2).  The transformations over the alternating group $A_4$
 (a 12-element group) are isometric to S(3).  
+
+\par A tool for generating the commutation relations for small groups
+may be found at GitHub:  https://github.com/jnbellinger/GroupAlgebraSymmetry.git
+
 
 \end{document}
