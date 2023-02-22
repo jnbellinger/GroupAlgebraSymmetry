@@ -1,5 +1,6 @@
 # GroupAlgebraSymmetry
-Find commutation relations for differential transforms in a group algebra over a finite non-abelian group
+Find commutation relations for differential chnages that generate continuous 
+transforms in a group algebra over a finite non-abelian group
 In the paper "Symmetries of preon interactions modeled as a finite group" 
 (J.N. Bellinger J.Math.Phys.38: 3414-3426,1997), I showed that
 non-abelian finite groups can sustain a special type of 
@@ -8,6 +9,8 @@ each transform maps the group elements
 in such a way that the result new "elements" maintain the original group structure.
 This is in addition to the obvious
 permutations possible among elements of the finite group.
+
+The same transformations appear when working with the antiautomorphism ( https://en.wikipedia.org/wiki/Antihomomorphism )
 
 The question I want to answer is **"Is there a simple way to predict from aspects of the finite group what those
 symmetries will be?"**
