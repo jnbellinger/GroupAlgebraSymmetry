@@ -82,8 +82,9 @@ in the abelian subgroup.
 
 $$\delta V_{i,kj^{-1}} + \delta V_{j,i^{-1}k} = \delta V_{ij,k}$$
 
+\begin{center}
 \begin{tabular}{c|ccc}
-Case & $i$ & $j$ & $k$ \\ \hline \\
+Case & $i$ & $j$ & $k$ \\ \hline
 1 & $A$ & $A$ & $A$ \\
 2 & $A$ & $A$ & $B$ \\
 3 & $A$ & $B$ & $A$ \\
@@ -93,12 +94,14 @@ Case & $i$ & $j$ & $k$ \\ \hline \\
 7 & $B$ & $B$ & $A$ \\
 8 & $B$ & $B$ & $B$ 
 \end{tabular}
+\end{center}
 
 \par
 For Case 1, all the $\delta V_{x,y}$ have $x$ and $y$ in subset $A$, which is
 an abelian subgroup and for which all the $\delta V$ $V1$ entries are
 zero.  
 
+\begin{center}
 \begin{tabular}{c|ccc}
 Case & $\delta V_{i,kj^{-1}}$ & $\delta V_{j,i^{-1}k}$ & $\delta V_{ij,k}$ \\ \hline \\
 2 & $V2$ & $V2$ & $V2$ \\
@@ -109,6 +112,7 @@ Case & $\delta V_{i,kj^{-1}}$ & $\delta V_{j,i^{-1}k}$ & $\delta V_{ij,k}$ \\ \h
 7 & $V4$ & $V4$ & $V1=0$ \\ 
 8 & $V3$ & $V3$ & $V2$ 
 \end{tabular}
+\end{center}
 
 \par $V2$ and $V3$ are, of course intimately linked, and $V4$ is not related to 
 either of them.
@@ -121,13 +125,15 @@ each element is its own inverse.
 When $i,j \in B$ (i.e. $i$ is really $mod(i)_N +N \equiv \{i\}+p$),
 their combination $ij$ is $\{j-i\}+p$.
 
-\begin{tabular}{cc|c}
-$i \in$  & $j \in$ & $ij$ \\ \hline \\
+\begin{center}
+\begin{tabular}{c|c|c}
+$i \in$  & $j \in$ & $ij$ \\ \hline
 $A$ & $A$ & $\{i+j\} \in A$ \\
 $A$ & $B$ & $\{j-i\} +p \in B$ \\
 $B$ & $A$ & $\{i-j\} +p \in B$ \\
 $B$ & $B$ & $\{j-i\} \in A$
 \end{tabular}
+\end{center}
 
 
 \subsection{V4}
@@ -420,24 +426,24 @@ with everything I will place it at the right.
 \par The $i$, $j$, and $k$ will be in either $H$ or $Q$, giving us 8 sets of equations.  The transformation
 array partitions into 4 blocks.  $A$ and $D$ are on the diagonal, $B$ and $C$ off-diagonal.
 $$
-\begin{array}{ccc}
- & H & Q \\
-H & A & B \\
+\begin{array}{c|c|c}
+ & H & Q \\ \hline
+H & A & B \\ \hline
 Q & C & D
 \end{array}
 $$
 
 \par The list of equations is
 $$
-\begin{array}{ccccccc}
-  & i & j & k & Generic & Block & Detail \\
-1 & H & H & H & (H,H)+(H,H)=(H,H) & A+A \in A & (i,kj^{-1}) + (j,i^{-1}k)=(ij,k) \\
-2 & H & H & Q & (H,Q)+(H,Q)=(H,Q) & B+B \in B & (i,kj^{-1}b) + (j,i^{-1}kb)=(ij,kb) \\
-3 & H & Q & H & (H,Q)+(Q,H)=(Q,H) & B+C \in C & (i,kj^{-1}b) + (jb,i^{-1}k)=(ijb,k) \\
-4 & H & Q & Q & (H,H)+(Q,Q)=(Q,Q) & A+D \in D & (i,kj^{-1}) + (jb,i^{-1}kb)=(ijb,kb) \\
-5 & Q & H & H & (Q,H)+(H,Q)=(Q,H) & C+B \in C & (ib,kj^{-1}) + (j,i^{-1}kb)=(ijb,k) \\
-6 & Q & H & Q & (Q,Q)+(H,H)=(Q,Q) & D+A \in D & (ib,kj^{-1}b) + (j,i^{-1}k)=(ijb,kb) \\
-7 & Q & Q & H & (Q,Q)+(Q,Q)=(H,H) & D+D \in A & (ib,kj^{-1}b) + (jb,i^{-1}kb)=(ij,k) \\
+\begin{array}{c|c|c|c|c|c|c}
+  & i & j & k & Generic & Block & Detail \\ \hline
+1 & H & H & H & (H,H)+(H,H)=(H,H) & A+A \in A & (i,kj^{-1}) + (j,i^{-1}k)=(ij,k) \\ \hline
+2 & H & H & Q & (H,Q)+(H,Q)=(H,Q) & B+B \in B & (i,kj^{-1}b) + (j,i^{-1}kb)=(ij,kb) \\ \hline
+3 & H & Q & H & (H,Q)+(Q,H)=(Q,H) & B+C \in C & (i,kj^{-1}b) + (jb,i^{-1}k)=(ijb,k) \\ \hline
+4 & H & Q & Q & (H,H)+(Q,Q)=(Q,Q) & A+D \in D & (i,kj^{-1}) + (jb,i^{-1}kb)=(ijb,kb) \\ \hline
+5 & Q & H & H & (Q,H)+(H,Q)=(Q,H) & C+B \in C & (ib,kj^{-1}) + (j,i^{-1}kb)=(ijb,k) \\ \hline
+6 & Q & H & Q & (Q,Q)+(H,H)=(Q,Q) & D+A \in D & (ib,kj^{-1}b) + (j,i^{-1}k)=(ijb,kb) \\ \hline
+7 & Q & Q & H & (Q,Q)+(Q,Q)=(H,H) & D+D \in A & (ib,kj^{-1}b) + (jb,i^{-1}kb)=(ij,k) \\ \hline
 8 & Q & Q & Q & (Q,H)+(Q,H)=(H,Q) & C+C \in B & (ib,kj^{-1}) + (jb,i^{-1}k)=(ij,kb) 
 \end{array}
 $$
