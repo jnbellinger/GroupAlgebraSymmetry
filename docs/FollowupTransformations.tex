@@ -19,7 +19,7 @@
 
 \begin{document}
 %\begin {CJK*} {GB} { } 
-\title{ Special transformations over a space defined over a finite group}
+\title{ Dihedral groups and special linear continuous transformations over their group algebras}
 \author{James N. Bellinger}
 \affiliation{University of Wisconsin at Madison}
 \date{\today}
@@ -28,8 +28,9 @@
 
 \begin{abstract}
 
-"Special" transformations in a group algebra map the elements representing the elements of the finite group into a set which preserves the
-original finite group operations.
+Special transformations in a group algebra are continuous linear transformations $\phi$ which satisfy
+$$\phi((1)g_i) \otimes \phi(1)g_j) = \phi((1)g_{ij})$$
+preserving the original finite group operations.
 
 Continuous special transformations of dihedral groups of $>=6$ have a maximum of $3(p-1)/2$ independent parameters if $p$ 
 is odd, and $3(p-2)/2$ if $p$ is even.
@@ -49,10 +50,14 @@ these continuous transformations are unlikely to have physical meaning.
 \section{Introduction}
 As described in an earlier paper \footnote{Symmetries of preon interactions modeled as a finite group. 
 J.N. Bellinger J.Math.Phys.38:3414-3426,1997}, non-abelian finite groups can sustain
-continuous special transformations in a space that maps the elements corresponding to the elements of the finite group into a set which
-preserves the original
-group structure.  Hereafter when I refer to a transformation it is one of these "special" transformations.
-These transformations are of the form of $n \times n$ matrices, where $n$ is the
+continuous special transformations on their group algebra over $C$ which satisfy
+$$\phi((1)g_i) \otimes \phi((1)g_j) = \phi((1)g_{ij})$$
+The transformation maps the 
+elements corresponding to the elements of the finite group into a set which
+is isomorphic to the original finite group.
+Hereafter when I refer to a transformation it is one of these "special" transformations.
+
+\par In the natural representation these transformations are of the form of $n \times n$ matrices, where $n$ is the
 order of the group.  Name such a transform matrix $V$; the equation governing its differential
 changes is $$\delta V_{i,kj^{-1}} + \delta V_{j,i^{-1}k} = \delta V_{ij,k}$$.  The $i$, $j$, and $k$ are the numbered group elements, 
 such that (e.g.) $kj^{-1}$ is the number of the element given by the group product of group element $k$ and the inverse of $j$.
@@ -398,8 +403,7 @@ represent the above as
 \begin{equation}
 (i,kj^{-1})+ (j,i^{-1}k) = (ij,k)
 \end{equation}
-Let $T_H$ be the continuous transformations (defined in 
-\footnote{Journal of Mathematical Physics 38:3414-3426, 1997}) over H. Let H be a subgroup of G.
+Let $T_H$ be the continuous transformations over H. Let H be a subgroup of G.
 
 \par Is $T_H \leq T_G$?
 
