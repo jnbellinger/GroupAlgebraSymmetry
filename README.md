@@ -9,6 +9,7 @@ each transform maps the group elements
 in such a way that the result new "elements" maintain the original group structure.
 This is in addition to the obvious
 permutations possible among elements of the finite group.
+These are obviously a subset of the "units" of the group.
 
 The same transformations appear when working with the antiautomorphism ( https://en.wikipedia.org/wiki/Antihomomorphism )
 
@@ -99,6 +100,8 @@ that there might be stability issues which, combined with the rounding, would gi
 
 The approach I used working on the original paper used a Fortran program to create and pre-simplify
 the equations, but the final solution and creation of commutation relations was manual.
+
+The program seems to fail with the groups of size 18.  I am investigating.
 
 Contents
 ------
