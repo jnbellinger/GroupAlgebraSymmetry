@@ -34,7 +34,8 @@ group G
 
 A transformation V in the group algebra will map these into other elements {g'}.
 Sometimes the natural operation on this new set will be isomorphic to the original finite
-group operations.  That's what I'm interested in here.
+group operations.  That's what I'm interested in here.  Because I'm requiring that the transformation
+be linear, since it satisfies V{g_i} x V{g_j} = V{g_ij}, if a x b = c, it will also satisfy V(a) x V(b) = V(c).
 
 
 Sometimes these transformations are simple permutations, but in some circumstances one finds
