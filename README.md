@@ -102,7 +102,8 @@ that there might be stability issues which, combined with the rounding, would gi
 The approach I used working on the original paper used a Fortran program to create and pre-simplify
 the equations, but the final solution and creation of commutation relations was manual.
 
-The program seems to fail with the groups of size 18.  I am investigating.
+The program seems to fail with the groups of size 18.  There is a bug, and the differential matrices
+do not all satisfy the fundamental equation.  I am investigating.
 
 Contents
 ------
