@@ -11,6 +11,7 @@ from Builder import Equation as Eq
 from Builder import Zero as Z
 from Builder import Chain
 from Builder import GenerateMatrix
+from Builder import CheckMatrixWithTable
 
 DETAILS = False
 # Read table
@@ -63,6 +64,12 @@ if DETAILS:
     print(xxx)
     print('=====================================================')
 matrixgenerator = GenerateMatrix.GenerateMatrix(solver.GiveEquivalences(), solver.GiveChains())
+# matrixgenerator.MatrixList holds the list of differential matrices
+# I should use the table object with this list to determine which of the Matrix
+# objects satisfy the fundamental differential formula.  Just in case!
+matrixtester = CheckMatrixWithTable.CheckMatrixWithTable(table, matrixgenerator.MatrixList)
+if not matrixtester.DriveChecks():
+    print('Some Matrix are not consistent with the fundamental equation')
 if DETAILS:
     print('----')
     print(matrixgenerator.EquivChainPointer)
